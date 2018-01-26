@@ -1,3 +1,5 @@
+//lol
+
 package serializable.commands;
 
 import java.io.IOException;
