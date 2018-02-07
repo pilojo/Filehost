@@ -1,5 +1,7 @@
 .metadata
 bin/
+build/
+nbproject/private/
 tmp/
 *.tmp
 *.bak
@@ -51,3 +53,7 @@ local.properties
 /JavaApplication1/nbproject/private/
 /nbproject/private/
 /JavaApp/build/
+/FSManager/nbproject/private/
+/JavaApp/dist/
+/FSManager/build/
+/FSManager/dist/
