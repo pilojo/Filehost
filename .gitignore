@@ -1,10 +1,13 @@
 .metadata
 bin/
 tmp/
+nbproject/
 *.tmp
 *.bak
 *.swp
 *~.nib
+*.xml
+*.properties
 local.properties
 .settings/
 .loadpath
@@ -48,3 +51,6 @@ local.properties
 
 # Code Recommenders
 .recommenders/
+/JavaApplication1/nbproject/private/
+/nbproject/private/
+/JavaApp/build/

@@ -6,20 +6,20 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.text.StringCharacterIterator;
 
-public class MKDIR implements Serializable{
-
-	private static final long serialVersionUID = 3636619772744681249L;
+public class MKDIR extends Command{
 	
 	private String path;
 	
-	public MKDIR(String path) {
-		this.path = path;
-	}
+        public MKDIR(){
+            path = null;
+        }
+        
+	public MKDIR(String path) {this.path = path;}
 	
-	public void validatePath(String Path){
+	public boolean validatePath(String Path){
 		boolean hasContent = (Path != null) && (!Path.equals(""));
 		if(!hasContent) {
-			throw new IllegalArgumentException("Must be non-null and non-empty.");
+			return false;
 		}
 		Path = Path.replace('/', '\\');
 		StringCharacterIterator it = new StringCharacterIterator(Path);
@@ -28,19 +28,24 @@ public class MKDIR implements Serializable{
 			boolean isValidChar = (Character.isLetter(c)|| Character.isSpaceChar(c) ||c == '\\');
 			if(!isValidChar) {
 				String message = "Can only contain letters, spaces, and backslashes";
-				throw new IllegalArgumentException(message);
+				return false;
 			}
 			c = it.next();
 		}	
+                return true;
 	}
 	
-	public void readObject(ObjectInputStream istream) throws ClassNotFoundException, IOException{
-		istream.defaultReadObject();
-		validatePath(path);
-	}
-	
-	public void writeObject(ObjectOutputStream ostream) throws IOException{
-		ostream.defaultWriteObject();
-	}
+	public String toString()
+        {
+            return path;
+        }
+        
+        public boolean fromString(String str)
+        {
+            //do shite
+            path = str;
+            return validatePath(path);
+            
+        }
 	
 }

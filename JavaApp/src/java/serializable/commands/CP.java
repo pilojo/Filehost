@@ -5,20 +5,18 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.text.StringCharacterIterator;
 
-public class CP implements Serializable{
-
-	private static final long serialVersionUID = 3809268679719475381L;
+public class CP extends Command{
 	private String from;
 	private String to;
+        
+        public CP(){
+            from = null;
+            to = null;
+        }
 	
 	public CP(String from, String to) {
 		this.from = from;
 		this.to = to;
-	}
-	
-	private void validateState() {
-		validatePath(this.from);
-		validatePath(this.to);
 	}
 	
 	private void validatePath(String from) {
@@ -38,14 +36,22 @@ public class CP implements Serializable{
 			c = it.next();
 		}		
 	}
-	
-	public void readObject(ObjectInputStream istream) throws ClassNotFoundException, IOException {
-		istream.defaultReadObject();
-		validateState();
-	}
-	
-	public void writeObject(ObjectOutputStream ostream) throws IOException{
-		ostream.defaultWriteObject();
-	}
+        
+        @Override
+        public String toString()
+        {
+            return from+"\n"+to;
+        }
+        
+        @Override
+        public boolean fromString(String str)
+        {
+            String[] values = str.split("\n");
+            if(values.length==2){
+                from=values[0];
+                to=values[1];
+            }
+            return false;
+        }
 	
 }
