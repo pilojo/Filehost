@@ -5,28 +5,25 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.text.StringCharacterIterator;
 
-public class MV implements Serializable{
-
-
-	private static final long serialVersionUID = -1224665646897838659L;
+public class MV extends Command{
 
 	private String from;
 	private String to;
 	
+        public MV(){
+            from = null;
+            to = null;
+        }
+        
 	public MV(String from, String to) {
 		this.from = from;
 		this.to = to;
 	}
-	
-	private void validateState() {
-		validatePath(this.from);
-		validatePath(this.to);
-	}
-	
-	private void validatePath(String from) {
+
+	private boolean validatePath(String from) {
 		boolean hasContent = (from != null) && (!from.equals(""));
 		if(!hasContent) {
-			throw new IllegalArgumentException("Must be non-null and non-empty.");
+			return false;
 		}
 		from = from.replace('/', '\\');
 		StringCharacterIterator it = new StringCharacterIterator(from);
@@ -35,19 +32,25 @@ public class MV implements Serializable{
 			boolean isValidChar = (Character.isLetter(c)|| Character.isSpaceChar(c) ||c == '\\');
 			if(!isValidChar) {
 				String message = "Can only contain letters, spaces, and backslashes";
-				throw new IllegalArgumentException(message);
+				return false;
 			}
 			c = it.next();
 		}		
+                return true;
 	}
 	
-	public void readObject(ObjectInputStream istream) throws ClassNotFoundException, IOException {
-		istream.defaultReadObject();
-		validateState();
-	}
+	public String toString(){
+            return from+"\n"+to;
+        }
 	
-	public void writeObject(ObjectOutputStream ostream) throws IOException{
-		ostream.defaultWriteObject();
+	public boolean fromString(String str){
+            String[] serial = str.split("\n");
+            if(serial.length == 2){
+                from = serial[0];
+                to = serial[1];
+            }
+            if(validatePath(from))return validatePath(to);
+            else return false;
 	}
 	
 }
