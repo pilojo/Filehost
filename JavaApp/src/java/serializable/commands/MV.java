@@ -15,6 +15,14 @@ public class MV extends Command{
             to = null;
         }
         
+        public String getFrom(){
+            return from;
+        }
+        
+        public String getTo(){
+            return to;
+        }
+        
 	public MV(String from, String to) {
 		this.from = from;
 		this.to = to;

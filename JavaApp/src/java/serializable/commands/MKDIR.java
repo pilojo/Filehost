@@ -15,6 +15,10 @@ public class MKDIR extends Command{
         }
         
 	public MKDIR(String path) {this.path = path;}
+        
+        public String getPath(){
+            return path;
+        }
 	
 	public boolean validatePath(String Path){
 		boolean hasContent = (Path != null) && (!Path.equals(""));

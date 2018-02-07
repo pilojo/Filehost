@@ -15,6 +15,14 @@ public class MV extends Command{
             to = null;
         }
         
+        public String getFrom(){
+            return from;
+        }
+        
+        public String getTo(){
+            return to;
+        }
+        
 	public MV(String from, String to) {
 		this.from = from;
 		this.to = to;
@@ -44,12 +52,12 @@ public class MV extends Command{
         }
 	
 	public boolean fromString(String str){
-            String[] serial = str.split("\n");
-            if(serial.length == 2){
-                from = serial[0];
-                to = serial[1];
-            }
-            if(validatePath(from))return validatePath(to);
+            String[] values = str.split("\n");
+            if(values.length==3){
+                from=values[0];
+                to=values[1];
+                password = values[2];
+            }if(validatePath(from))return validatePath(to);
             else return false;
 	}
 	

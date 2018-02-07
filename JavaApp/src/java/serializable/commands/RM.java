@@ -20,6 +20,10 @@ public class RM implements Serializable{
 		this.path = dst;
 	}
 	
+        public String getPath(){
+            return path;
+        }
+        
 	private boolean validatePath(String dst) {
 		boolean hasContent = (dst != null) && (!dst.equals(""));
 		if(!hasContent) {
