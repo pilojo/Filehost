@@ -1,13 +1,10 @@
 .metadata
 bin/
 tmp/
-nbproject/
 *.tmp
 *.bak
 *.swp
 *~.nib
-*.xml
-*.properties
 local.properties
 .settings/
 .loadpath
