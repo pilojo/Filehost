@@ -2,12 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="Filehost">
-            <file>file:/C:/Users/jp972/OneDrive/Web/Filehost/JavaApp/web/index.html</file>
-            <file>file:/C:/Users/jp972/OneDrive/Web/Filehost/JavaApp/src/java/serializable/commands/MKDIR.java</file>
-            <file>file:/C:/Users/jp972/OneDrive/Web/Filehost/JavaApp/src/java/serializable/commands/CP.java</file>
-            <file>file:/C:/Users/jp972/OneDrive/Web/Filehost/JavaApp/src/java/webhost/Server.java</file>
-            <file>file:/C:/Users/jp972/OneDrive/Web/Filehost/JavaApp/src/java/serializable/commands/Command.java</file>
-        </group>
+        <group name="Filehost"/>
     </open-files>
 </project-private>
