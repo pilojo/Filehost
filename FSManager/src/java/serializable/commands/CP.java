@@ -13,6 +13,14 @@ public class CP extends Command{
             from = null;
             to = null;
         }
+        
+        public String getFrom(){
+            return from;
+        }
+        
+        public String getTo(){
+            return to;
+        }
 	
 	public CP(String from, String to) {
 		this.from = from;
@@ -40,16 +48,17 @@ public class CP extends Command{
         @Override
         public String toString()
         {
-            return from+"\n"+to;
+            return from+"\n"+to+"\n"+password;
         }
         
         @Override
         public boolean fromString(String str)
         {
             String[] values = str.split("\n");
-            if(values.length==2){
+            if(values.length==3){
                 from=values[0];
                 to=values[1];
+                password = values[2];
             }
             return false;
         }

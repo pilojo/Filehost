@@ -15,6 +15,10 @@ public class MKDIR extends Command{
         }
         
 	public MKDIR(String path) {this.path = path;}
+        
+        public String getPath(){
+            return path;
+        }
 	
 	public boolean validatePath(String Path){
 		boolean hasContent = (Path != null) && (!Path.equals(""));
@@ -42,10 +46,12 @@ public class MKDIR extends Command{
         
         public boolean fromString(String str)
         {
-            //do shite
-            path = str;
+            String[] serial = str.split("\n");
+            if(serial.length == 2){
+                path = serial[0];
+                password = serial[1];
+            }
             return validatePath(path);
-            
         }
 	
 }

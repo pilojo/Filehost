@@ -13,6 +13,14 @@ public class CP extends Command{
             from = null;
             to = null;
         }
+        
+        public String getFrom(){
+            return from;
+        }
+        
+        public String getTo(){
+            return to;
+        }
 	
 	public CP(String from, String to) {
 		this.from = from;
