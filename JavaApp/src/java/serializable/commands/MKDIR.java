@@ -42,10 +42,12 @@ public class MKDIR extends Command{
         
         public boolean fromString(String str)
         {
-            //do shite
-            path = str;
+            String[] serial = str.split("\n");
+            if(serial.length == 2){
+                path = serial[0];
+                password = serial[1];
+            }
             return validatePath(path);
-            
         }
 	
 }

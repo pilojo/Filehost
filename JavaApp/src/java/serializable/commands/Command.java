@@ -10,7 +10,7 @@ package serializable.commands;
  * @author jp972
  */
 public abstract class Command{
-    
+    protected String password = "A^@kds034!@$#sjvlksoirg%#$%^#@()sdgnverkf15681165";
     
     
     @Override
