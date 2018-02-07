@@ -9,19 +9,21 @@ import java.io.Serializable;
 import java.text.StringCharacterIterator;
 
 public class RM implements Serializable{
-
-	private static final long serialVersionUID = -8022882916338366053L;
 	
-	private String dst;
+	private String path;
+        
+        public RM(){
+            path = null;
+        }
 	
 	public RM(String dst){
-		this.dst = dst;
+		this.path = dst;
 	}
 	
-	private void validatePath(String dst) {
+	private boolean validatePath(String dst) {
 		boolean hasContent = (dst != null) && (!dst.equals(""));
 		if(!hasContent) {
-			throw new IllegalArgumentException("Must be non-null and non-empty.");
+			return false;
 		}
 		dst = dst.replace('/', '\\');
 		StringCharacterIterator it = new StringCharacterIterator(dst);
@@ -30,18 +32,19 @@ public class RM implements Serializable{
 			boolean isValidChar = (Character.isLetter(c)|| Character.isSpaceChar(c) ||c == '\\');
 			if(!isValidChar) {
 				String message = "Can only contain letters, spaces, and backslashes";
-				throw new IllegalArgumentException(message);
+				return false;
 			}
 			c = it.next();
 		}		
+                return true;
 	}
 	
-	public void readObject(ObjectInputStream istream) throws ClassNotFoundException, IOException{
-		istream.defaultReadObject();
-		validatePath(dst);
+	public String toString(){
+            return path;
 	}
 	
-	public void writeObject(ObjectOutputStream ostream) throws IOException{
-		ostream.defaultWriteObject();
-	}
+	public boolean fromString(String str){
+            path = str;
+            return validatePath(path);
+        }
 }
