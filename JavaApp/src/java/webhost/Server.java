@@ -36,7 +36,7 @@ public class Server extends HttpServlet{
     
     void fsCom() throws MalformedURLException, IOException{
         try{
-            CP cp = new CP("/root", "/root/sub");
+            CP cp = new CP("/root", "/root/sub ");
             System.out.println(cp.getFrom());
             URL url = new URL(IP);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -63,7 +63,7 @@ public class Server extends HttpServlet{
 		while ((inputLine = in.readLine()) != null) {
 			response.append(inputLine);
 		}
-            
+            connection.disconnect();
         }catch(Exception e){
         }
     }
