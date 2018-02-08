@@ -13,6 +13,16 @@
 		<url-pattern>/test</url-pattern>
 	</servlet-mapping>
 
+        <servlet>
+            <servlet-name>UserServices</servlet-name>
+            <servlet-class>webhost.UserServices</servlet-class>
+        </servlet>
+        
+        <servlet-mapping>
+            <servlet-name>UserServices</servlet-name>
+            <url-pattern>/user/*</url-pattern>
+        </servlet-mapping>
+        
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
