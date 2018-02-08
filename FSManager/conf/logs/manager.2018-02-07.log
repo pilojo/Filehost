@@ -1,22 +1,10 @@
-07-Feb-2018 16:20:55.643 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 16:20:55.643 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 16:20:55.889 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 16:20:55.893 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 16:20:55.906 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/C:/Users/Devon/AppData/Local/Temp/context2080650410358037123.xml'
-07-Feb-2018 16:20:55.988 INFO [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/FSManager'
-07-Feb-2018 18:04:28.957 INFO [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 18:04:28.957 INFO [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 18:04:29.170 INFO [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:04:29.174 INFO [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:04:29.187 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 18:05:30.558 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 18:05:30.558 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 18:05:30.747 INFO [http-nio-8080-exec-7] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:05:30.751 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:08:43.310 INFO [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:08:43.417 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: stop: Stopping web application '/FSManager'
-07-Feb-2018 18:08:43.641 INFO [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/FSManager'
-07-Feb-2018 18:08:43.893 SEVERE [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log FAIL - Application at context path [/FSManager] could not be started
+07-Feb-2018 20:57:53.703 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+07-Feb-2018 20:57:53.703 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
+07-Feb-2018 20:57:53.852 INFO [http-nio-8080-exec-10] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+07-Feb-2018 20:57:53.855 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+07-Feb-2018 20:57:53.866 INFO [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log Manager: stop: Stopping web application '/FSManager'
+07-Feb-2018 20:57:53.876 INFO [http-nio-8080-exec-8] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/FSManager'
+07-Feb-2018 20:57:53.896 SEVERE [http-nio-8080-exec-8] org.apache.catalina.core.ApplicationContext.log FAIL - Application at context path [/FSManager] could not be started
  org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/FSManager]]
 	at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:441)
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
@@ -62,13 +50,11 @@ Caused by: java.lang.IllegalArgumentException: The servlets named [ManagementSer
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
 	... 26 more
 
-07-Feb-2018 18:09:14.634 INFO [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 18:09:14.635 INFO [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 18:09:17.310 INFO [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:09:17.331 INFO [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:09:17.395 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: stop: Stopping web application '/FSManager'
-07-Feb-2018 18:09:17.450 INFO [http-nio-8080-exec-10] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/FSManager'
-07-Feb-2018 18:09:17.535 SEVERE [http-nio-8080-exec-10] org.apache.catalina.core.ApplicationContext.log FAIL - Application at context path [/FSManager] could not be started
+07-Feb-2018 20:58:36.914 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+07-Feb-2018 20:58:36.917 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+07-Feb-2018 20:58:36.929 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: stop: Stopping web application '/FSManager'
+07-Feb-2018 20:58:36.935 INFO [http-nio-8080-exec-8] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/FSManager'
+07-Feb-2018 20:58:36.958 SEVERE [http-nio-8080-exec-8] org.apache.catalina.core.ApplicationContext.log FAIL - Application at context path [/FSManager] could not be started
  org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/FSManager]]
 	at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:441)
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
@@ -114,214 +100,15 @@ Caused by: java.lang.IllegalArgumentException: The servlets named [ManagementSer
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
 	... 26 more
 
-07-Feb-2018 18:10:04.255 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:10:04.277 INFO [http-nio-8080-exec-11] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:10:04.349 INFO [http-nio-8080-exec-10] org.apache.catalina.core.ApplicationContext.log Manager: stop: Stopping web application '/FSManager'
-07-Feb-2018 18:10:04.382 INFO [http-nio-8080-exec-13] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/FSManager'
-07-Feb-2018 18:10:04.522 SEVERE [http-nio-8080-exec-13] org.apache.catalina.core.ApplicationContext.log FAIL - Application at context path [/FSManager] could not be started
- org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/FSManager]]
-	at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:441)
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
-	at org.apache.catalina.manager.ManagerServlet.start(ManagerServlet.java:1309)
-	at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:358)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:619)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
-	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:501)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:754)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1376)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: java.lang.IllegalArgumentException: The servlets named [ManagementServlet] and [manage] are both mapped to the url-pattern [/manage/*] which is not permitted
-	at org.apache.tomcat.util.descriptor.web.WebXml.addServletMappingDecoded(WebXml.java:329)
-	at org.apache.tomcat.util.descriptor.web.WebXml.addServletMapping(WebXml.java:322)
-	at org.apache.catalina.startup.ContextConfig.processAnnotationWebServlet(ContextConfig.java:2428)
-	at org.apache.catalina.startup.ContextConfig.processAnnotationsStream(ContextConfig.java:2105)
-	at org.apache.catalina.startup.ContextConfig.processAnnotationsWebResource(ContextConfig.java:1991)
-	at org.apache.catalina.startup.ContextConfig.processAnnotationsWebResource(ContextConfig.java:1985)
-	at org.apache.catalina.startup.ContextConfig.processAnnotationsWebResource(ContextConfig.java:1985)
-	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1156)
-	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:775)
-	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:299)
-	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
-	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5003)
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
-	... 26 more
-
-07-Feb-2018 18:10:10.751 INFO [http-nio-8080-exec-17] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:10:10.828 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: undeploy: Undeploying web application at '/FSManager'
-07-Feb-2018 18:11:58.356 INFO [http-nio-8080-exec-8] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:11:58.378 INFO [http-nio-8080-exec-17] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:11:58.453 INFO [http-nio-8080-exec-19] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/C:/Users/Devon/AppData/Local/Temp/context2673055002935561570.xml'
-07-Feb-2018 18:13:58.284 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 18:13:58.284 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 18:13:58.496 INFO [http-nio-8080-exec-10] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:13:58.501 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:13:58.520 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: undeploy: Undeploying web application at '/FSManager'
-07-Feb-2018 18:13:59.038 INFO [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/C:/Users/Devon/AppData/Local/Temp/context8936695062069188924.xml'
-07-Feb-2018 18:14:20.354 INFO [http-nio-8080-exec-10] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:14:20.362 INFO [http-nio-8080-exec-11] org.apache.catalina.core.ApplicationContext.log Manager: undeploy: Undeploying web application at '/FSManager'
-07-Feb-2018 18:14:47.836 INFO [http-nio-8080-exec-12] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:14:58.354 INFO [http-nio-8080-exec-15] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:14:58.358 INFO [http-nio-8080-exec-13] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:14:58.369 INFO [http-nio-8080-exec-8] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/C:/Users/Devon/AppData/Local/Temp/context2162734782142294916.xml'
-07-Feb-2018 18:15:23.582 INFO [http-nio-8080-exec-19] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:15:23.585 INFO [http-nio-8080-exec-14] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:15:23.599 INFO [http-nio-8080-exec-15] org.apache.catalina.core.ApplicationContext.log Manager: undeploy: Undeploying web application at '/FSManager'
-07-Feb-2018 18:15:24.112 INFO [http-nio-8080-exec-17] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/C:/Users/Devon/AppData/Local/Temp/context1250328041201737131.xml'
-07-Feb-2018 18:15:48.013 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 18:15:48.013 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 18:15:48.230 INFO [http-nio-8080-exec-10] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:15:48.234 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:15:48.247 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: undeploy: Undeploying web application at '/FSManager'
-07-Feb-2018 18:15:48.783 INFO [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/C:/Users/Devon/AppData/Local/Temp/context1680100674908761299.xml'
-07-Feb-2018 18:18:44.992 INFO [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:18:44.997 INFO [http-nio-8080-exec-12] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:18:45.005 INFO [http-nio-8080-exec-14] org.apache.catalina.core.ApplicationContext.log Manager: undeploy: Undeploying web application at '/FSManager'
-07-Feb-2018 18:18:45.524 INFO [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/C:/Users/Devon/AppData/Local/Temp/context6415123413339036910.xml'
-07-Feb-2018 18:19:22.424 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 18:19:22.424 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 18:19:43.769 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 18:19:43.769 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 18:19:43.995 INFO [http-nio-8080-exec-10] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:19:43.998 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:19:44.011 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: undeploy: Undeploying web application at '/FSManager'
-07-Feb-2018 18:19:44.528 INFO [http-nio-8080-exec-9] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/C:/Users/Devon/AppData/Local/Temp/context8507857409849634880.xml'
-07-Feb-2018 18:20:02.359 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:20:02.363 INFO [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:20:02.376 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Manager: undeploy: Undeploying web application at '/FSManager'
-07-Feb-2018 18:20:02.888 INFO [http-nio-8080-exec-12] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/C:/Users/Devon/AppData/Local/Temp/context874937135049142469.xml'
-07-Feb-2018 18:22:02.503 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 18:22:02.503 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 18:22:02.760 INFO [http-nio-8080-exec-10] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:22:02.763 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:22:02.776 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: undeploy: Undeploying web application at '/FSManager'
-07-Feb-2018 18:22:03.309 INFO [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/C:/Users/Devon/AppData/Local/Temp/context3481035491054861702.xml'
-07-Feb-2018 18:22:55.905 INFO [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:22:55.911 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:22:55.922 INFO [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log Manager: undeploy: Undeploying web application at '/FSManager'
-07-Feb-2018 18:22:56.434 INFO [http-nio-8080-exec-13] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/C:/Users/Devon/AppData/Local/Temp/context6546705480138996873.xml'
-07-Feb-2018 18:22:56.491 INFO [http-nio-8080-exec-12] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/FSManager'
-07-Feb-2018 18:23:02.213 INFO [http-nio-8080-exec-10] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:23:02.216 INFO [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:23:02.229 INFO [http-nio-8080-exec-13] org.apache.catalina.core.ApplicationContext.log Manager: undeploy: Undeploying web application at '/FSManager'
-07-Feb-2018 18:23:02.759 INFO [http-nio-8080-exec-11] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/C:/Users/Devon/AppData/Local/Temp/context2034698998251777467.xml'
-07-Feb-2018 18:23:19.752 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 18:23:19.752 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 18:23:20.007 INFO [http-nio-8080-exec-10] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:23:20.010 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:24:14.774 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:24:14.783 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 18:25:47.036 INFO [http-nio-8080-exec-8] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:25:47.046 INFO [http-nio-8080-exec-16] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 18:26:14.175 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 18:26:14.176 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 18:26:14.389 INFO [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:26:14.392 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:26:14.403 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 18:26:39.074 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 18:26:39.074 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 18:26:39.264 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:26:39.267 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:29:58.892 INFO [http-nio-8080-exec-10] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:29:58.902 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 18:30:16.991 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 18:30:16.991 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 18:30:17.243 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:30:17.247 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:30:17.258 INFO [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 18:35:49.377 INFO [http-nio-8080-exec-13] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:35:49.386 INFO [http-nio-8080-exec-14] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 18:36:14.867 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 18:36:14.867 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 18:36:15.110 INFO [http-nio-8080-exec-10] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:36:15.115 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:36:15.128 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 18:37:55.872 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 18:37:55.873 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 18:37:56.096 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:37:56.100 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:37:56.115 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 18:38:55.532 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 18:38:55.532 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 18:38:55.762 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:38:55.766 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:38:55.777 INFO [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 18:43:00.589 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 18:43:00.589 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 18:43:00.766 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:43:00.770 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:43:00.782 INFO [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 18:43:26.925 INFO [http-nio-8080-exec-15] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:43:26.933 INFO [http-nio-8080-exec-16] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 18:43:50.655 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 18:43:50.655 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 18:43:50.869 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:43:50.872 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:43:50.884 INFO [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 18:44:16.711 INFO [http-nio-8080-exec-14] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:44:16.720 INFO [http-nio-8080-exec-15] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 18:44:22.057 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:44:22.060 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:44:22.073 INFO [http-nio-8080-exec-8] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 18:46:51.977 INFO [http-nio-8080-exec-23] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:46:51.985 INFO [http-nio-8080-exec-17] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 18:59:38.531 INFO [http-nio-8080-exec-28] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 18:59:38.539 INFO [http-nio-8080-exec-31] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 19:01:11.524 INFO [http-nio-8080-exec-33] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 19:01:11.531 INFO [http-nio-8080-exec-36] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 19:01:46.593 INFO [http-nio-8080-exec-39] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 19:01:46.603 INFO [http-nio-8080-exec-35] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 19:04:33.479 INFO [http-nio-8080-exec-33] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 19:04:33.487 INFO [http-nio-8080-exec-40] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 19:24:04.865 INFO [http-nio-8080-exec-51] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 19:24:04.875 INFO [http-nio-8080-exec-55] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 19:41:38.370 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 19:41:38.370 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 19:41:38.584 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 19:41:38.589 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 19:41:38.605 INFO [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 19:42:21.251 INFO [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 19:42:21.251 INFO [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 19:42:21.478 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 19:42:21.484 INFO [http-nio-8080-exec-7] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 19:43:25.360 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 19:43:25.360 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 19:43:25.637 INFO [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 19:43:25.641 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 19:48:28.154 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 19:48:28.154 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 19:48:28.391 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 19:48:28.395 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 19:58:03.354 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 19:58:03.355 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 19:58:03.621 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 19:58:03.625 INFO [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 19:59:26.161 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-07-Feb-2018 19:59:26.161 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-07-Feb-2018 19:59:26.488 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 19:59:26.492 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 20:00:31.340 INFO [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 20:00:31.354 INFO [http-nio-8080-exec-8] org.apache.catalina.core.ApplicationContext.log Manager: stop: Stopping web application '/FSManager'
-07-Feb-2018 20:00:31.369 INFO [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/FSManager'
-07-Feb-2018 20:00:31.771 INFO [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 20:00:31.780 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/FSManager'
-07-Feb-2018 20:00:42.650 INFO [http-nio-8080-exec-11] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-07-Feb-2018 20:00:42.662 INFO [http-nio-8080-exec-9] org.apache.catalina.core.ApplicationContext.log Manager: stop: Stopping web application '/FSManager'
-07-Feb-2018 20:00:42.678 INFO [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/FSManager'
+07-Feb-2018 20:58:50.152 INFO [http-nio-8080-exec-9] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+07-Feb-2018 20:58:50.164 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: undeploy: Undeploying web application at '/FSManager'
+07-Feb-2018 20:58:54.479 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+07-Feb-2018 20:58:54.486 INFO [http-nio-8080-exec-16] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+07-Feb-2018 20:58:54.510 INFO [http-nio-8080-exec-7] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/C:/Users/Devon/AppData/Local/Temp/context7610360568186022586.xml'
+07-Feb-2018 20:58:54.612 INFO [http-nio-8080-exec-7] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/FSManager'
+07-Feb-2018 20:59:12.013 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+07-Feb-2018 20:59:12.013 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
+07-Feb-2018 20:59:12.201 INFO [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+07-Feb-2018 20:59:12.204 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+07-Feb-2018 20:59:12.216 INFO [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log Manager: undeploy: Undeploying web application at '/FSManager'
+07-Feb-2018 20:59:12.739 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/C:/Users/Devon/AppData/Local/Temp/context3668659576834552138.xml'

@@ -3,22 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fileapp.management;
+package management;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URLDecoder;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import serializable.commands.CP;
 
 /**
  *
  * @author Devon
  */
-@WebServlet(name = "manage", urlPatterns = {"/manage/*"})
 public class ManagementServlet extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -33,7 +34,7 @@ public class ManagementServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        response.sendError(HttpServletResponse.SC_NOT_FOUND);
     }
 
     /**
@@ -46,7 +47,8 @@ public class ManagementServlet extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
-            String requestedFile = request.getPathInfo();
+        System.out.println("Post Started");
+        String requestedFile = request.getPathInfo();
 
         // Check if file is actually supplied to the request URI.
         if (requestedFile == null) {
@@ -58,10 +60,25 @@ public class ManagementServlet extends HttpServlet {
 
         String commandpath = URLDecoder.decode(requestedFile, "UTF-8");
         
+        byte[] bytes = new byte[1];
+        ArrayList<Byte> bindata = new ArrayList();
+        while(-1 != request.getInputStream().read(bytes)){
+            bindata.add(bytes[0]);
+        }
+        byte[] tmpdata = new byte[bindata.size()];
+        for(int i = 0; i < bindata.size(); i++){
+            tmpdata[i] = bindata.get(i);
+        }
+        String data = new String(tmpdata);
         
         switch (commandpath){
-            case "cp":
+            case "/cp":
+                    CP cp = new CP();
+                    cp.fromString(data);
                     
+                    System.out.println("From: " + cp.getFrom());
+                    System.out.println("To: " + cp.getTo());
+                    System.out.println("Password:" + cp.getPassword());
                 return;
             case "rm":
                 

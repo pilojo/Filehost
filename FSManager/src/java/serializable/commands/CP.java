@@ -59,6 +59,7 @@ public class CP extends Command{
                 from=values[0];
                 to=values[1];
                 password = values[2];
+                return true;
             }
             return false;
         }
