@@ -2,6 +2,7 @@
 bin/
 build/
 nbproject/private/
+*/nbproject/private/*
 tmp/
 *.tmp
 *.bak
