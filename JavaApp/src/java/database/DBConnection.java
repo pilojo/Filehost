@@ -15,51 +15,69 @@ import java.sql.SQLException;
  *
  * @author Ale
  */
-
 public class DBConnection {
+
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static final String URL = "jdbc:mysql://10.70.201.114:3306/filehostdb";
     private static final String USERNAME = "John";
     private static final String PASSWORD = "Password1";
-    
+
     private Connection connection;
-    
-    public Connection connect(){
-        if(connection == null){
-            try{
+
+    public Connection connect() {
+        if (connection == null) {
+            try {
                 Class.forName(DRIVER).newInstance();
                 connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-            }catch( InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e){
-                
+            } catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
+
             }
         }
         return connection;
     }
-    
-    public boolean login(String username, String hash){
+
+    public boolean login(String username, String hash) {
         String query = "select * from users where username = \"" + username + "\" AND password = \"" + hash + "\"";
         System.out.println(username + "\n" + hash);
-        try{
+        try {
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet result = statement.executeQuery();
             System.out.println("Executed Query");
-            
-            if(result != null) return true;
-        }catch(Exception e){
+
+            if (result != null) {
+                return true;
+            }
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return false;
     }
-    
-    public void disconnect(){
-        if(connection != null){
-            try{
+
+    public boolean signUp(String firstName, String lastName, String username, String hash, String email) {
+        if (connection != null) {
+            String insertUser = "INSERT INTO users (First_Name, Last_Name, Username, Email, Password, AccountType_ID) VALUES ('" + firstName + "','" + lastName + "','" + username + "','" + email + "','" + hash + "', 1)";
+            try {
+                PreparedStatement createUser = connection.prepareStatement(insertUser);
+                Boolean successful = createUser.execute();
+                return successful;
+            } catch (SQLException e) {
+
+            }
+        } else {
+            System.out.println("You need to start the Database connection");
+        }
+        return false;
+    }
+
+    public void disconnect() {
+        if (connection != null) {
+            try {
                 connection.close();
                 connection = null;
-            }catch(SQLException e){
-                
+            } catch (SQLException e) {
+
             }
         }
     }
-        
+
 }
