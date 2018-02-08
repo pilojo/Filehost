@@ -3,6 +3,8 @@ bin/
 build/
 nbproject/private/
 */nbproject/private/*
+private.properties
+private.xml
 tmp/
 *.tmp
 *.bak
