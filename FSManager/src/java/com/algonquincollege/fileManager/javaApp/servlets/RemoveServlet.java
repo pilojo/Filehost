@@ -13,7 +13,6 @@ import javax.servlet.annotation.WebServlet;
  *
  * @author Byzantian
  */
-@WebServlet(name = "RemoveServlet", urlPatterns = {"/rm"})
 public class RemoveServlet extends JavaAppServlet {
 
     @Override

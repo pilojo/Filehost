@@ -13,7 +13,6 @@ import javax.servlet.annotation.WebServlet;
  *
  * @author Byzantian
  */
-@WebServlet(name = "MoveServlet", urlPatterns = {"/mv"})
 public class MoveServlet extends JavaAppServlet {
 
     @Override

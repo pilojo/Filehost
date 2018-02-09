@@ -7,13 +7,11 @@ package com.algonquincollege.fileManager.javaApp.servlets;
 
 import com.algonquincollege.fileManager.javaApp.JavaAppServlet;
 import com.algonquincollege.javaApp.fileManager.commands.*;
-import javax.servlet.annotation.WebServlet;
 
 /**
  *
  * @author Byzantian
  */
-@WebServlet(name = "CopyServlet", urlPatterns = {"/cp"})
 public class CopyServlet extends JavaAppServlet {
 
     @Override

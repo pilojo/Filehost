@@ -7,13 +7,11 @@ package com.algonquincollege.fileManager.javaApp.servlets;
 
 import com.algonquincollege.fileManager.javaApp.JavaAppServlet;
 import com.algonquincollege.javaApp.fileManager.commands.MKDIR;
-import javax.servlet.annotation.WebServlet;
 
 /**
  *
  * @author Byzantian
  */
-@WebServlet(name = "MakeDirectoryServlet", urlPatterns = {"/mkdir"})
 public class MakeDirectoryServlet extends JavaAppServlet {
 
     @Override
