@@ -1,8 +1,5 @@
-package serializable.commands;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+package com.algonquincollege.javaApp.fileManager.commands;
+import com.algonquincollege.javaApp.fileManager.Command;
 import java.text.StringCharacterIterator;
 
 public class CP extends Command{
@@ -60,7 +57,7 @@ public class CP extends Command{
                 to=values[1];
                 password = values[2];
             }
-            return false;
+            return this.isValid();
         }
 	
 }

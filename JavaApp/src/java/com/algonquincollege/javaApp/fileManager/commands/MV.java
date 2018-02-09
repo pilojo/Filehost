@@ -1,8 +1,5 @@
-package serializable.commands;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+package com.algonquincollege.javaApp.fileManager.commands;
+import com.algonquincollege.javaApp.fileManager.Command;
 import java.text.StringCharacterIterator;
 
 public class MV extends Command{
@@ -57,7 +54,7 @@ public class MV extends Command{
                 from=values[0];
                 to=values[1];
                 password = values[2];
-            }if(validatePath(from))return validatePath(to);
+            }if(this.isValid() && validatePath(from))return validatePath(to);
             else return false;
 	}
 	

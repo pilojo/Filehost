@@ -1,14 +1,11 @@
 //lol
 
-package serializable.commands;
+package com.algonquincollege.javaApp.fileManager.commands;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import com.algonquincollege.javaApp.fileManager.Command;
 import java.text.StringCharacterIterator;
 
-public class RM implements Serializable{
+public class RM extends Command{
 	
 	private String path;
         
@@ -49,6 +46,6 @@ public class RM implements Serializable{
 	
 	public boolean fromString(String str){
             path = str;
-            return validatePath(path);
+            return this.isValid() && validatePath(path);
         }
 }
