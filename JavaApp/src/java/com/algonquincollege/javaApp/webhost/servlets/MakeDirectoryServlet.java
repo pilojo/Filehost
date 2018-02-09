@@ -12,7 +12,6 @@ import javax.servlet.annotation.WebServlet;
  *
  * @author Byzantian
  */
-@WebServlet(name = "MakeDirectoryServlet", urlPatterns = {"/server/makeDirectory"})
 public class MakeDirectoryServlet extends WebInterfaceServlet {
 
     @Override

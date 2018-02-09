@@ -12,7 +12,6 @@ import javax.servlet.annotation.WebServlet;
  *
  * @author Byzantian
  */
-@WebServlet(name = "LoginCheckServlet", urlPatterns = {"/server/isLogedIn"})
 public class LoginCheckServlet extends WebInterfaceServlet {
 
     @Override

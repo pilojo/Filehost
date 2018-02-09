@@ -12,7 +12,6 @@ import javax.servlet.annotation.WebServlet;
  *
  * @author Byzantian
  */
-@WebServlet(name = "MoveServlet", urlPatterns = {"/server/move"})
 public class MoveServlet extends WebInterfaceServlet {
 
     @Override

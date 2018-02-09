@@ -12,7 +12,6 @@ import javax.servlet.annotation.WebServlet;
  *
  * @author Byzantian
  */
-@WebServlet(name = "CopyServlet", urlPatterns = {"/server/copy"})
 public class CopyServlet extends WebInterfaceServlet {
 
     @Override

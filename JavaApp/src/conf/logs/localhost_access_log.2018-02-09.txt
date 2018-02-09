@@ -93,3 +93,10 @@
 127.0.0.1 - admin [09/Feb/2018:03:16:02 -0500] "GET /manager/text/start?path=/FSManager HTTP/1.1" 200 66
 0:0:0:0:0:0:0:1 - - [09/Feb/2018:03:16:02 -0500] "GET /FSManager HTTP/1.1" 302 -
 0:0:0:0:0:0:0:1 - - [09/Feb/2018:03:16:02 -0500] "GET /FSManager/ HTTP/1.1" 200 446
+46.174.191.30 - - [09/Feb/2018:07:44:07 -0500] "GET / HTTP/1.0" 404 -
+127.0.0.1 - - [09/Feb/2018:10:22:12 -0500] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - admin [09/Feb/2018:10:22:12 -0500] "GET /manager/text/ HTTP/1.1" 200 39
+127.0.0.1 - - [09/Feb/2018:10:22:12 -0500] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - admin [09/Feb/2018:10:22:12 -0500] "GET /manager/text/ HTTP/1.1" 200 39
+127.0.0.1 - - [09/Feb/2018:10:22:12 -0500] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - admin [09/Feb/2018:10:22:12 -0500] "GET /manager/text/ HTTP/1.1" 200 39

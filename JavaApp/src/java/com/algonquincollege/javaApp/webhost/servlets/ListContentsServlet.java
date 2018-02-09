@@ -12,7 +12,6 @@ import javax.servlet.annotation.WebServlet;
  *
  * @author Byzantian
  */
-@WebServlet(name = "ListContentsServlet", urlPatterns = {"/server/listContents"})
 public class ListContentsServlet extends WebInterfaceServlet {
 
     @Override

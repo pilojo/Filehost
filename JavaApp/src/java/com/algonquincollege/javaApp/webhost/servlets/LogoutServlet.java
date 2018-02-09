@@ -12,7 +12,6 @@ import javax.servlet.annotation.WebServlet;
  *
  * @author Byzantian
  */
-@WebServlet(name = "LogoutServlet", urlPatterns = {"/server/logout"})
 public class LogoutServlet extends WebInterfaceServlet {
 
     @Override

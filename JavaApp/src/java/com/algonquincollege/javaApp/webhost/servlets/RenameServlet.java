@@ -6,13 +6,11 @@
 package com.algonquincollege.javaApp.webhost.servlets;
 
 import com.algonquincollege.javaApp.webhost.WebInterfaceServlet;
-import javax.servlet.annotation.WebServlet;
 
 /**
  *
  * @author Byzantian
  */
-@WebServlet(name = "RenameServlet", urlPatterns = {"/server/rename"})
 public class RenameServlet extends WebInterfaceServlet {
 
     @Override

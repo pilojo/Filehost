@@ -53,3 +53,11 @@
 09-Feb-2018 03:16:02.056 INFO [http-nio-8080-exec-29] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Byzantian\Documents\NetBeansProjects\Filehost\JavaApp\src\conf\conf\Catalina\localhost\FSManager.xml]
 09-Feb-2018 03:16:02.095 INFO [http-nio-8080-exec-29] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Byzantian\Documents\NetBeansProjects\Filehost\JavaApp\src\conf\conf\Catalina\localhost\FSManager.xml] has finished in [38] ms
 09-Feb-2018 03:16:02.098 INFO [http-nio-8080-exec-33] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/FSManager]] after start() had already been called. The second call will be ignored.
+09-Feb-2018 10:22:12.632 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+09-Feb-2018 10:22:12.632 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 10:22:12.776 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 10:22:12.908 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Feb-2018 10:22:12.924 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 10:22:12.924 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 10:22:12.928 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 10:22:12.928 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
