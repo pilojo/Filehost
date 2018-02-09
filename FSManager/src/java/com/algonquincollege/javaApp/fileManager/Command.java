@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package serializable.commands;
+package com.algonquincollege.javaApp.fileManager;
 
 /**
  *
  * @author jp972
  */
 public abstract class Command{
-    protected String password = "A^@kds034!@$#sjvlksoirg%#$%^#@()sdgnverkf15681165";
+    protected static final String validPassword = "A^@kds034!@$#sjvlksoirg%#$%^#@()sdgnverkf15681165";
+    protected String password;
     
-    public String getPassword(){
-        return password;
-    }
+    /*Checks if the packet is valid when its recieved from the other side*/
+    public boolean isValid(){return password.equals(validPassword);}
     
     @Override
     public abstract String toString();

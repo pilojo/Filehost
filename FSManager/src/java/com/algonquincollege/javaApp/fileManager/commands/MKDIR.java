@@ -1,9 +1,6 @@
-package serializable.commands;
+package com.algonquincollege.javaApp.fileManager.commands;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import com.algonquincollege.javaApp.fileManager.Command;
 import java.text.StringCharacterIterator;
 
 public class MKDIR extends Command{
@@ -51,7 +48,7 @@ public class MKDIR extends Command{
                 path = serial[0];
                 password = serial[1];
             }
-            return validatePath(path);
+            return this.isValid() && validatePath(path);
         }
 	
 }
