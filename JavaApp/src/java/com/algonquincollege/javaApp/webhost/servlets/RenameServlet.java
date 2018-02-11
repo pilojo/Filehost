@@ -6,6 +6,7 @@
 package com.algonquincollege.javaApp.webhost.servlets;
 
 import com.algonquincollege.javaApp.webhost.WebInterfaceServlet;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -14,7 +15,7 @@ import com.algonquincollege.javaApp.webhost.WebInterfaceServlet;
 public class RenameServlet extends WebInterfaceServlet {
 
     @Override
-    public String toString() {
+    public String toString(HttpSession session) {
         return "";
     }
     
