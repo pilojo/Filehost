@@ -152,17 +152,17 @@ create table tomcat_sessions (
 
 ALTER TABLE `folders` 
 DROP FOREIGN KEY `fk_Folders_Permissions1`;
-ALTER TABLE `test`.`folders` 
+ALTER TABLE `folders` 
 ADD INDEX `fk_Folders_Permissions1_idx` (`Permission_ID` ASC),
 DROP INDEX `fk_Folders_Permissions1_idx` ;
-ALTER TABLE `test`.`folders` 
+ALTER TABLE `folders` 
 ADD CONSTRAINT `fk_Folders_Permissions1`
   FOREIGN KEY (`Permission_ID`)
-  REFERENCES `test`.`permissions` (`ID`)
+  REFERENCES `permissions` (`ID`)
   ON DELETE CASCADE
   ON UPDATE NO ACTION,
 ADD CONSTRAINT `fk_user_id`
   FOREIGN KEY (`Owner_ID`)
-  REFERENCES `test`.`users` (`ID`)
+  REFERENCES `users` (`ID`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
