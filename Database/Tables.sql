@@ -1,4 +1,28 @@
 
+-- -----------------------------------------------------
+-- Table `mydb`.`AccountTypes`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `AccountTypes` (
+  `ID` BIGINT NOT NULL AUTO_INCREMENT,
+  `Name` VARCHAR(16) NOT NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE INDEX `ID_UNIQUE` (`ID` ASC),
+  UNIQUE INDEX `Name_UNIQUE` (`Name` ASC)
+);
+
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Permissions`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Permissions` (
+  `ID` BIGINT NOT NULL AUTO_INCREMENT,
+  `Name` VARCHAR(16) NOT NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE INDEX `ID_UNIQUE` (`ID` ASC),
+  UNIQUE INDEX `Name_UNIQUE` (`Name` ASC)
+);
+
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Folders`
