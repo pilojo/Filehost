@@ -21,8 +21,8 @@ import javax.servlet.http.HttpSession;
 public class LoginServlet extends WebInterfaceServlet {
     
     @Override
-    public String toString(HttpSession session) {
-        session.setAttribute("username", "lel");
+    public String toString(HttpServletRequest request) {
+        request.getSession().setAttribute("username", "lel");
         return "\"logedin\":true";
     }
     

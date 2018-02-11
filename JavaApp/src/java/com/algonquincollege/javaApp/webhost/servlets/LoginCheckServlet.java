@@ -6,6 +6,7 @@
 package com.algonquincollege.javaApp.webhost.servlets;
 
 import com.algonquincollege.javaApp.webhost.WebInterfaceServlet;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -15,9 +16,9 @@ import javax.servlet.http.HttpSession;
 public class LoginCheckServlet extends WebInterfaceServlet {
 
     @Override
-    public String toString(HttpSession session) {
+    public String toString(HttpServletRequest request) {
         
-        return session.getAttribute("username")!=null?"\"logedin\":true":"\"logedin\":false";
+        return request.getSession().getAttribute("username")!=null?"\"logedin\":true":"\"logedin\":false";
     }
     
 }
