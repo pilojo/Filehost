@@ -150,7 +150,7 @@ create table tomcat_sessions (
   KEY kapp_name(app_name)
 );
 
-ALTER TABLE `test`.`folders` 
+ALTER TABLE `folders` 
 DROP FOREIGN KEY `fk_Folders_Permissions1`;
 ALTER TABLE `test`.`folders` 
 ADD INDEX `fk_Folders_Permissions1_idx` (`Permission_ID` ASC),
