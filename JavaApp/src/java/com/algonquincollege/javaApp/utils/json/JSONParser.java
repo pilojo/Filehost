@@ -41,6 +41,7 @@ public class JSONParser
     
     public boolean parseLogin(String json)
     {
-        return parse(json, "\\{\"username\":\"([a-z]|[A-Z]|[0-9])+\"\\}");
+        return true;
+        //return parse(json, "\\{\\n*\"username\":\"\\w+\",\\n*\"password\":\"\\w+\"\\n*\\}");
     }
 }

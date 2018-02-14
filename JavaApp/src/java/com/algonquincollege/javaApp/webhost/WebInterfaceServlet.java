@@ -29,7 +29,7 @@ public abstract class WebInterfaceServlet extends HttpServlet {
         response.setContentType("text/json;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             out.println("{"+this.toString(request)+"}");
-        }
+        }catch(Exception e){}
     }
     
     public abstract String toString(HttpServletRequest session);

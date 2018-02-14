@@ -5,6 +5,7 @@
  */
 package com.algonquincollege.javaApp.database;
 
+import com.algonquincollege.javaApp.database.encryption.PasswordHashUtils;
 import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -37,14 +38,16 @@ public class DBConnection {
     }
     
     public boolean login(String username, String hash){
-        String query = "select * from users where username = \"" + username + "\" AND password = \"" + hash + "\"";
+        PasswordHashUtils password = new PasswordHashUtils();
+        String query = "select password from users where username = \"" + username;
         System.out.println(username + "\n" + hash);
         try{
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet result = statement.executeQuery();
             System.out.println("Executed Query");
-            
-            if(result != null) return true;
+            if(password.verifyHash(hash, result.getString("password"))){
+                return true;
+            }
         }catch(Exception e){
             System.out.println(e.getMessage());
         }

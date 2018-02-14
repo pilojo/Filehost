@@ -5,25 +5,50 @@
  */
 package com.algonquincollege.javaApp.webhost.servlets;
 
+import com.algonquincollege.javaApp.database.DBConnection;
+import com.algonquincollege.javaApp.utils.json.JSONParser;
 import com.algonquincollege.javaApp.webhost.WebInterfaceServlet;
 import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Byzantian
  */
 public class LoginServlet extends WebInterfaceServlet {
-    
+    private JSONParser json = new JSONParser();
+    private DBConnection db = new DBConnection();
     @Override
     public String toString(HttpServletRequest request) {
-        request.getSession().setAttribute("username", "lel");
-        return "\"logedin\":true";
+        byte[] bytes = new byte[1];
+        ArrayList<Byte> bindata = new ArrayList();
+        try {
+            while(-1 != request.getInputStream().read(bytes)){
+                bindata.add(bytes[0]);
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        byte[] tmpdata = new byte[bindata.size()];
+        for(int i = 0; i < bindata.size(); i++){
+            tmpdata[i] = bindata.get(i);
+        }
+
+        if(json.parseLogin(new String(tmpdata))){
+            if(db.connect() == null){
+                 return"\"logedin\":\"false\"";
+             }else{
+                 if(db.login(json.map.get("username"), json.map.get("password"))){
+                     return "\"logedin\":\"true\"";
+                 }
+             }
+             
+        }
+       
+        return "\"logedin\":\"false\"";
     }
     
 }
