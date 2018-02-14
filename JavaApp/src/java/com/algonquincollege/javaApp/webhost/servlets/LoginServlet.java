@@ -23,21 +23,9 @@ public class LoginServlet extends WebInterfaceServlet {
     private DBConnection db = new DBConnection();
     @Override
     public String toString(HttpServletRequest request) {
-        byte[] bytes = new byte[1];
-        ArrayList<Byte> bindata = new ArrayList();
-        try {
-            while(-1 != request.getInputStream().read(bytes)){
-                bindata.add(bytes[0]);
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        byte[] tmpdata = new byte[bindata.size()];
-        for(int i = 0; i < bindata.size(); i++){
-            tmpdata[i] = bindata.get(i);
-        }
+        
 
-        if(json.parseLogin(new String(tmpdata))){
+        if(json.parseLogin(new String(""))){
             if(db.connect() == null){
                  return"\"logedin\":\"false\"";
              }else{
