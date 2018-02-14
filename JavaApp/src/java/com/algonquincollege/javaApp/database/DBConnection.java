@@ -54,6 +54,12 @@ public class DBConnection {
         return false;
     }
     
+    public boolean signUp(String firstName, String lastName, String email, String username, String password){
+        
+        return false;
+    }
+    
+    
     public void disconnect(){
         if(connection != null){
             try{

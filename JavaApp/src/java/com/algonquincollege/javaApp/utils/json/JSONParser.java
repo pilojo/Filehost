@@ -43,4 +43,8 @@ public class JSONParser
     {
         return parse(json, "\\{\\n*\"username\":\"\\w+\",\\n*\"password\":\"\\w+\"\\n*\\}");
     }
+    
+    public boolean parseSignUp(String json){
+        return parse(json, "\\{\"firstName\":\"[A-Za-z]+\",\"lastName\":\"[A-Za-z]+\",\"email\":\"\\w+@\\w+\\.\\w+\",\"username\":\"\\w+\",\"password\":\".+\"\\}");
+    }
 }

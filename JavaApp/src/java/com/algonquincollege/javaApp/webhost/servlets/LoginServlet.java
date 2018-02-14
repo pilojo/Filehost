@@ -23,8 +23,6 @@ public class LoginServlet extends WebInterfaceServlet {
     private DBConnection db = new DBConnection();
     @Override
     public String toString(HttpServletRequest request) {
-        
-
         if(json.parseLogin(new String(""))){
             if(db.connect() == null){
                  return"\"logedin\":\"false\"";
@@ -35,7 +33,6 @@ public class LoginServlet extends WebInterfaceServlet {
              }
              
         }
-       
         return "\"logedin\":\"false\"";
     }
     
