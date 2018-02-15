@@ -1,0 +1,38 @@
+<body>
+<div style="min-height:96.3vh">
+<nav class="navbar mobileShow">
+  <div class="container" style="max-width: 1200px; margin: auto;">
+  <ul class="nav navbar-nav">
+    <li [@menuState]='state'><a routerLink="">Home</a></li>
+    <li [@menuState]='state'><a routerLink="userSearch">Search Users</a></li>
+    <li [@menuState]='state'><a routerLink="fileSearch">Search Files</a></li>
+		<li [@menuState]='state'><a routerLink="signup">Sign Up</a></li>
+    <li [@menuState]='state'><a routerLink="login">Login</a></li>
+    <li [@menuState]='state'><a>Logout</a></li>
+    <li [@menuState]='reverseState' id="mobileMenuUp"><a (click)="animateMenu()"><span class="glyphicon glyphicon-triangle-bottom"></span></a></li>
+    <li [@menuState]='state' id="mobileMenuDown"><a (click)="animateMenu()"><span class="glyphicon glyphicon-triangle-top"></span></a></li>
+  </ul>
+  </div>
+</nav>
+
+<nav class="navbar mobileHide">
+  <div class="container" style="max-width: 1200px; margin: auto;">
+  <ul class="nav navbar-nav">
+    <li><a routerLink="">Home</a></li>
+    <li><a routerLink="userSearch">Search Users</a></li>
+    <li><a routerLink="fileSearch">Search Files</a></li>
+		<li><a routerLink="signup">Sign Up</a></li>
+    <li><a routerLink="login">Login</a></li>
+    <li><a>Logout</a></li>
+  </ul>
+  </div>
+</nav>
+
+<div class="page_elements">
+  <router-outlet></router-outlet>
+</div>
+</div>
+</body>
+<footer style="height:3.7vh">
+@Waterbin 2018
+</footer>

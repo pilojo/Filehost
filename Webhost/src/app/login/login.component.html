@@ -1,0 +1,12 @@
+
+<div class="commonFormDiv">
+<div style="max-width:355px;margin:auto;">
+    <h1 style="text-align:center;font-size:50px;font-weight:700;color:rgb(255, 255, 255)">Login</h1>
+    <form>
+        <input id="email" ng-model="loginController.email" style="margin:auto;margin-bottom:10px;" class="form-control" placeholder="Username">
+        <input id="password" type="password" ng-model="loginController.password" style="margin:auto;margin-bottom:10px;" class="form-control" placeholder="Email">
+        <span style="color:red" ng-bind="loginErrorMessage"></span>
+        <button ng-click="loginController.login()" style="margin:auto" class="form-control">Login</button>
+    </form>
+</div>
+</div>

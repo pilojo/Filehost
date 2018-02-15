@@ -3,6 +3,7 @@ bin/
 build/
 nbproject/private/
 */nbproject/private/*
+*/node_modules/*
 private.properties
 private.xml
 tmp/

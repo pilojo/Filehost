@@ -1,29 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
-	version="2.5">
-	<servlet>
-		<servlet-name>Server</servlet-name>
-		<servlet-class>webhost.Server</servlet-class>
-	</servlet>
-	
-	<servlet-mapping>
-		<servlet-name>Server</servlet-name>
-		<url-pattern>/test</url-pattern>
-	</servlet-mapping>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginCheckServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.LoginCheckServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SignUpServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.SignUpServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MoveServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.MoveServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CopyServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.CopyServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RenameServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.RenameServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.RemoveServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MakeDirectoryServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.MakeDirectoryServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListContentsServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.ListContentsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/server/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginCheckServlet</servlet-name>
+        <url-pattern>/server/isLogedIn</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MoveServlet</servlet-name>
+        <url-pattern>/server/move</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CopyServlet</servlet-name>
+        <url-pattern>/server/copy</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RenameServlet</servlet-name>
+        <url-pattern>/server/rename</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveServlet</servlet-name>
+        <url-pattern>/server/remove</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MakeDirectoryServlet</servlet-name>
+        <url-pattern>/server/makeDirectory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/server/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListContentsServlet</servlet-name>
+        <url-pattern>/server/listContents</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SignUpServlet</servlet-name>
+        <url-pattern>/server/signup</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+     <error-page>
+       <error-code>404</error-code>
+       <location>/index.html</location>
+   </error-page>
 
-        <servlet>
-            <servlet-name>UserServices</servlet-name>
-            <servlet-class>webhost.UserServices</servlet-class>
-        </servlet>
-        
-        <servlet-mapping>
-            <servlet-name>UserServices</servlet-name>
-            <url-pattern>/user/*</url-pattern>
-        </servlet-mapping>
-        
-	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-	</welcome-file-list>
 </web-app>
