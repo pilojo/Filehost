@@ -43,3 +43,40 @@ Caused by: java.lang.IllegalArgumentException: The main resource set specified [
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
 	... 29 more
 
+09-Feb-2018 15:39:50.345 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+09-Feb-2018 15:39:50.346 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
+09-Feb-2018 15:39:50.636 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+09-Feb-2018 15:39:50.639 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+09-Feb-2018 15:39:50.665 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: stop: Stopping web application '/FSManager'
+09-Feb-2018 15:39:50.684 INFO [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/FSManager'
+09-Feb-2018 15:41:07.023 INFO [http-nio-8080-exec-17] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+09-Feb-2018 15:41:07.031 INFO [http-nio-8080-exec-11] org.apache.catalina.core.ApplicationContext.log Manager: stop: Stopping web application '/FSManager'
+09-Feb-2018 15:41:07.037 INFO [http-nio-8080-exec-7] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/FSManager'
+09-Feb-2018 16:18:22.387 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+09-Feb-2018 16:18:22.387 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
+09-Feb-2018 16:18:22.675 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+09-Feb-2018 16:18:22.681 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: undeploy: Undeploying web application at '/'
+09-Feb-2018 16:18:23.213 INFO [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/C:/Users/Devon/AppData/Local/Temp/context4428378486906947577.xml'
+09-Feb-2018 16:18:25.093 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/'
+09-Feb-2018 16:27:53.665 INFO [http-nio-8080-exec-20] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+09-Feb-2018 16:27:53.668 INFO [http-nio-8080-exec-11] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+09-Feb-2018 16:27:53.680 INFO [http-nio-8080-exec-12] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/'
+09-Feb-2018 16:28:13.007 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+09-Feb-2018 16:28:13.007 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
+09-Feb-2018 16:28:13.246 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+09-Feb-2018 16:28:13.249 INFO [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+09-Feb-2018 16:55:30.637 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+09-Feb-2018 16:55:30.637 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
+09-Feb-2018 16:55:31.039 INFO [http-nio-8080-exec-7] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+09-Feb-2018 16:55:31.050 INFO [http-nio-8080-exec-8] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+09-Feb-2018 17:08:24.313 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+09-Feb-2018 17:08:24.316 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+09-Feb-2018 17:18:24.073 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+09-Feb-2018 17:18:24.073 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
+09-Feb-2018 17:18:24.303 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+09-Feb-2018 17:18:24.307 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+09-Feb-2018 17:18:24.322 INFO [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/'
+09-Feb-2018 17:20:18.979 INFO [http-nio-8080-exec-12] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+09-Feb-2018 17:20:18.983 INFO [http-nio-8080-exec-14] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+09-Feb-2018 17:21:34.615 INFO [http-nio-8080-exec-12] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+09-Feb-2018 17:21:34.624 INFO [http-nio-8080-exec-16] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/'

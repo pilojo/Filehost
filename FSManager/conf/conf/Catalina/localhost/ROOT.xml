@@ -1,1 +1,2 @@
-<Context path="" docBase="${catalina.home}/webapps/ROOT"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<Context docBase="C:\Users\Devon\Documents\NetBeansProjects\SignIn\build\web" path=""/>

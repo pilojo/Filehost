@@ -136,3 +136,310 @@ Caused by: java.lang.IllegalArgumentException: The main resource set specified [
 09-Feb-2018 12:40:19.654 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
 09-Feb-2018 12:40:19.656 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
 09-Feb-2018 12:40:19.657 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 15:39:48.037 SEVERE [main] org.apache.catalina.startup.Catalina.initDirs Cannot find specified temporary folder at [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\temp]
+09-Feb-2018 15:39:48.544 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.2
+09-Feb-2018 15:39:48.544 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Nov 25 2017 21:08:02 UTC
+09-Feb-2018 15:39:48.544 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.2.0
+09-Feb-2018 15:39:48.544 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+09-Feb-2018 15:39:48.545 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+09-Feb-2018 15:39:48.545 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+09-Feb-2018 15:39:48.545 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_144\jre
+09-Feb-2018 15:39:48.545 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_144-b01
+09-Feb-2018 15:39:48.545 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+09-Feb-2018 15:39:48.545 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf
+09-Feb-2018 15:39:48.545 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Program Files\Apache Software Foundation\Tomcat 9.0
+09-Feb-2018 15:39:48.546 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\logging.properties
+09-Feb-2018 15:39:48.546 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Feb-2018 15:39:48.546 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dhttp.nonProxyHosts=localhost|127.0.0.1|Devon-Laptop
+09-Feb-2018 15:39:48.546 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+09-Feb-2018 15:39:48.546 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+09-Feb-2018 15:39:48.546 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+09-Feb-2018 15:39:48.546 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf
+09-Feb-2018 15:39:48.547 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Program Files\Apache Software Foundation\Tomcat 9.0
+09-Feb-2018 15:39:48.547 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\temp
+09-Feb-2018 15:39:48.547 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\pgmodeler;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Users\Devon\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Skype\Phone\;C:\Users\Devon\AppData\Local\Microsoft\WindowsApps;C:\Users\Devon\AppData\Local\GitHubDesktop\bin;.]
+09-Feb-2018 15:39:49.432 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 15:39:49.593 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+09-Feb-2018 15:39:49.603 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 15:39:49.605 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+09-Feb-2018 15:39:49.605 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1573 ms
+09-Feb-2018 15:39:49.649 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Feb-2018 15:39:49.649 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.2
+09-Feb-2018 15:39:49.662 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\FSManager.xml]
+09-Feb-2018 15:39:50.139 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\FSManager.xml] has finished in [476] ms
+09-Feb-2018 15:39:50.140 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\manager.xml]
+09-Feb-2018 15:39:50.199 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\manager.xml] has finished in [60] ms
+09-Feb-2018 15:39:50.199 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\ROOT.xml]
+09-Feb-2018 15:39:50.228 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\ROOT.xml] has finished in [29] ms
+09-Feb-2018 15:39:50.232 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 15:39:50.245 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 15:39:50.248 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 642 ms
+09-Feb-2018 15:41:10.006 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+09-Feb-2018 15:41:10.006 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 15:41:10.157 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 15:41:10.301 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Feb-2018 15:41:10.328 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 15:41:10.331 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 15:41:10.333 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 15:41:10.333 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 16:18:20.793 SEVERE [main] org.apache.catalina.startup.Catalina.initDirs Cannot find specified temporary folder at [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\temp]
+09-Feb-2018 16:18:21.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.2
+09-Feb-2018 16:18:21.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Nov 25 2017 21:08:02 UTC
+09-Feb-2018 16:18:21.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.2.0
+09-Feb-2018 16:18:21.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+09-Feb-2018 16:18:21.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+09-Feb-2018 16:18:21.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+09-Feb-2018 16:18:21.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_144\jre
+09-Feb-2018 16:18:21.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_144-b01
+09-Feb-2018 16:18:21.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+09-Feb-2018 16:18:21.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf
+09-Feb-2018 16:18:21.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Program Files\Apache Software Foundation\Tomcat 9.0
+09-Feb-2018 16:18:21.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\logging.properties
+09-Feb-2018 16:18:21.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Feb-2018 16:18:21.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dhttp.nonProxyHosts=localhost|127.0.0.1|Devon-Laptop
+09-Feb-2018 16:18:21.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+09-Feb-2018 16:18:21.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+09-Feb-2018 16:18:21.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+09-Feb-2018 16:18:21.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf
+09-Feb-2018 16:18:21.209 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Program Files\Apache Software Foundation\Tomcat 9.0
+09-Feb-2018 16:18:21.209 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\temp
+09-Feb-2018 16:18:21.209 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\pgmodeler;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Users\Devon\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Skype\Phone\;C:\Users\Devon\AppData\Local\Microsoft\WindowsApps;C:\Users\Devon\AppData\Local\GitHubDesktop\bin;.]
+09-Feb-2018 16:18:21.350 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 16:18:21.492 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+09-Feb-2018 16:18:21.497 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 16:18:21.499 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+09-Feb-2018 16:18:21.499 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 706 ms
+09-Feb-2018 16:18:21.537 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Feb-2018 16:18:21.537 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.2
+09-Feb-2018 16:18:21.546 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\FSManager.xml]
+09-Feb-2018 16:18:21.964 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\FSManager.xml] has finished in [418] ms
+09-Feb-2018 16:18:21.965 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\manager.xml]
+09-Feb-2018 16:18:22.009 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\manager.xml] has finished in [45] ms
+09-Feb-2018 16:18:22.010 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\ROOT.xml]
+09-Feb-2018 16:18:22.040 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\ROOT.xml] has finished in [30] ms
+09-Feb-2018 16:18:22.043 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 16:18:22.052 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 16:18:22.055 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 556 ms
+09-Feb-2018 16:18:23.194 INFO [http-nio-8080-exec-4] org.apache.catalina.startup.HostConfig.undeploy Undeploying context []
+09-Feb-2018 16:18:23.215 INFO [http-nio-8080-exec-5] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\ROOT.xml]
+09-Feb-2018 16:18:24.041 INFO [http-nio-8080-exec-5] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Feb-2018 16:18:24.181 INFO [http-nio-8080-exec-5] com.sun.faces.config.ConfigureListener.contextInitialized Initializing Mojarra 2.2.7 ( 20140610-1547 https://svn.java.net/svn/mojarra~svn/tags/2.2.7@13362) for context ''
+09-Feb-2018 16:18:24.364 INFO [http-nio-8080-exec-5] com.sun.faces.spi.InjectionProviderFactory.createInstance JSF1048: PostConstruct/PreDestroy annotations present.  ManagedBeans methods marked with these annotations will have said annotations processed.
+09-Feb-2018 16:18:25.090 INFO [http-nio-8080-exec-5] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\ROOT.xml] has finished in [1,875] ms
+09-Feb-2018 16:18:25.094 INFO [http-nio-8080-exec-6] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[]] after start() had already been called. The second call will be ignored.
+09-Feb-2018 16:27:53.680 INFO [http-nio-8080-exec-12] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+09-Feb-2018 16:27:53.702 WARNING [http-nio-8080-exec-12] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ROOT] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+09-Feb-2018 16:27:53.702 WARNING [http-nio-8080-exec-12] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ROOT] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:64)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+09-Feb-2018 16:27:54.513 INFO [http-nio-8080-exec-12] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Feb-2018 16:27:54.646 INFO [http-nio-8080-exec-12] com.sun.faces.config.ConfigureListener.contextInitialized Initializing Mojarra 2.2.7 ( 20140610-1547 https://svn.java.net/svn/mojarra~svn/tags/2.2.7@13362) for context ''
+09-Feb-2018 16:27:54.788 INFO [http-nio-8080-exec-12] com.sun.faces.spi.InjectionProviderFactory.createInstance JSF1048: PostConstruct/PreDestroy annotations present.  ManagedBeans methods marked with these annotations will have said annotations processed.
+09-Feb-2018 16:27:55.410 INFO [52] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+ java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1295)
+	at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:972)
+	at com.mysql.jdbc.AbandonedConnectionCleanupThread.checkContextClassLoaders(AbandonedConnectionCleanupThread.java:90)
+	at com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:63)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+09-Feb-2018 16:27:55.496 INFO [http-nio-8080-exec-12] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+09-Feb-2018 16:28:04.310 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+09-Feb-2018 16:28:04.310 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 16:28:04.471 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 16:28:04.618 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Feb-2018 16:28:04.662 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 16:28:04.665 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 16:28:04.668 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 16:28:04.669 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 16:28:09.564 SEVERE [main] org.apache.catalina.startup.Catalina.initDirs Cannot find specified temporary folder at [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\temp]
+09-Feb-2018 16:28:10.122 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.2
+09-Feb-2018 16:28:10.122 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Nov 25 2017 21:08:02 UTC
+09-Feb-2018 16:28:10.122 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.2.0
+09-Feb-2018 16:28:10.123 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+09-Feb-2018 16:28:10.123 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+09-Feb-2018 16:28:10.123 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+09-Feb-2018 16:28:10.123 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_144\jre
+09-Feb-2018 16:28:10.124 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_144-b01
+09-Feb-2018 16:28:10.124 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+09-Feb-2018 16:28:10.124 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf
+09-Feb-2018 16:28:10.124 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Program Files\Apache Software Foundation\Tomcat 9.0
+09-Feb-2018 16:28:10.125 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\logging.properties
+09-Feb-2018 16:28:10.126 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Feb-2018 16:28:10.127 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dhttp.nonProxyHosts=localhost|127.0.0.1|Devon-Laptop
+09-Feb-2018 16:28:10.127 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+09-Feb-2018 16:28:10.127 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+09-Feb-2018 16:28:10.127 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+09-Feb-2018 16:28:10.134 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf
+09-Feb-2018 16:28:10.138 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Program Files\Apache Software Foundation\Tomcat 9.0
+09-Feb-2018 16:28:10.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\temp
+09-Feb-2018 16:28:10.141 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\pgmodeler;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Users\Devon\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Skype\Phone\;C:\Users\Devon\AppData\Local\Microsoft\WindowsApps;C:\Users\Devon\AppData\Local\GitHubDesktop\bin;.]
+09-Feb-2018 16:28:10.423 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 16:28:10.560 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+09-Feb-2018 16:28:10.567 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 16:28:10.569 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+09-Feb-2018 16:28:10.569 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1006 ms
+09-Feb-2018 16:28:10.605 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Feb-2018 16:28:10.606 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.2
+09-Feb-2018 16:28:10.613 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\FSManager.xml]
+09-Feb-2018 16:28:11.041 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\FSManager.xml] has finished in [427] ms
+09-Feb-2018 16:28:11.041 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\manager.xml]
+09-Feb-2018 16:28:11.084 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\manager.xml] has finished in [43] ms
+09-Feb-2018 16:28:11.084 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\ROOT.xml]
+09-Feb-2018 16:28:11.916 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Feb-2018 16:28:12.048 INFO [main] com.sun.faces.config.ConfigureListener.contextInitialized Initializing Mojarra 2.2.7 ( 20140610-1547 https://svn.java.net/svn/mojarra~svn/tags/2.2.7@13362) for context ''
+09-Feb-2018 16:28:12.254 INFO [main] com.sun.faces.spi.InjectionProviderFactory.createInstance JSF1048: PostConstruct/PreDestroy annotations present.  ManagedBeans methods marked with these annotations will have said annotations processed.
+09-Feb-2018 16:28:12.901 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\ROOT.xml] has finished in [1,816] ms
+09-Feb-2018 16:28:12.904 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 16:28:12.914 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 16:28:12.917 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 2347 ms
+09-Feb-2018 16:46:40.769 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+09-Feb-2018 16:46:40.770 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 16:46:40.959 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 16:46:41.119 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Feb-2018 16:46:41.140 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ROOT] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+09-Feb-2018 16:46:41.141 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ROOT] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:64)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+09-Feb-2018 16:46:41.154 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 16:46:41.155 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 16:46:41.157 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 16:46:41.158 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 16:55:23.175 SEVERE [main] org.apache.catalina.startup.Catalina.initDirs Cannot find specified temporary folder at [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\temp]
+09-Feb-2018 16:55:23.627 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.2
+09-Feb-2018 16:55:23.627 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Nov 25 2017 21:08:02 UTC
+09-Feb-2018 16:55:23.627 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.2.0
+09-Feb-2018 16:55:23.628 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+09-Feb-2018 16:55:23.628 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+09-Feb-2018 16:55:23.628 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+09-Feb-2018 16:55:23.628 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_144\jre
+09-Feb-2018 16:55:23.628 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_144-b01
+09-Feb-2018 16:55:23.628 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+09-Feb-2018 16:55:23.628 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf
+09-Feb-2018 16:55:23.628 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Program Files\Apache Software Foundation\Tomcat 9.0
+09-Feb-2018 16:55:23.629 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\logging.properties
+09-Feb-2018 16:55:23.629 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Feb-2018 16:55:23.629 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dhttp.nonProxyHosts=localhost|127.0.0.1|Devon-Laptop
+09-Feb-2018 16:55:23.629 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+09-Feb-2018 16:55:23.629 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+09-Feb-2018 16:55:23.629 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+09-Feb-2018 16:55:23.630 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf
+09-Feb-2018 16:55:23.630 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Program Files\Apache Software Foundation\Tomcat 9.0
+09-Feb-2018 16:55:23.630 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\temp
+09-Feb-2018 16:55:23.630 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\pgmodeler;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Users\Devon\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Skype\Phone\;C:\CooCox\CoIDE_V2Beta\gcc\bin;C:\CooCox\CoIDE_V2Beta\bin;C:\Users\Devon\AppData\Local\Microsoft\WindowsApps;C:\Users\Devon\AppData\Local\GitHubDesktop\bin;.]
+09-Feb-2018 16:55:23.858 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 16:55:24.001 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+09-Feb-2018 16:55:24.009 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 16:55:24.011 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+09-Feb-2018 16:55:24.012 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 837 ms
+09-Feb-2018 16:55:24.047 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Feb-2018 16:55:24.048 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.2
+09-Feb-2018 16:55:24.056 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\FSManager.xml]
+09-Feb-2018 16:55:24.571 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\FSManager.xml] has finished in [514] ms
+09-Feb-2018 16:55:24.571 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\manager.xml]
+09-Feb-2018 16:55:24.641 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\manager.xml] has finished in [70] ms
+09-Feb-2018 16:55:24.641 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\ROOT.xml]
+09-Feb-2018 16:55:25.682 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Feb-2018 16:55:25.917 INFO [main] com.sun.faces.config.ConfigureListener.contextInitialized Initializing Mojarra 2.2.7 ( 20140610-1547 https://svn.java.net/svn/mojarra~svn/tags/2.2.7@13362) for context ''
+09-Feb-2018 16:55:26.218 INFO [main] com.sun.faces.spi.InjectionProviderFactory.createInstance JSF1048: PostConstruct/PreDestroy annotations present.  ManagedBeans methods marked with these annotations will have said annotations processed.
+09-Feb-2018 16:55:26.883 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\ROOT.xml] has finished in [2,241] ms
+09-Feb-2018 16:55:26.885 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 16:55:26.896 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 16:55:26.900 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 2888 ms
+09-Feb-2018 17:17:30.454 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+09-Feb-2018 17:17:30.455 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 17:17:30.613 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 17:17:30.748 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Feb-2018 17:17:30.765 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ROOT] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+09-Feb-2018 17:17:30.766 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ROOT] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:64)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+09-Feb-2018 17:17:30.784 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 17:17:30.787 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 17:17:30.789 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 17:17:30.791 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 17:18:22.412 SEVERE [main] org.apache.catalina.startup.Catalina.initDirs Cannot find specified temporary folder at [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\temp]
+09-Feb-2018 17:18:22.825 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.2
+09-Feb-2018 17:18:22.825 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Nov 25 2017 21:08:02 UTC
+09-Feb-2018 17:18:22.825 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.2.0
+09-Feb-2018 17:18:22.826 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+09-Feb-2018 17:18:22.826 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+09-Feb-2018 17:18:22.826 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+09-Feb-2018 17:18:22.826 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_144\jre
+09-Feb-2018 17:18:22.826 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_144-b01
+09-Feb-2018 17:18:22.826 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+09-Feb-2018 17:18:22.826 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf
+09-Feb-2018 17:18:22.826 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Program Files\Apache Software Foundation\Tomcat 9.0
+09-Feb-2018 17:18:22.826 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\logging.properties
+09-Feb-2018 17:18:22.826 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Feb-2018 17:18:22.826 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dhttp.nonProxyHosts=localhost|127.0.0.1|Devon-Laptop
+09-Feb-2018 17:18:22.827 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+09-Feb-2018 17:18:22.827 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+09-Feb-2018 17:18:22.827 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+09-Feb-2018 17:18:22.827 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf
+09-Feb-2018 17:18:22.827 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Program Files\Apache Software Foundation\Tomcat 9.0
+09-Feb-2018 17:18:22.827 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\temp
+09-Feb-2018 17:18:22.827 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\pgmodeler;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Users\Devon\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Skype\Phone\;C:\CooCox\CoIDE_V2Beta\gcc\bin;C:\CooCox\CoIDE_V2Beta\bin;C:\Users\Devon\AppData\Local\Microsoft\WindowsApps;C:\Users\Devon\AppData\Local\GitHubDesktop\bin;.]
+09-Feb-2018 17:18:23.055 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 17:18:23.173 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+09-Feb-2018 17:18:23.180 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 17:18:23.183 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+09-Feb-2018 17:18:23.183 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 771 ms
+09-Feb-2018 17:18:23.213 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Feb-2018 17:18:23.213 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.2
+09-Feb-2018 17:18:23.221 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\FSManager.xml]
+09-Feb-2018 17:18:23.619 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\FSManager.xml] has finished in [397] ms
+09-Feb-2018 17:18:23.619 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\manager.xml]
+09-Feb-2018 17:18:23.671 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\manager.xml] has finished in [52] ms
+09-Feb-2018 17:18:23.672 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\ROOT.xml]
+09-Feb-2018 17:18:23.958 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Feb-2018 17:18:23.977 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\ROOT.xml] has finished in [305] ms
+09-Feb-2018 17:18:23.980 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 17:18:23.991 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 17:18:23.994 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 810 ms
+09-Feb-2018 17:18:24.322 INFO [http-nio-8080-exec-5] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+09-Feb-2018 17:18:24.523 INFO [http-nio-8080-exec-5] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Feb-2018 17:18:24.530 INFO [http-nio-8080-exec-5] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+09-Feb-2018 17:21:34.624 INFO [http-nio-8080-exec-16] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+09-Feb-2018 17:21:34.633 WARNING [http-nio-8080-exec-16] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ROOT] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+09-Feb-2018 17:21:34.634 WARNING [http-nio-8080-exec-16] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ROOT] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:64)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+09-Feb-2018 17:21:34.774 INFO [http-nio-8080-exec-16] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Feb-2018 17:21:34.777 INFO [http-nio-8080-exec-16] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+09-Feb-2018 17:21:38.465 INFO [Abandoned connection cleanup thread] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+ java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1295)
+	at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:972)
+	at com.mysql.jdbc.AbandonedConnectionCleanupThread.checkContextClassLoaders(AbandonedConnectionCleanupThread.java:90)
+	at com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:63)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+09-Feb-2018 17:52:58.426 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+09-Feb-2018 17:52:58.426 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 17:52:58.582 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 17:52:58.729 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Feb-2018 17:52:58.753 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 17:52:58.757 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+09-Feb-2018 17:52:58.760 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+09-Feb-2018 17:52:58.761 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
