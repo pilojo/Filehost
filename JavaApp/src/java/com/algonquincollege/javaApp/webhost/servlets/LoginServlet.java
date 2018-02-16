@@ -8,22 +8,27 @@ package com.algonquincollege.javaApp.webhost.servlets;
 import com.algonquincollege.javaApp.database.DBConnection;
 import com.algonquincollege.javaApp.utils.json.JSONParser;
 import com.algonquincollege.javaApp.webhost.WebInterfaceServlet;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 
 /**
  *
- * @author Byzantian
+ * @author John Pilon
+ * Communicates with the database after receiving POST data from browser to validate login information
  */
 public class LoginServlet extends WebInterfaceServlet {
     private JSONParser json = new JSONParser();
     private DBConnection db = new DBConnection();
+    /**
+     * Sends JSON to a client that connects to this servlet.
+     *
+     * @param request servlet request
+     * @return String: JSON formatted data for the client
+     */
     @Override
     public String toString(HttpServletRequest request) {
         try{
+            //Beginning of String reconstruction
             byte[] bytes = new byte[1];
             ArrayList<Byte> bindata = new ArrayList();
             while(-1 != request.getInputStream().read(bytes)){
@@ -32,7 +37,8 @@ public class LoginServlet extends WebInterfaceServlet {
             byte[] tmpdata = new byte[bindata.size()];
             for(int i = 0; i < bindata.size(); i++){
                 tmpdata[i] = bindata.get(i);
-            }
+            }//End of String reconstruction
+            
             if(json.parseLogin(new String(tmpdata))){
                 if(db.connect() == null){
                      return"\"logedin\":\"false\"";
@@ -43,6 +49,7 @@ public class LoginServlet extends WebInterfaceServlet {
                  }
 
             }
+            //Any exceptions thrown means the login failed.
         }catch(Exception e){return "\"logedin\":\"false\"";}
         
         return "\"logedin\":\"false\"";

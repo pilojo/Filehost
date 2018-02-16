@@ -12,7 +12,8 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Byzantian
+ * @author John Pilon
+ * To be implemented later
  */
 public class CopyServlet extends WebInterfaceServlet {
 

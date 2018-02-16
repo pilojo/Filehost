@@ -7,7 +7,7 @@ package com.algonquincollege.javaApp.fileManager;
 
 /**
  *
- * @author jp972
+ * @author John PIlon
  */
 public abstract class Command{
     protected static final String validPassword = "A^@kds034!@$#sjvlksoirg%#$%^#@()sdgnverkf15681165";
