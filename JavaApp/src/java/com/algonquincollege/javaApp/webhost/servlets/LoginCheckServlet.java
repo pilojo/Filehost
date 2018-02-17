@@ -11,7 +11,8 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Byzantian
+ * @author John Pilon
+ * To be fully implemented later. Sessions not yet working.
  */
 public class LoginCheckServlet extends WebInterfaceServlet {
 

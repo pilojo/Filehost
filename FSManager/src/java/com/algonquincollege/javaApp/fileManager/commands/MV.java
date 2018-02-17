@@ -2,6 +2,12 @@ package com.algonquincollege.javaApp.fileManager.commands;
 import com.algonquincollege.javaApp.fileManager.Command;
 import java.text.StringCharacterIterator;
 
+/**
+ * 
+ * @author John Pilon
+ * A class to be serialized for Server to FSManager communication
+ * Make Directory command
+ */
 public class MV extends Command{
 
 	private String from;
@@ -25,6 +31,12 @@ public class MV extends Command{
 		this.to = to;
 	}
 
+        /**
+        * Validates the path
+        *
+        * @param from The path to validate
+        * @return boolean: whether the path is valid
+        */
 	private boolean validatePath(String from) {
 		boolean hasContent = (from != null) && (!from.equals(""));
 		if(!hasContent) {
@@ -44,18 +56,29 @@ public class MV extends Command{
                 return true;
 	}
 	
+        /**
+        * Serializes the class
+        *
+        * @return String: serialized class
+        */
 	public String toString(){
-            return from+"\n"+to;
+            return from+"\n"+to+"\n"+password;
         }
-	
+
+        /**
+        * Reconstructs the class from a serialized string
+        *
+        * @param str the serialized class
+        * @return boolean: Whether the class reconstructed successfully
+        */
 	public boolean fromString(String str){
             String[] values = str.split("\n");
             if(values.length==3){
                 from=values[0];
                 to=values[1];
                 password = values[2];
-            }if(this.isValid() && validatePath(from))return validatePath(to);
-            else return false;
+                return isValid() && validatePath(to) && validatePath(from);
+            }else return false;
 	}
 	
 }

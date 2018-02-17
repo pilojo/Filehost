@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 /**
  *
- * @author Byzantian
+ * @author John Pilon
  */
 public abstract class WebInterfaceServlet extends HttpServlet {
     /**

@@ -5,6 +5,12 @@ package com.algonquincollege.javaApp.fileManager.commands;
 import com.algonquincollege.javaApp.fileManager.Command;
 import java.text.StringCharacterIterator;
 
+/**
+ * 
+ * @author John Pilon
+ * A class to be serialized for Server to FSManager communication
+ * Make Directory command
+ */
 public class RM extends Command{
 	
 	private String path;
@@ -21,6 +27,12 @@ public class RM extends Command{
             return path;
         }
         
+        /**
+        * Validates the path
+        *
+        * @param dst The path to validate
+        * @return boolean: whether the path is valid
+        */
 	private boolean validatePath(String dst) {
 		boolean hasContent = (dst != null) && (!dst.equals(""));
 		if(!hasContent) {
@@ -32,7 +44,6 @@ public class RM extends Command{
 		while(c!=StringCharacterIterator.DONE) { 
 			boolean isValidChar = (Character.isLetter(c)|| Character.isSpaceChar(c) ||c == '\\');
 			if(!isValidChar) {
-				String message = "Can only contain letters, spaces, and backslashes";
 				return false;
 			}
 			c = it.next();
@@ -40,12 +51,27 @@ public class RM extends Command{
                 return true;
 	}
 	
+        /**
+        * Serializes the class
+        *
+        * @return String: serialized class
+        */
 	public String toString(){
-            return path;
+            return path+"\n"+password;
 	}
-	
+	/**
+        * Reconstructs the class from a serialized string
+        *
+        * @param str the serialized class
+        * @return boolean: Whether the class reconstructed successfully
+        */
 	public boolean fromString(String str){
-            path = str;
-            return this.isValid() && validatePath(path);
+            String[] values = str.split("\n");
+            if(values.length==2){
+                path=values[0];
+                password = values[1];
+                return isValid() && validatePath(path);
+            }
+            return false;
         }
 }
