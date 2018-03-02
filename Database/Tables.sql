@@ -1,6 +1,8 @@
-
+-- Author: Alejandra Acosta
 -- -----------------------------------------------------
--- Table `mydb`.`AccountTypes`
+-- Table `AccountTypes`
+-- Contains a list of all the different account types
+-- that a user can have
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `AccountTypes` (
   `ID` BIGINT NOT NULL AUTO_INCREMENT,
@@ -13,7 +15,9 @@ CREATE TABLE IF NOT EXISTS `AccountTypes` (
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Permissions`
+-- Table `Permissions`
+-- Stores all available permission that folders and files
+-- can have
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Permissions` (
   `ID` BIGINT NOT NULL AUTO_INCREMENT,
@@ -25,7 +29,14 @@ CREATE TABLE IF NOT EXISTS `Permissions` (
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Folders`
+-- Table `Folders`
+-- Holds information about every folder that has been 
+-- created, including root folders. The information 
+-- includes the name, path of the folder as well as 
+-- foreign keys that link to the users table to say
+-- which user created the folder. As well as a foreign
+-- to the permissions table to know what permissons
+-- a folder has.
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Folders` (
   `ID` BIGINT NOT NULL AUTO_INCREMENT,
@@ -46,16 +57,23 @@ CREATE TABLE IF NOT EXISTS `Folders` (
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Users`
+-- Table `Users`
+-- Holds information about the users that have created an
+-- acount. Includes their first name, last name, a unique
+-- user name and a unique email address. It contains a 
+-- foreign key to the folders table to say which folder
+-- is the user's root folder and to the accountTypes table
+-- to know the account type of the user's account.
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Users` (
   `ID` BIGINT NOT NULL AUTO_INCREMENT,
-  `Username` VARCHAR(32) NULL,
+  `Username` VARCHAR(32) NOT NULL,
+  `Password` VARCHAR(150) NOT NULL,
   `First_Name` VARCHAR(32) NOT NULL,
   `Last_Name` VARCHAR(150) NOT NULL,
   `Email` VARCHAR(150) NOT NULL,
   `AccountType_ID` BIGINT NOT NULL,
-  `RootFolder_ID` BIGINT NOT NULL,
+  `RootFolder_ID` BIGINT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE INDEX `ID_UNIQUE` (`ID` ASC),
   UNIQUE INDEX `Username_UNIQUE` (`Username` ASC),
@@ -76,7 +94,11 @@ CREATE TABLE IF NOT EXISTS `Users` (
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Files`
+-- Table `Files`
+-- Stores all uploaded files from the users. It holds
+-- information for the file name and 2 foreign keys. One
+-- foreign key for the folder that it is in and one for
+-- the permissions table.
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Files` (
   `ID` BIGINT NOT NULL AUTO_INCREMENT,
@@ -101,7 +123,9 @@ CREATE TABLE IF NOT EXISTS `Files` (
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`SharedFolders`
+-- Table `SharedFolders`
+-- relational table containing information on which users
+-- have access to wich folders with the shared permission
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `SharedFolders` (
   `Folder_ID` BIGINT NOT NULL,
@@ -122,7 +146,9 @@ CREATE TABLE IF NOT EXISTS `SharedFolders` (
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`SharedFiles`
+-- Table `SharedFiles`
+-- relational table with information on which users have
+-- access to which files.
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `SharedFiles` (
   `Folder_ID` BIGINT NOT NULL,
@@ -140,6 +166,11 @@ CREATE TABLE IF NOT EXISTS `SharedFiles` (
     ON DELETE CASCADE
     ON UPDATE NO ACTION
 );
+-- -----------------------------------------------------
+-- Table tomcat_sessions
+-- table containing session information for the Web host
+-- and the FileManager
+-- -----------------------------------------------------
 create table tomcat_sessions (
   session_id     varchar(100) not null primary key,
   valid_session  char(1) not null,
@@ -149,7 +180,14 @@ create table tomcat_sessions (
   session_data   mediumblob,
   KEY kapp_name(app_name)
 );
-
+-- -----------------------------------------------------
+-- Alter folders
+-- this block of code creates the users foreign key inside
+-- of the folders table. This allows for the entire script
+-- to be run without any errors because the table creation
+-- is trying to create a foreign key to a table that doesn't
+-- exist yet.
+-- -----------------------------------------------------
 ALTER TABLE `folders` 
 DROP FOREIGN KEY `fk_Folders_Permissions1`;
 ALTER TABLE `folders` 
@@ -164,5 +202,5 @@ ADD CONSTRAINT `fk_Folders_Permissions1`
 ADD CONSTRAINT `fk_user_id`
   FOREIGN KEY (`Owner_ID`)
   REFERENCES `users` (`ID`)
-  ON DELETE NO ACTION
+  ON DELETE CASCADE
   ON UPDATE NO ACTION;
