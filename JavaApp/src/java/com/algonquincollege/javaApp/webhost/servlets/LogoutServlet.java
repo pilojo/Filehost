@@ -12,12 +12,14 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Byzantian
+ * @author John Pilon
+ * To be implemented later.
  */
 public class LogoutServlet extends WebInterfaceServlet {
 
     @Override
     public String toString(HttpServletRequest request) {
+        request.getSession().setAttribute("email", null);
         return "";
     }
     

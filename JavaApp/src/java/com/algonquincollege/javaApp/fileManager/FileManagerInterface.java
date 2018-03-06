@@ -11,12 +11,17 @@ import java.net.URL;
 
 /**
  *
- * @author Byzantian
+ * @author John Pilon
+ * Interacts with the file manager
  */
 public class FileManagerInterface {
     
-    private final static String IP = "http://10.70.218.168:8080/FSManager/manage/cp";
+    private final static String IP = "http://10.70.210.18:8080/FSManager/cp";
     
+    /**
+     * Sends commands to the File manager
+     * @param cmd command to POST to FSManager
+     */
     public static void sendCommand(Command cmd){
         try {
             URL url = new URL(IP);
@@ -33,6 +38,7 @@ public class FileManagerInterface {
             wr.close();
             
             int responseCode = connection.getResponseCode();
+            System.out.println(responseCode);
             BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             String inputLine;
             StringBuilder response = new StringBuilder();

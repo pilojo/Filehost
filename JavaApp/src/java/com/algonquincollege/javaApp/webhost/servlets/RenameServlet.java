@@ -11,13 +11,15 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Byzantian
+ * @author John Pilon
+ * To be implemented later.
  */
 public class RenameServlet extends WebInterfaceServlet {
 
     @Override
     public String toString(HttpServletRequest request) {
-        return "";
+        MoveServlet mv = new MoveServlet();
+        return mv.toString(request);
     }
     
 }

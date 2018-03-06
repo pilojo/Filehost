@@ -8,21 +8,40 @@ package com.algonquincollege.javaApp.webhost.servlets;
 import com.algonquincollege.javaApp.database.DBConnection;
 import com.algonquincollege.javaApp.utils.json.JSONParser;
 import com.algonquincollege.javaApp.webhost.WebInterfaceServlet;
+import java.util.ArrayList;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Byzantian
+ * @author John Pilon
+ * Inserts a user to the database after receiving signup info. Email verification for signups to come soon.
  */
 public class SignUpServlet extends WebInterfaceServlet {
     private JSONParser json = new JSONParser();
     private DBConnection db = new DBConnection();
+    /**
+     * Sends JSON to a client that connects to this servlet.
+     *
+     * @param request servlet request
+     * @return String: JSON formatted data for the client
+     */
     @Override
     public String toString(HttpServletRequest request) {
-       
-        if(json.parseLogin(new String(""))){
+        try{
+            //Beginning of String reconstruction
+            byte[] bytes = new byte[1];
+            ArrayList<Byte> bindata = new ArrayList();
+            while(-1 != request.getInputStream().read(bytes)){
+                bindata.add(bytes[0]);
+            }
+            byte[] tmpdata = new byte[bindata.size()];
+            for(int i = 0; i < bindata.size(); i++){
+                tmpdata[i] = bindata.get(i);
+            }//End of String reconstruction
+            
+        if(json.parseSignUp(new String(tmpdata))){
             if(db.connect() == null){
                  return"\"signedup\":\"false\"";
              }else{
@@ -30,8 +49,9 @@ public class SignUpServlet extends WebInterfaceServlet {
                      return "\"signedup\":\"true\"";
                  }
              }
-             
         }
+        //Any exceptions means signup failed
+        }catch(Exception  e){return e.toString();}
         return "\"signedup\":\"false\"";
     }
     

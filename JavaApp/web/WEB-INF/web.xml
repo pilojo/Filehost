@@ -54,7 +54,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CopyServlet</servlet-name>
-        <url-pattern>/server/copy</url-pattern>
+        <url-pattern>/server/cp</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RenameServlet</servlet-name>
