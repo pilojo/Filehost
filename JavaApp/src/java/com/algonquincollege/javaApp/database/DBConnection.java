@@ -20,9 +20,9 @@ import java.sql.Statement;
 
 public class DBConnection {
     private static final String DRIVER = "com.mysql.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://localhost/filehostdb";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "60143088431472276664";
+    private static final String URL = "jdbc:mysql://10.70.210.76:3306/filehostdb";
+    private static final String USERNAME = "John";
+    private static final String PASSWORD = "Password1";
     
     private Connection connection;
     
@@ -38,17 +38,24 @@ public class DBConnection {
         return connection;
     }
     
-    public boolean login(String username, String hash){
+    public boolean login(String email, String hash){
+        System.out.println();
         PasswordHashUtils password = new PasswordHashUtils();
-        String query = "select password from users where username = \"" + username;
-        System.out.println(username + "\n" + hash);
+        String query = "select password from users where email = \"" + email + "\";";
         try{
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet result = statement.executeQuery();
             System.out.println("Executed Query");
-            if(password.verifyHash(hash, result.getString("password"))){
-                return true;
+            if (result.next()){
+                System.out.println(hash + " " + result.getString("Password"));
+                if(password.verifyHash(hash, result.getString("Password"))){
+
+                    System.out.println("logino passed");
+                    return true;
+                }
+                result.close();
             }
+           
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
@@ -66,7 +73,7 @@ public class DBConnection {
      */
     public boolean signUp(String firstName, String lastName, String email, String username, String password){
         System.out.println(firstName+" "+lastName);
-        String createUser = "INSERT INTO users (Username, First_Name, Last_Name, Email,AccountType_ID, Password) VALUES ('"+username+"' ,'"+firstName+"' ,'"+lastName+"' ,'"+email+"' ,4,'"+password+"')";
+        String createUser = "INSERT INTO users (Username, First_Name, Last_Name, Email,AccountType_ID, Password) VALUES ('"+username+"' ,'"+firstName+"' ,'"+lastName+"' ,'"+email+"' ,4,'"+PasswordHashUtils.hash(password)+"')";
         //String getUIDQuery = "SELECT ID FROM users WHERE Username = '"+username+"'";
         try{
             //Create the new user

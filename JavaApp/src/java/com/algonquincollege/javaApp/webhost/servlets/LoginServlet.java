@@ -6,6 +6,7 @@
 package com.algonquincollege.javaApp.webhost.servlets;
 
 import com.algonquincollege.javaApp.database.DBConnection;
+import com.algonquincollege.javaApp.fileManager.utils.ByteReconstruct;
 import com.algonquincollege.javaApp.utils.json.JSONParser;
 import com.algonquincollege.javaApp.webhost.WebInterfaceServlet;
 import java.util.ArrayList;
@@ -17,8 +18,6 @@ import javax.servlet.http.HttpServletRequest;
  * Communicates with the database after receiving POST data from browser to validate login information
  */
 public class LoginServlet extends WebInterfaceServlet {
-    private JSONParser json = new JSONParser();
-    private DBConnection db = new DBConnection();
     /**
      * Sends JSON to a client that connects to this servlet.
      *
@@ -28,22 +27,12 @@ public class LoginServlet extends WebInterfaceServlet {
     @Override
     public String toString(HttpServletRequest request) {
         try{
-            //Beginning of String reconstruction
-            byte[] bytes = new byte[1];
-            ArrayList<Byte> bindata = new ArrayList();
-            while(-1 != request.getInputStream().read(bytes)){
-                bindata.add(bytes[0]);
-            }
-            byte[] tmpdata = new byte[bindata.size()];
-            for(int i = 0; i < bindata.size(); i++){
-                tmpdata[i] = bindata.get(i);
-            }//End of String reconstruction
-            
-            if(json.parseLogin(new String(tmpdata))){
+            if(json.parseLogin(ByteReconstruct.byteToString(request))){
                 if(db.connect() == null){
                      return"\"logedin\":\"false\"";
                  }else{
-                     if(db.login(json.map.get("username"), json.map.get("password"))){
+                     if(db.login(json.map.get("email"), json.map.get("password"))){
+                         request.getSession().setAttribute("email", json.map.get("email"));
                          return "\"logedin\":\"true\"";
                      }
                  }

@@ -19,6 +19,7 @@ public class LogoutServlet extends WebInterfaceServlet {
 
     @Override
     public String toString(HttpServletRequest request) {
+        request.getSession().setAttribute("email", null);
         return "";
     }
     

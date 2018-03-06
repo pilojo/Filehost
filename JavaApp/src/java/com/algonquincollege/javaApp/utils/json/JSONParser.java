@@ -12,7 +12,7 @@ import java.util.Map;
  */
 public class JSONParser
 {
-    public Map<String, String> map;
+    public static Map<String, String> map;
     
     public JSONParser() {
         this.map = new HashMap();
@@ -22,7 +22,7 @@ public class JSONParser
     /*
     Parses the single object json if it matches the regex;returns false otherwise
     */
-    public boolean parse(String json, String regex){
+    public static boolean parse(String json, String regex){
         if(json.matches(regex))
         {
             try{
@@ -39,12 +39,12 @@ public class JSONParser
         return false;
     }
     
-    public boolean parseLogin(String json)
+    public static boolean parseLogin(String json)
     {
-        return parse(json, "\\{\\n*\"username\":\"\\w+\",\\n*\"password\":\"\\w+\"\\n*\\}");
+        return parse(json, "\\{\\n*\"email\":\"\\w+@\\w+\\.\\w+\",\"password\":\"\\w+\"\\n*\\}");
     }
     
-    public boolean parseSignUp(String json){
+    public static boolean parseSignUp(String json){
         return parse(json, "\\{\"firstName\":\"[A-Za-z]+\",\"lastName\":\"[A-Za-z]+\",\"email\":\"\\w+@\\w+\\.\\w+\",\"username\":\"\\w+\",\"password\":\".+\"\\}");
     }
 }
