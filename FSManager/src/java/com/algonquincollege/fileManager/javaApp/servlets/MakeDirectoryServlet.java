@@ -31,29 +31,18 @@ public class MakeDirectoryServlet extends JavaAppServlet {
         System.out.println("Make Directory Servlet: Data: " + data);
         if(mkdir.fromString(data))//Parse the data
         {//On success
-            System.out.println("Make Directory Servlet: Path: " + mkdir.getPath());//DEBUG STATEMENT, REPORT THE PARSED PATH
+                       
+            FSAggregator aggregator = (FSAggregator)this.getServletContext().getAttribute("aggregator");
             
-            Future ourFuture = null;
-            
-            for (Enumeration<String> e = this.getServletContext().getAttributeNames(); e.hasMoreElements();)
-                System.out.println("Make Directory: " + e.nextElement());
-            
-            Object aggregator = this.getServletContext().getAttribute("aggregator");
-            if(aggregator != null){
-                ourFuture = ((FSAggregator)aggregator).addTask(new MakeDirectory(mkdir.getPath()));
-                //System.out.println("Make Directory Servlet: ");
-            }
-            else{
-                System.out.println("Make Directory Servlet: Aggregator Failiure");
-            }
+            Future ourFuture = aggregator.addTask(new MakeDirectory(mkdir.getPath()));
             
             try{
                 ourFuture.get();
             } catch (InterruptedException | ExecutionException ex) {
-                System.out.println("Make Directory Servlet: Aggregator Exception");
+                System.err.println("Make Directory Servlet: Aggregator Exception");
+                return false;//Return the error to the caller
             }
             
-            System.out.println("Make Directory Servlet: Complete");//DEBUG STATEMENT, REPORT COMPLETE
             return true;//And report the sucess to the caller
         }
         System.err.println("Make Directory Servlet: INVALID REQUEST");

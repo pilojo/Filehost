@@ -10,7 +10,7 @@ import java.nio.file.Paths;
  */
 public class MakeDirectory extends FileSystemTask{
 
-    private String path;
+    private final String path;
     
     public MakeDirectory(String directory){
         path = directory;
@@ -19,7 +19,7 @@ public class MakeDirectory extends FileSystemTask{
     
     @Override
     public void run() {
-        System.out.println("Make Directory Task: Going Live");
+        System.out.println("Make Directory Task: " + path + " | Going Live");
         try{
             Files.createDirectory(Paths.get(root, path));
         } catch (IOException ex) {

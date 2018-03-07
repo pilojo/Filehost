@@ -1,7 +1,11 @@
 package com.algonquincollege.fileManager.javaApp.servlets;
 
+import com.algonquincollege.fileManager.fileSystemAggregator.FSAggregator;
+import com.algonquincollege.fileManager.fileSystemAggregator.tasks.Copy;
 import com.algonquincollege.fileManager.javaApp.JavaAppServlet;
 import com.algonquincollege.javaApp.fileManager.commands.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 /**
  * Handles connections to the management link intending to copy one file to
@@ -22,8 +26,17 @@ public class CopyServlet extends JavaAppServlet {
         CP cp = new CP();//Create a CP Command Servlet to parse data with
         if(cp.fromString(data))//Parse the data
         {//On success
-            System.out.println("From: " + cp.getFrom());//DEBUG STATEMENT, REPORT THE PARSED SOURCE
-            System.out.println("To: " + cp.getTo());//DEBUG STATEMENT, REPORT THE PARSED DESTINATION
+            FSAggregator aggregator = (FSAggregator)this.getServletContext().getAttribute("aggregator");
+            
+            Future ourFuture = aggregator.addTask(new Copy(cp.getFrom(),cp.getTo()));
+                
+            try{
+                ourFuture.get();
+            } catch (InterruptedException | ExecutionException ex) {
+                System.err.println("Copy Servlet: Aggregator Exception");
+                return false;//Return the error to the caller
+            }
+            
             return true;//And report the sucess to the caller
         }
         return false;//Return the error to the caller
