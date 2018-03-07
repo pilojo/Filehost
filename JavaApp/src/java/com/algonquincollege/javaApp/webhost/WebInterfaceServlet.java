@@ -3,6 +3,8 @@ The base parent of all json returning servlets for front end
 */
 package com.algonquincollege.javaApp.webhost;
 
+import com.algonquincollege.javaApp.database.DBConnection;
+import com.algonquincollege.javaApp.utils.json.JSONParser;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -12,9 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 /**
  *
- * @author Byzantian
+ * @author John Pilon
  */
 public abstract class WebInterfaceServlet extends HttpServlet {
+    protected DBConnection db = new DBConnection();
+    protected JSONParser json = new JSONParser();
     /**
      * Sends JSON to a client that connects to any children servlets. Ensure toString is overriden
      *

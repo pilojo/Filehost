@@ -5,20 +5,34 @@
  */
 package com.algonquincollege.javaApp.webhost.servlets;
 
+import com.algonquincollege.javaApp.fileManager.FileManagerInterface;
+import com.algonquincollege.javaApp.fileManager.commands.MV;
+import com.algonquincollege.javaApp.fileManager.utils.ByteReconstruct;
 import com.algonquincollege.javaApp.webhost.WebInterfaceServlet;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Byzantian
+ * @author John Pilon
+ * To be implemented later.
  */
 public class MoveServlet extends WebInterfaceServlet {
 
     @Override
     public String toString(HttpServletRequest request) {
-        return "";
+        ListContentsServlet ls = new ListContentsServlet();
+        try{
+            if(json.parseLogin(ByteReconstruct.byteToString(request))){
+                if(db.connect() == null){
+                    return ls.toString();
+                }else{
+                    MV mv = new MV(json.map.get("from"), json.map.get("to"));
+                    FileManagerInterface.sendCommand(mv);
+                    return ls.toString();
+                }
+            }
+        }catch(Exception IOException){}
+        return ls.toString();
     }
     
 }

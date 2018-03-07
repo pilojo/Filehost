@@ -8,17 +8,27 @@ package com.algonquincollege.javaApp.database.encryption;
 
 /**
  *
- * @author Byzantian
+ * @author John Pilon
  */
 public class PasswordHashUtils {
     private static final int logRounds = 10;
     
-    
-    public String hash(String password) {
+    /**
+     * Hashes a password
+     * @param password the password to has
+     * @return String: The hashed password
+     */
+    public static String hash(String password) {
         return BCrypt.hashpw(password, BCrypt.gensalt(logRounds));
     }
     
-    public boolean verifyHash(String password, String hash) {
+    /**
+     * 
+     * @param password The password to compare
+     * @param hash The hash stored in the DB to compare to
+     * @return boolean: Whether the hash is valid
+     */
+    public static boolean verifyHash(String password, String hash) {
         return BCrypt.checkpw(password, hash);
     }
 }

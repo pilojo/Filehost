@@ -11,14 +11,15 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Byzantian
+ * @author John Pilon
+ * To be fully implemented later. Sessions not yet working.
  */
 public class LoginCheckServlet extends WebInterfaceServlet {
 
     @Override
     public String toString(HttpServletRequest request) {
-        
-        return request.getSession().getAttribute("username")!=null?"\"logedin\":true":"\"logedin\":false";
+        System.out.println(request.getSession().getAttribute("email")!=null);
+        return request.getSession().getAttribute("email")!=null?"\"logedin\":true":"\"logedin\":false";
     }
     
 }
