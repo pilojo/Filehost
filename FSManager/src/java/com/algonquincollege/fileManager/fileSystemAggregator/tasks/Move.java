@@ -28,7 +28,7 @@ public class Move extends FileSystemTask {
     public void run() {
         System.out.println("Move Task: " + source + " To " + dest + " | Going Live");
         try{
-            Files.copy(Paths.get(root, source), Paths.get(root, dest));
+            Files.move(Paths.get(root, source), Paths.get(root, dest));
         } catch (IOException ex) {
             System.err.println("Move Failed: " + source + " To " + dest);
             return;

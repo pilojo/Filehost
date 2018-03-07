@@ -46,7 +46,7 @@ public class MV extends Command{
 		StringCharacterIterator it = new StringCharacterIterator(from);
 		char c = it.current();
 		while(c!=StringCharacterIterator.DONE) { 
-			boolean isValidChar = (Character.isLetter(c)|| Character.isSpaceChar(c) ||c == '\\');
+			boolean isValidChar = (Character.isLetter(c)|| Character.isSpaceChar(c) ||c == '\\' || c == '.');
 			if(!isValidChar) {
 				String message = "Can only contain letters, spaces, and backslashes";
 				return false;
