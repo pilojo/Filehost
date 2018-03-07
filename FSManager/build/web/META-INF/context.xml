@@ -1,2 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/FSManager"/>
+<Context path="/">
+<Manager className="org.apache.catalina.session.PersistentManager"
+         maxIdleBackup="10">
+  <Store className="org.apache.catalina.session.JDBCStore"
+         connectionURL="jdbc:mysql://10.70.213.182:3306/filehostdb?user=Dev&amp;password=Password2"
+         driverName="com.mysql.jdbc.Driver"
+         sessionAppCol="app_name"
+         sessionDataCol="session_data"
+         sessionIdCol="session_id"
+         sessionLastAccessedCol="last_access"
+         sessionMaxInactiveCol="max_inactive"
+         sessionTable="tomcat_sessions"
+         sessionValidCol="valid_session"/>
+</Manager>
+</Context>

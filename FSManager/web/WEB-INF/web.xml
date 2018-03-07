@@ -4,6 +4,7 @@
     <listener>
         <listener-class>com.algonquincollege.fileManager.fileSystemAggregator.FSAggregatorInitializer</listener-class>
     </listener>
+
     
     <servlet>
         <servlet-name>MoveServlet</servlet-name>
@@ -21,6 +22,25 @@
         <servlet-name>MakeDirectoryServlet</servlet-name>
         <servlet-class>com.algonquincollege.fileManager.javaApp.servlets.MakeDirectoryServlet</servlet-class>
     </servlet>
+    
+    <servlet>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>com.algonquincollege.fileManager.javaApp.servlets.UploadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/upload</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CheckLogin</servlet-name>
+        <servlet-class>com.algonquincollege.fileManager.javaApp.servlets.CheckLogin</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckLogin</servlet-name>
+        <url-pattern>/check</url-pattern>
+    </servlet-mapping>
+    
     <servlet-mapping>
         <servlet-name>MoveServlet</servlet-name>
         <url-pattern>/mv</url-pattern>
@@ -37,6 +57,9 @@
         <servlet-name>MakeDirectoryServlet</servlet-name>
         <url-pattern>/mkdir</url-pattern>
     </servlet-mapping>
+    
+    
+    
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>

@@ -18,7 +18,7 @@ import java.sql.SQLException;
 
 public class DBConnection {
     private static final String DRIVER = "com.mysql.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://10.70.201.114:3306/filehostdb";
+    private static final String URL = "jdbc:mysql://10.70.213.182:3306/filehostdb";
     private static final String USERNAME = "Dev";
     private static final String PASSWORD = "Password1";
     
