@@ -28,6 +28,7 @@ public class CP extends Command{
 	public CP(String from, String to) {
 		this.from = from;
 		this.to = to;
+                password = validPassword;
 	}
 	
         /**

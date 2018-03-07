@@ -18,7 +18,8 @@ public class RenameServlet extends WebInterfaceServlet {
 
     @Override
     public String toString(HttpServletRequest request) {
-        return "";
+        MoveServlet mv = new MoveServlet();
+        return mv.toString(request);
     }
     
 }
