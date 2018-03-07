@@ -1,0 +1,132 @@
+07-Mar-2018 15:31:58.014 SEVERE [main] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.]
+07-Mar-2018 15:37:39.400 SEVERE [http-nio-8080-exec-8] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [UploadServlet] in context with path [/FSManager] threw exception
+ java.io.IOException: java.io.FileNotFoundException: D:\fileHostRoot (Access is denied)
+	at org.apache.catalina.core.ApplicationPart.write(ApplicationPart.java:122)
+	at com.algonquincollege.fileManager.javaApp.servlets.UploadServlet.doPost(UploadServlet.java:49)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:501)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:754)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1376)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.FileNotFoundException: D:\fileHostRoot (Access is denied)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:162)
+	at org.apache.tomcat.util.http.fileupload.disk.DiskFileItem.write(DiskFileItem.java:372)
+	at org.apache.catalina.core.ApplicationPart.write(ApplicationPart.java:120)
+	... 25 more
+
+07-Mar-2018 15:44:55.218 SEVERE [http-nio-8080-exec-15] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [UploadServlet] in context with path [/FSManager] threw exception
+ java.io.IOException: java.io.FileNotFoundException: D:\fileHostRoot (Access is denied)
+	at org.apache.catalina.core.ApplicationPart.write(ApplicationPart.java:122)
+	at com.algonquincollege.fileManager.javaApp.servlets.UploadServlet.doPost(UploadServlet.java:49)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:501)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:754)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1376)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.FileNotFoundException: D:\fileHostRoot (Access is denied)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:162)
+	at org.apache.tomcat.util.http.fileupload.disk.DiskFileItem.write(DiskFileItem.java:372)
+	at org.apache.catalina.core.ApplicationPart.write(ApplicationPart.java:120)
+	... 25 more
+
+07-Mar-2018 15:53:01.724 SEVERE [http-nio-8080-exec-30] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 15:53:14.813 SEVERE [http-nio-8080-exec-27] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 15:53:14.830 SEVERE [http-nio-8080-exec-27] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 15:53:16.057 SEVERE [main] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 15:53:23.619 SEVERE [main] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 15:53:25.466 SEVERE [http-nio-8080-exec-8] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 15:53:40.801 SEVERE [main] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 15:53:54.041 SEVERE [http-nio-8080-exec-7] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 15:53:54.058 SEVERE [http-nio-8080-exec-7] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 15:54:30.998 SEVERE [http-nio-8080-exec-10] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 15:54:31.638 SEVERE [http-nio-8080-exec-10] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 15:55:00.876 SEVERE [main] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 15:55:02.136 SEVERE [http-nio-8080-exec-6] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 15:56:01.418 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 15:57:03.653 SEVERE [main] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 15:57:05.930 SEVERE [http-nio-8080-exec-7] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 15:57:10.742 SEVERE [http-nio-8080-exec-3] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 15:57:13.818 SEVERE [http-nio-8080-exec-4] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 15:58:04.297 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 15:58:04.313 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 15:59:04.404 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:00:04.517 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:01:04.625 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:02:04.735 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:03:25.744 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.]
+07-Mar-2018 16:08:18.991 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:09:07.522 SEVERE [main] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:09:12.540 SEVERE [main] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:09:13.972 SEVERE [http-nio-8080-exec-10] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:10:15.617 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:11:15.734 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:12:15.856 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:13:15.940 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:14:15.988 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:15:16.065 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:16:16.168 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:17:16.205 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:18:16.279 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:19:16.302 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:20:16.326 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:21:19.346 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:22:22.395 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:23:22.415 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:24:22.449 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:25:22.503 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:26:22.532 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:27:22.762 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:28:22.790 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:29:22.829 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:30:22.846 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:32:31.545 SEVERE [main] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:32:32.806 SEVERE [http-nio-8080-exec-10] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
+07-Mar-2018 16:33:26.366 SEVERE [http-nio-8080-exec-11] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: Access denied for user 'dev'@'10.70.195.123' (using password: YES)]
