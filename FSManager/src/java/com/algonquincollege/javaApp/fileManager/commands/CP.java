@@ -75,6 +75,7 @@ public class CP extends Command{
         public boolean fromString(String str)
         {
             String[] values = str.split("\n");
+            //System.out.println(str);
             if(values.length==3){
                 from=values[0];
                 to=values[1];
