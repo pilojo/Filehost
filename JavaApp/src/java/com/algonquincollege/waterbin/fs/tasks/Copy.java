@@ -19,6 +19,7 @@ public class Copy extends FileSystemTask {
     private final String dest;
     
     public Copy(String source, String dest){
+        super();
         this.source = source;
         this.dest = dest;
         
@@ -30,11 +31,11 @@ public class Copy extends FileSystemTask {
         System.out.println("Copy Task: | Going Live");
         try{
             Files.copy(Paths.get(root, source), Paths.get(root, dest));
+            success = true;
         } catch (IOException ex) {
             System.err.println("Copy Failed: " + source + " To " + dest);
-            return;
         }
-        System.out.println("Copy Task: Completed");
+        super.run();
     }
     
 }

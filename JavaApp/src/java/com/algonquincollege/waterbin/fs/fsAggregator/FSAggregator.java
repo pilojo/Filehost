@@ -26,15 +26,18 @@ public class FSAggregator {
         System.out.println("File System Aggregator: Started");
     }
     
-    public void addTask(FileSystemTask task){
+    public boolean addTask(FileSystemTask task){
         System.out.println("File System Aggregator: New Task Submitted");
         Future<FileSystemTask> ourFuture = (Future<FileSystemTask>) pool.submit(task);
         
+        
+        
         try {
-            ourFuture.get();
+            return ourFuture.get().getSuccess();
         } catch (InterruptedException | ExecutionException ex) {
             Logger.getLogger(FSAggregator.class.getName()).log(Level.SEVERE, "Task encountered abnormal conditions", ex);
         }
+        return false;
     }
     
     public void shutdown(){

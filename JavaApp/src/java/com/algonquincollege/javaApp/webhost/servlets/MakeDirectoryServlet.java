@@ -9,7 +9,6 @@ import com.algonquincollege.javaApp.fileManager.utils.ByteReconstruct;
 import com.algonquincollege.javaApp.webhost.WebInterfaceServlet;
 import com.algonquincollege.waterbin.fs.fsAggregator.FSAggregator;
 import com.algonquincollege.waterbin.fs.tasks.MakeDirectory;
-import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -18,23 +17,23 @@ import javax.servlet.http.HttpServletRequest;
  * To be implemented later.
  */
 public class MakeDirectoryServlet extends WebInterfaceServlet {
-    
+
     @Override
     public String toString(HttpServletRequest request) {
         
-        /*ListContentsServlet ls = new ListContentsServlet();
+        ListContentsServlet ls = new ListContentsServlet();
         try{
             if(json.parseLogin(ByteReconstruct.byteToString(request))){
-                /*if(db.connect() == null){
+                if(db.connect() == null){
                     return ls.toString();
-                }else{*/
+                }else{
                     FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
-                    aggregator.addTask(new MakeDirectory("Lol"));
-                    /*return ls.toString();
-                }*/
-            /*}
-        }catch(IOException IOException){}
-        */return "Fuck off";/*ls.toString();*/
+                    aggregator.addTask(new MakeDirectory("/Cool"));
+                    return ls.toString();
+                }
+            }
+        }catch(Exception IOException){}
+        return ls.toString();
     }
     
 }

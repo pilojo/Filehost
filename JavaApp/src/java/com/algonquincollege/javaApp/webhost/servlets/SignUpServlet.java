@@ -8,6 +8,8 @@ package com.algonquincollege.javaApp.webhost.servlets;
 import com.algonquincollege.javaApp.database.DBConnection;
 import com.algonquincollege.javaApp.utils.json.JSONParser;
 import com.algonquincollege.javaApp.webhost.WebInterfaceServlet;
+import com.algonquincollege.waterbin.fs.fsAggregator.FSAggregator;
+import com.algonquincollege.waterbin.fs.tasks.MakeDirectory;
 import java.util.ArrayList;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,6 +32,7 @@ public class SignUpServlet extends WebInterfaceServlet {
     @Override
     public String toString(HttpServletRequest request) {
         try{
+            System.out.println("Signup Servlet");
             //Beginning of String reconstruction
             byte[] bytes = new byte[1];
             ArrayList<Byte> bindata = new ArrayList();
@@ -42,16 +45,22 @@ public class SignUpServlet extends WebInterfaceServlet {
             }//End of String reconstruction
             
         if(json.parseSignUp(new String(tmpdata))){
+            System.out.println("Signup Servlet: Parsed");
             if(db.connect() == null){
+                System.out.println("Signup Servlet: Null DB");
                  return"\"signedup\":\"false\"";
              }else{
                  if(db.signUp(json.map.get("firstName"), json.map.get("lastName"), json.map.get("email"), json.map.get("username"), json.map.get("password"))){
-                     return "\"signedup\":\"true\"";
+                    System.out.println("Signup Servlet: Created");
+                    
+                    FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
+                    if(aggregator.addTask(new MakeDirectory(json.map.get("username"))));
+                        return "\"signedup\":\"true\"";
                  }
              }
         }
         //Any exceptions means signup failed
-        }catch(Exception  e){return e.toString();}
+        }catch(Exception e){return e.toString();}
         return "\"signedup\":\"false\"";
     }
     

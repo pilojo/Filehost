@@ -22,12 +22,14 @@ public class MoveServlet extends WebInterfaceServlet {
     public String toString(HttpServletRequest request) {
         ListContentsServlet ls = new ListContentsServlet();
         try{
-            if(json.parseLogin(ByteReconstruct.byteToString(request))){
+            if(json.parseMv(ByteReconstruct.byteToString(request))){
                 if(db.connect() == null){
+                    System.out.println("DB is Null");
                     return ls.toString();
                 }else{
+                    System.out.println("Preparing to launch task");
                     FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
-                    aggregator.addTask(new Move("Lol","Woot"));
+                    aggregator.addTask(new Move("Lol","It Works"));
                     return ls.toString();
                 }
             }

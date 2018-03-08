@@ -18,6 +18,7 @@ public class Move extends FileSystemTask {
     private final String dest;
     
     public Move(String source, String dest){
+        super();
         this.source = source;
         this.dest = dest;
         
@@ -29,11 +30,12 @@ public class Move extends FileSystemTask {
         System.out.println("Move Task: " + source + " To " + dest + " | Going Live");
         try{
             Files.move(Paths.get(root, source), Paths.get(root, dest));
+            success = true;
         } catch (IOException ex) {
             System.err.println("Move Failed: " + source + " To " + dest);
-            return;
         }
         System.out.println("Move Task: Completed");
+        super.run();
     }
    
 }

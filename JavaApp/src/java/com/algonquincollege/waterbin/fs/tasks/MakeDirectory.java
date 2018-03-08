@@ -14,6 +14,7 @@ public class MakeDirectory extends FileSystemTask{
     
     
     public MakeDirectory(String path){
+        super();
         this.path = path;
         
         System.out.println("Make Directory Task: Launched to Aggregator");
@@ -24,11 +25,12 @@ public class MakeDirectory extends FileSystemTask{
         System.out.println("Make Directory Task: " + path + " | Going Live");
         try{
             Files.createDirectory(Paths.get(root, path));
+            success = true;
         } catch (IOException ex) {
             System.err.println("Make Directory Task Failed: " + path);
-            return;
         }
         System.out.println("Make Directory Task: Completed");
+        super.run();
     }
     
 }

@@ -539,3 +539,15 @@
 07-Mar-2018 22:45:29.673 INFO [http-nio-8080-exec-18] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\ROOT.xml]
 07-Mar-2018 22:45:29.889 INFO [http-nio-8080-exec-18] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Devon\Documents\NetBeansProjects\Filehost\FSManager\conf\conf\Catalina\localhost\ROOT.xml] has finished in [216] ms
 07-Mar-2018 22:45:29.893 INFO [http-nio-8080-exec-19] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[]] after start() had already been called. The second call will be ignored.
+07-Mar-2018 22:47:08.680 INFO [http-nio-8080-exec-28] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+07-Mar-2018 22:47:08.942 INFO [http-nio-8080-exec-28] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+07-Mar-2018 22:47:31.295 INFO [http-nio-8080-exec-28] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+07-Mar-2018 22:47:31.546 INFO [http-nio-8080-exec-28] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+07-Mar-2018 22:49:51.825 INFO [http-nio-8080-exec-38] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+07-Mar-2018 22:49:52.047 INFO [http-nio-8080-exec-38] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+07-Mar-2018 22:51:07.259 INFO [http-nio-8080-exec-41] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+07-Mar-2018 22:51:07.478 INFO [http-nio-8080-exec-41] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+07-Mar-2018 22:51:29.635 INFO [http-nio-8080-exec-42] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+07-Mar-2018 22:51:29.878 INFO [http-nio-8080-exec-42] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+07-Mar-2018 22:54:00.206 INFO [http-nio-8080-exec-49] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+07-Mar-2018 22:54:00.485 INFO [http-nio-8080-exec-49] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
