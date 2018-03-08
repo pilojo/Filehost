@@ -32,9 +32,7 @@ public class LoginServlet extends WebInterfaceServlet {
                      return"\"logedin\":\"false\"";
                  }else{
                      if(db.login(json.map.get("email"), json.map.get("password"))){
-                         
                          request.getSession().setAttribute("email", json.map.get("email"));
-                         System.out.println(request.getSession().getAttribute("email"));
                          return "\"logedin\":\"true\"";
                      }
                  }
@@ -42,7 +40,7 @@ public class LoginServlet extends WebInterfaceServlet {
             }
             //Any exceptions thrown means the login failed.
         }catch(Exception e){return "\"logedin\":\"false\"";}
-        db.disconnect();
+        
         return "\"logedin\":\"false\"";
     }
     

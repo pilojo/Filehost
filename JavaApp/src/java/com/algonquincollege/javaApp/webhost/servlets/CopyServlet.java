@@ -5,7 +5,7 @@
  */
 package com.algonquincollege.javaApp.webhost.servlets;
 
-import com.algonquincollege.javaApp.FSComs.FSCommunications;
+import com.algonquincollege.javaApp.fileManager.FileManagerInterface;
 import com.algonquincollege.javaApp.fileManager.commands.CP;
 import com.algonquincollege.javaApp.fileManager.utils.ByteReconstruct;
 import com.algonquincollege.javaApp.webhost.WebInterfaceServlet;
@@ -29,20 +29,17 @@ public class CopyServlet extends WebInterfaceServlet {
     @Override
     public String toString(HttpServletRequest request) {
         ListContentsServlet ls = new ListContentsServlet();
-        
         try{
-            if(json.parseCp(ByteReconstruct.byteToString(request))){
+            if(json.parseLogin(ByteReconstruct.byteToString(request))){
                 if(db.connect() == null){
                     return ls.toString();
                 }else{
                     CP cp = new CP(json.map.get("from"), json.map.get("to"));
-                    FSCommunications fscom = (FSCommunications)getServletContext().getAttribute("FSCommunications");
-                    fscom.send(cp);
+                    FileManagerInterface.sendCommand(cp);
                     return ls.toString();
                 }
             }
         }catch(Exception IOException){}
-        db.disconnect();
         return ls.toString();
     }
     

@@ -24,7 +24,7 @@ public class ListContentsServlet extends WebInterfaceServlet {
     public String toString(HttpServletRequest request) {
         ListContentsServlet ls = new ListContentsServlet();
         try{
-            if(json.parseList(ByteReconstruct.byteToString(request))){
+            if(json.parseLogin(ByteReconstruct.byteToString(request))){
                 if(db.connect() == null){
                 }else{
                     

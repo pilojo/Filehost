@@ -10,4 +10,13 @@ package com.algonquincollege.javaApp.fileManager;
  * @author John PIlon
  */
 public abstract class Command{
+    protected static final String validPassword = "A^@kds034!@$#sjvlksoirg%#$%^#@()sdgnverkf15681165";
+    protected String password;
+    
+    /*Checks if the packet is valid when its recieved from the other side*/
+    public boolean isValid(){return password.equals(validPassword);}
+    
+    @Override
+    public abstract String toString();
+    public abstract boolean fromString(String str);
 }

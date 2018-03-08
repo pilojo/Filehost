@@ -22,12 +22,11 @@ public class MoveServlet extends WebInterfaceServlet {
     public String toString(HttpServletRequest request) {
         ListContentsServlet ls = new ListContentsServlet();
         try{
-            if(json.parseMv(ByteReconstruct.byteToString(request))){
+            if(json.parseLogin(ByteReconstruct.byteToString(request))){
                 if(db.connect() == null){
                     return ls.toString();
                 }else{
                     MV mv = new MV(json.map.get("from"), json.map.get("to"));
-                    FileManagerInterface.route = "mv";
                     FileManagerInterface.sendCommand(mv);
                     return ls.toString();
                 }
