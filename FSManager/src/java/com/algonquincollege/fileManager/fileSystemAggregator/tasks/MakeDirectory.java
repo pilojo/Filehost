@@ -12,7 +12,11 @@ import java.nio.file.Paths;
  */
 public class MakeDirectory extends FileSystemTask{
 
+<<<<<<< HEAD
     private final MKDIR task;
+=======
+    private String path;
+>>>>>>> parent of d59e2b3... Initial code behind all file opperations
     
     private final ObjectOutputStream stream;
     
@@ -25,7 +29,11 @@ public class MakeDirectory extends FileSystemTask{
     
     @Override
     public void run() {
+<<<<<<< HEAD
         System.out.println("Make Directory Task: " + task.getPath() + " | Going Live");
+=======
+        System.out.println("Make Directory Task: Going Live");
+>>>>>>> parent of d59e2b3... Initial code behind all file opperations
         try{
             Files.createDirectory(Paths.get(root, task.getPath()));
         } catch (IOException ex) {
