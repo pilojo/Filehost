@@ -484,7 +484,7 @@ public class DBConnection {
                     contents[i][0] = fileRS.getString("Name");
                     contents[i][numData] = "File";
                 } else {
-                    System.out.println("Well fuck.");
+                    System.out.println("Unexpected Error in List");
                 }
                 /*for(int j = 0; j < numData; j++){
                         
