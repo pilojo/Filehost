@@ -5,6 +5,7 @@
  */
 package com.algonquincollege.fileManager.appComs;
 
+import com.algonquincollege.fileManager.fileSystemAggregator.FSAggregator;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,12 +23,17 @@ public class AppComsInitializer implements ServletContextListener{
     public void contextInitialized(ServletContextEvent sce){
         System.out.println("App Coms Initializer: Creating Interlink");
         
-        try {
+       // try {
             communicator = new AppCommunications();
-        } catch (IOException ex) {
-            Logger.getLogger(AppComsInitializer.class.getName()).log(Level.SEVERE, null, ex);
-            System.err.println("App Coms Initializer: Interlink Failure...");
-        }
+            
+            System.out.println("App Coms Initializer: Launching...");
+           // Thread mythread = new Thread(communicator);
+           // mythread.start();
+            
+        //} catch (IOException ex) {
+           // Logger.getLogger(AppComsInitializer.class.getName()).log(Level.SEVERE, null, ex);
+         //   System.err.println("App Coms Initializer: Interlink Failure...");
+        //}
         
         
         
@@ -37,6 +43,7 @@ public class AppComsInitializer implements ServletContextListener{
     @Override
     public void contextDestroyed(ServletContextEvent sce){
         System.out.println("App Coms Initializer: Destroying Interlink");
-        communicator.shutdown();
+        if (communicator != null)
+            communicator.shutdown();
     }
 }

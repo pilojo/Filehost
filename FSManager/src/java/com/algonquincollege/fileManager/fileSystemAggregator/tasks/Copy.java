@@ -5,7 +5,9 @@
  */
 package com.algonquincollege.fileManager.fileSystemAggregator.tasks;
 
+import com.algonquincollege.javaApp.fileManager.commands.CP;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -14,26 +16,26 @@ import java.nio.file.Paths;
  * @author Devon
  */
 public class Copy extends FileSystemTask {
-
-    private final String source;
-    private final String dest;
+    private final ObjectOutputStream stream;
     
-    public Copy(String source, String dest){
-        this.source = source;
-        this.dest = dest;
+    private final CP task;
+    
+    public Copy(CP task, ObjectOutputStream stream){
+        this.task = task;
+        this.stream = stream;
         
         System.out.println("Copy Task: Launched to Aggregator");
     }
     
     @Override
     public void run() {
-        System.out.println("Copy Task: " + source + " To " + dest + " | Going Live");
-        try{
-            Files.copy(Paths.get(root, source), Paths.get(root, dest));
+        System.out.println("Copy Task: | Going Live");
+        /*try{
+            //Files.copy(Paths.get(root, source), Paths.get(root, dest));
         } catch (IOException ex) {
             System.err.println("Copy Failed: " + source + " To " + dest);
             return;
-        }
+        }*/
         System.out.println("Copy Task: Completed");
     }
     
