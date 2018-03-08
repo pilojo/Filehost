@@ -1,75 +1,47 @@
 package com.algonquincollege.javaApp.fileManager.commands;
 
 import com.algonquincollege.javaApp.fileManager.Command;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.text.StringCharacterIterator;
 
-/**
- *
- * @author John Pilon A class to be serialized for Server to FSManager
- * communication Make Directory command
- */
-public class MKDIR extends Command {
+public class MKDIR extends Command implements Serializable{
 
-    private String path;
-
-    public MKDIR() {
-        path = null;
-    }
-
-    public MKDIR(String path) {
-        this.path = path;
-    }
-
-    public String getPath() {
-        return path;
-    }
-
-    /**
-     * Validates the path
-     *
-     * @param path The path to validate
-     * @return boolean: whether the path is valid
-     */
-    public boolean validatePath(String path) {
-        boolean hasContent = (path != null) && (!path.equals(""));
-        if (!hasContent) {
-            return false;
-        }
-        path = path.replace('/', '\\');
-        StringCharacterIterator it = new StringCharacterIterator(path);
-        char c = it.current();
-        while (c != StringCharacterIterator.DONE) {
-            boolean isValidChar = (Character.isLetter(c) || Character.isSpaceChar(c) || c == '\\');
-            if (!isValidChar) {
-                return false;
-            }
-            c = it.next();
-        }
-        return true;
-    }
-
-    /**
-     * Serializes the class
-     *
-     * @return String: serialized class
-     */
-    public String toString() {
-        return path + "\n" + password;
-    }
-
-    /**
-     * Reconstructs the class from a serialized string
-     *
-     * @param str the serialized class
-     * @return boolean: Whether the class reconstructed successfully
-     */
-    public boolean fromString(String str) {
-        String[] serial = str.split("\n");
-        if (serial.length == 2) {
-            path = serial[0];
-            password = serial[1];
-        }
-        return this.isValid() && validatePath(path);
-    }
-
+	private static final long serialVersionUID = 3636619772744681249L;
+	
+	private String path;
+	
+	public MKDIR(String path) {
+		this.path = path;
+	}
+	
+	public void validatePath(String Path){
+		boolean hasContent = (Path != null) && (!Path.equals(""));
+		if(!hasContent) {
+			throw new IllegalArgumentException("Must be non-null and non-empty.");
+		}
+		Path = Path.replace('/', '\\');
+		StringCharacterIterator it = new StringCharacterIterator(Path);
+		char c = it.current();
+		while(c!=StringCharacterIterator.DONE) { 
+			boolean isValidChar = (Character.isLetter(c)|| Character.isSpaceChar(c) ||c == '\\');
+			if(!isValidChar) {
+				String message = "Can only contain letters, spaces, and backslashes";
+				throw new IllegalArgumentException(message);
+			}
+			c = it.next();
+		}	
+	}
+	
+	public void readObject(ObjectInputStream istream) throws ClassNotFoundException, IOException{
+		istream.defaultReadObject();
+		validatePath(path);
+	}
+	
+	public void writeObject(ObjectOutputStream ostream) throws IOException{
+		ostream.defaultWriteObject();
+	}
+	
 }

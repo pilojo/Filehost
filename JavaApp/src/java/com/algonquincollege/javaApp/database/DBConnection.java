@@ -20,7 +20,7 @@ import java.sql.Statement;
 
 public class DBConnection {
     private static final String DRIVER = "com.mysql.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://10.70.210.76:3306/filehostdb";
+    private static final String URL = "jdbc:mysql://10.70.213.182:3306/filehostdb";
     private static final String USERNAME = "John";
     private static final String PASSWORD = "Password1";
     
@@ -33,6 +33,7 @@ public class DBConnection {
                 connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             }catch( InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e){
                 
+                return null;
             }
         }
         return connection;

@@ -1,0 +1,1138 @@
+07-Mar-2018 15:48:53.817 SEVERE [http-nio-8080-exec-8] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:48:53.817 SEVERE [http-nio-8080-exec-8] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:50:09.833 SEVERE [main] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:50:09.833 SEVERE [main] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:50:11.304 SEVERE [http-nio-8080-exec-9] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:50:11.304 SEVERE [http-nio-8080-exec-9] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:50:11.304 SEVERE [http-nio-8080-exec-8] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:50:11.304 SEVERE [http-nio-8080-exec-8] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:51:09.895 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:51:09.895 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:51:09.895 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:51:09.895 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:51:09.895 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:51:09.895 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:52:09.921 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:52:09.921 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:53:09.926 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:53:09.926 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:54:09.928 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:54:09.928 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:55:09.945 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:55:09.945 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:55:09.945 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:55:09.945 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:55:56.708 SEVERE [http-nio-8080-exec-4] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:55:56.708 SEVERE [http-nio-8080-exec-4] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:55:56.708 SEVERE [http-nio-8080-exec-4] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:55:56.708 SEVERE [http-nio-8080-exec-4] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:55:56.865 SEVERE [http-nio-8080-exec-4] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:55:56.865 SEVERE [http-nio-8080-exec-4] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:56:00.930 SEVERE [http-nio-8080-exec-2] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:56:00.930 SEVERE [http-nio-8080-exec-2] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:56:09.993 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:56:09.993 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:57:10.041 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:57:10.041 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:57:10.041 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:57:10.041 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:58:10.071 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:58:10.071 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:58:10.071 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:58:10.071 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:59:10.089 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:59:10.089 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:59:10.089 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 15:59:10.089 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:00:10.095 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:00:10.095 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:01:10.114 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:01:10.114 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:02:10.146 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:02:10.146 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:08:03.971 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:08:03.971 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:08:28.890 SEVERE [http-nio-8080-exec-15] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:08:28.890 SEVERE [http-nio-8080-exec-15] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:08:29.565 SEVERE [http-nio-8080-exec-12] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:08:29.565 SEVERE [http-nio-8080-exec-12] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:08:51.549 SEVERE [main] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:08:51.549 SEVERE [main] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:08:52.609 SEVERE [http-nio-8080-exec-4] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:08:52.609 SEVERE [http-nio-8080-exec-4] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:08:53.503 SEVERE [http-nio-8080-exec-9] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:08:53.503 SEVERE [http-nio-8080-exec-9] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:08:53.503 SEVERE [http-nio-8080-exec-5] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:08:53.503 SEVERE [http-nio-8080-exec-5] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:09:51.582 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:09:51.582 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:10:51.587 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:10:51.587 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:11:51.609 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:11:51.609 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:12:31.327 SEVERE [http-nio-8080-exec-16] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:12:31.327 SEVERE [http-nio-8080-exec-16] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:12:31.327 SEVERE [http-nio-8080-exec-16] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:12:31.327 SEVERE [http-nio-8080-exec-16] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:13:23.051 SEVERE [http-nio-8080-exec-5] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:13:23.051 SEVERE [http-nio-8080-exec-5] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:13:23.687 SEVERE [http-nio-8080-exec-4] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:13:23.687 SEVERE [http-nio-8080-exec-4] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:13:23.687 SEVERE [http-nio-8080-exec-6] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:13:23.687 SEVERE [http-nio-8080-exec-6] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:14:22.581 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:14:22.581 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:15:05.979 SEVERE [http-nio-8080-exec-4] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:15:05.979 SEVERE [http-nio-8080-exec-4] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:15:05.994 SEVERE [http-nio-8080-exec-4] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:15:05.994 SEVERE [http-nio-8080-exec-4] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:15:06.191 SEVERE [http-nio-8080-exec-4] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:15:06.191 SEVERE [http-nio-8080-exec-4] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:15:08.503 SEVERE [http-nio-8080-exec-12] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:15:08.503 SEVERE [http-nio-8080-exec-12] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:15:27.179 SEVERE [main] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:15:27.179 SEVERE [main] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:15:27.609 SEVERE [http-nio-8080-exec-3] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:15:27.609 SEVERE [http-nio-8080-exec-3] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:15:28.338 SEVERE [http-nio-8080-exec-9] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:15:28.338 SEVERE [http-nio-8080-exec-9] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:15:28.338 SEVERE [http-nio-8080-exec-8] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:15:28.338 SEVERE [http-nio-8080-exec-8] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:16:27.219 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:16:27.219 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:17:27.266 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:17:27.266 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:18:27.313 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:18:27.313 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:19:27.375 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:19:27.375 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:20:27.407 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:20:27.407 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:21:27.420 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:21:27.420 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:21:57.187 SEVERE [main] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:21:57.187 SEVERE [main] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:21:57.187 SEVERE [main] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:21:57.187 SEVERE [main] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:22:04.704 SEVERE [main] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:22:04.704 SEVERE [main] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:22:05.625 SEVERE [http-nio-8080-exec-3] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:22:05.625 SEVERE [http-nio-8080-exec-3] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:22:06.441 SEVERE [http-nio-8080-exec-4] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:22:06.441 SEVERE [http-nio-8080-exec-4] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:22:06.441 SEVERE [http-nio-8080-exec-1] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:22:06.441 SEVERE [http-nio-8080-exec-1] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:23:04.750 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:23:04.750 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:24:04.791 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:24:04.791 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:25:04.844 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:25:04.844 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:26:04.876 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:26:04.876 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:27:03.942 SEVERE [main] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:27:03.942 SEVERE [main] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:27:03.942 SEVERE [main] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:27:03.942 SEVERE [main] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:27:14.829 SEVERE [main] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:27:14.829 SEVERE [main] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:27:15.781 SEVERE [http-nio-8080-exec-5] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:27:15.781 SEVERE [http-nio-8080-exec-5] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:27:17.067 SEVERE [http-nio-8080-exec-1] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:27:17.067 SEVERE [http-nio-8080-exec-1] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:27:17.067 SEVERE [http-nio-8080-exec-4] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:27:17.067 SEVERE [http-nio-8080-exec-4] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:28:14.891 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:28:14.891 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:28:25.391 SEVERE [main] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:28:25.391 SEVERE [main] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:28:25.391 SEVERE [main] org.apache.catalina.session.JDBCStore.open JDBC driver class not found [java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 16:28:25.391 SEVERE [main] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [java.sql.SQLException: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver]
+07-Mar-2018 18:32:57.367 SEVERE [http-nio-8080-exec-8] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.manager.ManagerServlet.undeploy(ManagerServlet.java:1488)
+	at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:370)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:611)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:409)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:754)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1376)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+07-Mar-2018 18:33:31.382 SEVERE [main] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:471)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:791)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.startup.Catalina.stop(Catalina.java:755)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:717)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+07-Mar-2018 18:39:32.079 SEVERE [main] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:471)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:791)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.startup.Catalina.stop(Catalina.java:755)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:717)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+07-Mar-2018 18:41:36.573 SEVERE [main] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:471)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:791)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.startup.Catalina.stop(Catalina.java:755)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:717)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+07-Mar-2018 18:46:41.875 SEVERE [main] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:471)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:791)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.startup.Catalina.stop(Catalina.java:755)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:717)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+07-Mar-2018 18:49:13.116 SEVERE [main] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:471)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:791)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.startup.Catalina.stop(Catalina.java:755)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:717)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+07-Mar-2018 18:53:08.100 SEVERE [main] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:471)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:791)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.startup.Catalina.stop(Catalina.java:755)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:717)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+07-Mar-2018 18:54:26.933 SEVERE [http-nio-8080-exec-3] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.manager.ManagerServlet.undeploy(ManagerServlet.java:1488)
+	at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:370)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:611)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:409)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:754)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1376)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+07-Mar-2018 18:58:20.648 SEVERE [main] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:471)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:791)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.startup.Catalina.stop(Catalina.java:755)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:717)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+07-Mar-2018 18:58:31.367 SEVERE [http-nio-8080-exec-7] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.manager.ManagerServlet.undeploy(ManagerServlet.java:1488)
+	at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:370)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:611)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:409)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:754)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1376)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+07-Mar-2018 19:00:26.386 SEVERE [http-nio-8080-exec-14] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3693)
+	at org.apache.catalina.manager.ManagerServlet.reload(ManagerServlet.java:1080)
+	at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:354)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:611)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:409)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:754)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1376)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+07-Mar-2018 19:00:40.259 SEVERE [main] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:471)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:791)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.startup.Catalina.stop(Catalina.java:755)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:717)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+07-Mar-2018 19:01:01.180 SEVERE [http-nio-8080-exec-10] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3693)
+	at org.apache.catalina.manager.ManagerServlet.reload(ManagerServlet.java:1080)
+	at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:354)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:611)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:409)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:754)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1376)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+07-Mar-2018 19:01:25.595 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [MakeDirectoryServlet] in context with path [] threw exception [Servlet execution threw an exception] with root cause
+ java.lang.RuntimeException: Uncompilable source code - cannot find symbol
+  symbol:   class FileManagerInterface
+  location: package com.algonquincollege.javaApp.fileManager
+	at com.algonquincollege.javaApp.webhost.servlets.ListContentsServlet.<clinit>(ListContentsServlet.java:8)
+	at com.algonquincollege.javaApp.webhost.servlets.MakeDirectoryServlet.toString(MakeDirectoryServlet.java:23)
+	at com.algonquincollege.javaApp.webhost.WebInterfaceServlet.doPost(WebInterfaceServlet.java:35)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:409)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:754)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1376)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+07-Mar-2018 19:01:30.801 SEVERE [http-nio-8080-exec-8] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [MakeDirectoryServlet] in context with path [] threw exception [Servlet execution threw an exception] with root cause
+ java.lang.NoClassDefFoundError: Could not initialize class com.algonquincollege.javaApp.webhost.servlets.ListContentsServlet
+	at com.algonquincollege.javaApp.webhost.servlets.MakeDirectoryServlet.toString(MakeDirectoryServlet.java:23)
+	at com.algonquincollege.javaApp.webhost.WebInterfaceServlet.doPost(WebInterfaceServlet.java:35)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:409)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:754)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1376)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+07-Mar-2018 19:02:30.098 SEVERE [main] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:471)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:791)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.startup.Catalina.stop(Catalina.java:755)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:717)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+07-Mar-2018 19:03:12.789 SEVERE [main] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:471)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:791)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.startup.Catalina.stop(Catalina.java:755)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:717)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+07-Mar-2018 19:08:48.965 SEVERE [http-nio-8080-exec-8] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.manager.ManagerServlet.stop(ManagerServlet.java:1432)
+	at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:368)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:611)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:409)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:754)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1376)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+07-Mar-2018 19:14:52.399 SEVERE [main] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:471)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:791)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.startup.Catalina.stop(Catalina.java:755)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:717)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+07-Mar-2018 19:15:25.076 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.manager.ManagerServlet.stop(ManagerServlet.java:1432)
+	at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:368)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:611)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:409)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:754)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1376)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+07-Mar-2018 19:17:57.213 SEVERE [main] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:471)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:791)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.startup.Catalina.stop(Catalina.java:755)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:717)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+07-Mar-2018 19:22:52.468 SEVERE [main] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:471)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:791)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.startup.Catalina.stop(Catalina.java:755)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:717)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+07-Mar-2018 19:23:28.243 SEVERE [main] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:471)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:791)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.startup.Catalina.stop(Catalina.java:755)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:717)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+07-Mar-2018 19:26:37.339 SEVERE [main] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:471)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:791)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.startup.Catalina.stop(Catalina.java:755)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:717)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+07-Mar-2018 19:28:32.136 SEVERE [main] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:471)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:791)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.startup.Catalina.stop(Catalina.java:755)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:717)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+07-Mar-2018 19:33:25.918 SEVERE [http-nio-8080-exec-4] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3693)
+	at org.apache.catalina.manager.ManagerServlet.reload(ManagerServlet.java:1080)
+	at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:354)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:611)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:409)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:754)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1376)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+07-Mar-2018 19:33:55.776 SEVERE [main] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:471)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:791)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.startup.Catalina.stop(Catalina.java:755)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:717)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+07-Mar-2018 19:34:30.261 SEVERE [http-nio-8080-exec-10] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3693)
+	at org.apache.catalina.manager.ManagerServlet.reload(ManagerServlet.java:1080)
+	at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:354)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:611)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:409)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:754)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1376)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+07-Mar-2018 19:35:52.714 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3693)
+	at org.apache.catalina.manager.ManagerServlet.reload(ManagerServlet.java:1080)
+	at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:354)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:611)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:409)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:754)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1376)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+07-Mar-2018 19:36:20.914 SEVERE [main] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class [com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer]
+ java.lang.NullPointerException
+	at com.algonquincollege.javaApp.FSComs.FSCommunicationsInitializer.contextDestroyed(FSCommunicationsInitializer.java:27)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4684)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5321)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1441)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1430)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:997)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:471)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:791)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.startup.Catalina.stop(Catalina.java:755)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:717)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+

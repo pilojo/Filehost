@@ -1,46 +1,33 @@
 package com.algonquincollege.javaApp.fileManager.commands;
 import com.algonquincollege.javaApp.fileManager.Command;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.text.StringCharacterIterator;
 
-/**
- * 
- * @author John Pilon
- * A class to be serialized for Server to FSManager communication
- * Make Directory command
- */
-public class MV extends Command{
+public class MV extends Command implements Serializable{
+
+
+	private static final long serialVersionUID = -1224665646897838659L;
 
 	private String from;
 	private String to;
 	
-        public MV(){
-            from = null;
-            to = null;
-        }
-        
-        public String getFrom(){
-            return from;
-        }
-        
-        public String getTo(){
-            return to;
-        }
-        
 	public MV(String from, String to) {
 		this.from = from;
 		this.to = to;
 	}
-
-        /**
-        * Validates the path
-        *
-        * @param from The path to validate
-        * @return boolean: whether the path is valid
-        */
-	private boolean validatePath(String from) {
+	
+	private void validateState() {
+		validatePath(this.from);
+		validatePath(this.to);
+	}
+	
+	private void validatePath(String from) {
 		boolean hasContent = (from != null) && (!from.equals(""));
 		if(!hasContent) {
-			return false;
+			throw new IllegalArgumentException("Must be non-null and non-empty.");
 		}
 		from = from.replace('/', '\\');
 		StringCharacterIterator it = new StringCharacterIterator(from);
@@ -49,36 +36,19 @@ public class MV extends Command{
 			boolean isValidChar = (Character.isLetter(c)|| Character.isSpaceChar(c) ||c == '\\');
 			if(!isValidChar) {
 				String message = "Can only contain letters, spaces, and backslashes";
-				return false;
+				throw new IllegalArgumentException(message);
 			}
 			c = it.next();
 		}		
-                return true;
 	}
 	
-        /**
-        * Serializes the class
-        *
-        * @return String: serialized class
-        */
-	public String toString(){
-            return from+"\n"+to+"\n"+password;
-        }
-
-        /**
-        * Reconstructs the class from a serialized string
-        *
-        * @param str the serialized class
-        * @return boolean: Whether the class reconstructed successfully
-        */
-	public boolean fromString(String str){
-            String[] values = str.split("\n");
-            if(values.length==3){
-                from=values[0];
-                to=values[1];
-                password = values[2];
-                return isValid() && validatePath(to) && validatePath(from);
-            }else return false;
+	public void readObject(ObjectInputStream istream) throws ClassNotFoundException, IOException {
+		istream.defaultReadObject();
+		validateState();
+	}
+	
+	public void writeObject(ObjectOutputStream ostream) throws IOException{
+		ostream.defaultWriteObject();
 	}
 	
 }

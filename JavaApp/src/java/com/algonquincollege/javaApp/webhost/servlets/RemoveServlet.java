@@ -22,11 +22,12 @@ public class RemoveServlet extends WebInterfaceServlet {
     public String toString(HttpServletRequest request) {
         ListContentsServlet ls = new ListContentsServlet();
         try{
-            if(json.parseLogin(ByteReconstruct.byteToString(request))){
+            if(json.parseRm(ByteReconstruct.byteToString(request))){
                 if(db.connect() == null){
                     return ls.toString();
                 }else{
                     RM rm = new RM(json.map.get("path"));
+                    FileManagerInterface.route = "rm";
                     FileManagerInterface.sendCommand(rm);
                     return ls.toString();
                 }
