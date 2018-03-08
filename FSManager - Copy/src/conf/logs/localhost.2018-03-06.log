@@ -1,6 +1,0 @@
-06-Mar-2018 23:59:28.194 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.keys SQL Error [com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
-
-The last packet successfully received from the server was 81,687 milliseconds ago.  The last packet sent successfully to the server was 21,305 milliseconds ago.]
-06-Mar-2018 23:59:49.196 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.session.JDBCStore.getConnection A SQL exception occurred [com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.]
