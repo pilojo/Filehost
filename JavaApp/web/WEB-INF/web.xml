@@ -5,6 +5,24 @@
     </listener>
     
     <servlet>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.UploadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/Upload/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>DownloadServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.DownloadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DownloadServlet</servlet-name>
+        <url-pattern>/Download/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.algonquincollege.javaApp.webhost.servlets.LoginServlet</servlet-class>
     </servlet>
