@@ -29,7 +29,7 @@ public class MoveServlet extends WebInterfaceServlet {
                 }else{
                     System.out.println("Preparing to launch task");
                     FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
-                    aggregator.addTask(new Move("Lol","It Works"));
+                    aggregator.addTask(new Move(json.map.get("from"),json.map.get("to")));
                     return ls.toString();
                 }
             }

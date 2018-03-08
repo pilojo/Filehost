@@ -54,19 +54,19 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>MoveServlet</servlet-name>
-        <url-pattern>/server/move</url-pattern>
+        <url-pattern>/server/mv</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CopyServlet</servlet-name>
         <url-pattern>/server/cp</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>RenameServlet</servlet-name>
+        <servlet-name>MoveServlet</servlet-name>
         <url-pattern>/server/rename</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RemoveServlet</servlet-name>
-        <url-pattern>/server/remove</url-pattern>
+        <url-pattern>/server/rm</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>MakeDirectoryServlet</servlet-name>
@@ -78,7 +78,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListContentsServlet</servlet-name>
-        <url-pattern>/server/listContents</url-pattern>
+        <url-pattern>/server/ls</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SignUpServlet</servlet-name>

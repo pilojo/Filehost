@@ -22,12 +22,12 @@ public class RemoveServlet extends WebInterfaceServlet {
     public String toString(HttpServletRequest request) {
         ListContentsServlet ls = new ListContentsServlet();
         try{
-            if(json.parseLogin(ByteReconstruct.byteToString(request))){
+            if(json.parseRm(ByteReconstruct.byteToString(request))){
                 if(db.connect() == null){
                     return ls.toString();
                 }else{
                     FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
-                    aggregator.addTask(new Remove("Lol"));
+                    aggregator.addTask(new Remove(json.map.get("path")));
                     return ls.toString();
                 }
             }

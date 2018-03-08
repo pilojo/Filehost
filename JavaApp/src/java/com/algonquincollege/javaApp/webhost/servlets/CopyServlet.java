@@ -30,12 +30,12 @@ public class CopyServlet extends WebInterfaceServlet {
     public String toString(HttpServletRequest request) {
         ListContentsServlet ls = new ListContentsServlet();
         try{
-            if(json.parseLogin(ByteReconstruct.byteToString(request))){
+            if(json.parseCp(ByteReconstruct.byteToString(request))){
                 if(db.connect() == null){
                     return ls.toString();
                 }else{
                     FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
-                    aggregator.addTask(new Copy("Lol","Woot"));
+                    aggregator.addTask(new Copy(json.map.get("from"),json.map.get("to")));
                     return ls.toString();
                 }
             }

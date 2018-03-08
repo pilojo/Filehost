@@ -23,12 +23,12 @@ public class MakeDirectoryServlet extends WebInterfaceServlet {
         
         ListContentsServlet ls = new ListContentsServlet();
         try{
-            if(json.parseLogin(ByteReconstruct.byteToString(request))){
+            if(json.parseMkdir(ByteReconstruct.byteToString(request))){
                 if(db.connect() == null){
                     return ls.toString();
                 }else{
                     FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
-                    aggregator.addTask(new MakeDirectory("/Cool"));
+                    aggregator.addTask(new MakeDirectory(json.map.get("path")));
                     return ls.toString();
                 }
             }
