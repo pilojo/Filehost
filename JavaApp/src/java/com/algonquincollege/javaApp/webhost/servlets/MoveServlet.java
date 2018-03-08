@@ -5,10 +5,10 @@
  */
 package com.algonquincollege.javaApp.webhost.servlets;
 
-import com.algonquincollege.javaApp.fileManager.FileManagerInterface;
-import com.algonquincollege.javaApp.fileManager.commands.MV;
 import com.algonquincollege.javaApp.fileManager.utils.ByteReconstruct;
 import com.algonquincollege.javaApp.webhost.WebInterfaceServlet;
+import com.algonquincollege.waterbin.fs.fsAggregator.FSAggregator;
+import com.algonquincollege.waterbin.fs.tasks.Move;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -26,8 +26,8 @@ public class MoveServlet extends WebInterfaceServlet {
                 if(db.connect() == null){
                     return ls.toString();
                 }else{
-                    MV mv = new MV(json.map.get("from"), json.map.get("to"));
-                    FileManagerInterface.sendCommand(mv);
+                    FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
+                    aggregator.addTask(new Move("Lol","Woot"));
                     return ls.toString();
                 }
             }

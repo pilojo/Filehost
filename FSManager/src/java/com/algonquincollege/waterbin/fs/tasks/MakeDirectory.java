@@ -1,4 +1,4 @@
-package com.algonquincollege.fileManager.fileSystemAggregator.tasks;
+package com.algonquincollege.waterbin.fs.tasks;
 
 import com.algonquincollege.javaApp.fileManager.commands.MKDIR;
 import java.io.IOException;

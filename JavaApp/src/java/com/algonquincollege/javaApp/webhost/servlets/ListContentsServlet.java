@@ -5,8 +5,6 @@
  */
 package com.algonquincollege.javaApp.webhost.servlets;
 
-import com.algonquincollege.javaApp.fileManager.FileManagerInterface;
-import com.algonquincollege.javaApp.fileManager.commands.MKDIR;
 import com.algonquincollege.javaApp.fileManager.utils.ByteReconstruct;
 import com.algonquincollege.javaApp.webhost.WebInterfaceServlet;
 import javax.servlet.annotation.WebServlet;

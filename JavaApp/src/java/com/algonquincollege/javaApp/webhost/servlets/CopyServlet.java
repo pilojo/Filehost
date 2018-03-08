@@ -5,10 +5,10 @@
  */
 package com.algonquincollege.javaApp.webhost.servlets;
 
-import com.algonquincollege.javaApp.fileManager.FileManagerInterface;
-import com.algonquincollege.javaApp.fileManager.commands.CP;
 import com.algonquincollege.javaApp.fileManager.utils.ByteReconstruct;
 import com.algonquincollege.javaApp.webhost.WebInterfaceServlet;
+import com.algonquincollege.waterbin.fs.fsAggregator.FSAggregator;
+import com.algonquincollege.waterbin.fs.tasks.Copy;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -34,8 +34,8 @@ public class CopyServlet extends WebInterfaceServlet {
                 if(db.connect() == null){
                     return ls.toString();
                 }else{
-                    CP cp = new CP(json.map.get("from"), json.map.get("to"));
-                    FileManagerInterface.sendCommand(cp);
+                    FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
+                    aggregator.addTask(new Copy("Lol","Woot"));
                     return ls.toString();
                 }
             }

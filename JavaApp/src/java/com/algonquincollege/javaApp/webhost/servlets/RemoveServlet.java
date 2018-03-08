@@ -5,10 +5,10 @@
  */
 package com.algonquincollege.javaApp.webhost.servlets;
 
-import com.algonquincollege.javaApp.fileManager.FileManagerInterface;
-import com.algonquincollege.javaApp.fileManager.commands.RM;
 import com.algonquincollege.javaApp.fileManager.utils.ByteReconstruct;
 import com.algonquincollege.javaApp.webhost.WebInterfaceServlet;
+import com.algonquincollege.waterbin.fs.fsAggregator.FSAggregator;
+import com.algonquincollege.waterbin.fs.tasks.Remove;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -26,8 +26,8 @@ public class RemoveServlet extends WebInterfaceServlet {
                 if(db.connect() == null){
                     return ls.toString();
                 }else{
-                    RM rm = new RM(json.map.get("path"));
-                    FileManagerInterface.sendCommand(rm);
+                    FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
+                    aggregator.addTask(new Remove("Lol"));
                     return ls.toString();
                 }
             }

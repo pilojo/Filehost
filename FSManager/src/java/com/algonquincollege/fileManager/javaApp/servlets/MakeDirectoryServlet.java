@@ -1,7 +1,7 @@
 package com.algonquincollege.fileManager.javaApp.servlets;
 
-import com.algonquincollege.fileManager.fileSystemAggregator.FSAggregator;
-import com.algonquincollege.fileManager.fileSystemAggregator.tasks.MakeDirectory;
+import com.algonquincollege.waterbin.fs.fsAggregator.FSAggregator;
+import com.algonquincollege.waterbin.fs.tasks.MakeDirectory;
 import com.algonquincollege.fileManager.javaApp.JavaAppServlet;
 import com.algonquincollege.javaApp.fileManager.commands.MKDIR;
 import java.util.Enumeration;
