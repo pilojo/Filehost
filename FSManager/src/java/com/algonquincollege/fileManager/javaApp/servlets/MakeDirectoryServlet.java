@@ -40,7 +40,7 @@ public class MakeDirectoryServlet extends JavaAppServlet {
             
             Object aggregator = this.getServletContext().getAttribute("aggregator");
             if(aggregator != null){
-                ourFuture = ((FSAggregator)aggregator).addTask(new MakeDirectory(mkdir.getPath()));
+                ourFuture = ((FSAggregator)aggregator).addTask(new MakeDirectory(mkdir));
                 //System.out.println("Make Directory Servlet: ");
             }
             else{
