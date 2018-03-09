@@ -31,8 +31,9 @@ public class ListContentsServlet extends WebInterfaceServlet {
                     if(data == null) return "\"success\":\"false\"";
                     String send = new String();
                     for(int i = 0; i < data.length; i++){
-                        send += "{\"name\"" + data[i][0] + ":\"type\"" + data[i][1] + "\",\"size\":\"\",\"lastmodified\":\"\"}";
+                        send += "{\"name\"" + data[i][0] + ":\"type\"" + data[i][1] + "\",\"size\":\"\",\"lastModified\":\"\"},";
                     }
+                    send = send.substring(0, send.length()-1);
                     send+="\"success\":\"true\"";
                     return send;
                 }
