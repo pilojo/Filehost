@@ -18,7 +18,7 @@ public class LoginCheckServlet extends WebInterfaceServlet {
 
     @Override
     public String toString(HttpServletRequest request) {
-        return request.getSession().getAttribute("email")!=null?"\"logedin\":true":"\"logedin\":false";
+        return request.getSession().getAttribute("email")!=null?"\"logedin\":true,\"username\":\"" + request.getSession().getAttribute("username") + "\"":"\"logedin\":false";
     }
     
 }

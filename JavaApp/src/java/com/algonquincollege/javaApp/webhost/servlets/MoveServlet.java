@@ -20,9 +20,10 @@ public class MoveServlet extends WebInterfaceServlet {
 
     @Override
     public String toString(HttpServletRequest request) {
-        ListContentsServlet ls = new ListContentsServlet();
+        ListContentsServlet ls = null;
         try{
             if(json.parseMv(ByteReconstruct.byteToString(request))){
+                //ls = new ListContentsServlet(json.map.get("from"));
                 if(db.connect() == null){
                     System.out.println("DB is Null");
                     return ls.toString();
@@ -30,7 +31,12 @@ public class MoveServlet extends WebInterfaceServlet {
                     System.out.println("Preparing to launch task");
                     FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
                     if(aggregator.addTask(new Move(json.map.get("from"),json.map.get("to")))){
-                        //updateDB
+                        if(json.map.get("type").equals(new String("File"))){
+                            System.out.println("/"+db.getUserIDFromUsername(db.getUserIDFromPath(json.map.get("from")))+"/" +json.map.get("from").substring(json.map.get("from").indexOf("/", 1)+1) + "\n" + "/"+db.getUserIDFromUsername(db.getUserIDFromPath(json.map.get("to")))+"/"+json.map.get("to").substring(json.map.get("to").indexOf("/", 1)+1));
+                            db.updateFile("/"+db.getUserIDFromUsername(db.getUserIDFromPath(json.map.get("from")))+"/" +json.map.get("from").substring(json.map.get("from").indexOf("/", 1)+1), "/"+db.getUserIDFromUsername(db.getUserIDFromPath(json.map.get("to")))+"/"+json.map.get("to").substring(json.map.get("to").indexOf("/", 1)+1));
+                        }else{
+                            db.updateFolder("/"+db.getUserIDFromUsername(db.getUserIDFromPath(json.map.get("from")))+"/"+json.map.get("from").substring(json.map.get("from").lastIndexOf("/")+1), "/"+db.getUserIDFromUsername(db.getUserIDFromPath(json.map.get("to")))+"/"+json.map.get("to").substring(json.map.get("to").lastIndexOf("/")+1));
+                        }
                     }else{
                         //Went to /dev/null
                     }

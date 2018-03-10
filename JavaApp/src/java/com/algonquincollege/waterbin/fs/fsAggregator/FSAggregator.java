@@ -33,7 +33,8 @@ public class FSAggregator {
         
         
         try {
-            return ourFuture.get().getSuccess();
+            ourFuture.get();
+            return task.getSuccess();
         } catch (InterruptedException | ExecutionException ex) {
             Logger.getLogger(FSAggregator.class.getName()).log(Level.SEVERE, "Task encountered abnormal conditions", ex);
         }

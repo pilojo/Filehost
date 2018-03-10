@@ -55,6 +55,7 @@ public class SignUpServlet extends WebInterfaceServlet {
                     
                     FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
                     if(aggregator.addTask(new MakeDirectory(json.map.get("username"))));
+                        db.newFolder("/"+db.getUserIDFromUsername(db.getUserIDFromPath(json.map.get("username")))+"/");
                         return "\"signedup\":\"true\"";
                  }
              }

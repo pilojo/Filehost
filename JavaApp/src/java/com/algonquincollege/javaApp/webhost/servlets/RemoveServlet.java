@@ -20,14 +20,26 @@ public class RemoveServlet extends WebInterfaceServlet {
 
     @Override
     public String toString(HttpServletRequest request) {
-        ListContentsServlet ls = new ListContentsServlet();
+         ListContentsServlet ls = null;
         try{
             if(json.parseRm(ByteReconstruct.byteToString(request))){
+                    System.out.println(json.map.get("path"));
+                //ls = new ListContentsServlet(new String(json.map.get("path")));
                 if(db.connect() == null){
                     return ls.toString();
                 }else{
                     FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
-                    aggregator.addTask(new Remove(json.map.get("path")));
+                    if(aggregator.addTask(new Remove(json.map.get("path")))){
+                        System.out.println("TRUE");
+                        if(json.map.get("type").equals(new String("File"))){
+                            System.out.println("/"+db.getUserIDFromUsername(db.getUserIDFromPath(json.map.get("path")))+"/"+json.map.get("path").substring(json.map.get("path").indexOf("/", 1)+1));
+                            db.deleteFile("/"+db.getUserIDFromUsername(db.getUserIDFromPath(json.map.get("path")))+"/"+json.map.get("path").substring(json.map.get("path").indexOf("/", 1)+1));
+                        }else{
+                            db.deleteFolder("/"+db.getUserIDFromUsername(db.getUserIDFromPath(json.map.get("path")))+"/"+json.map.get("path").substring(json.map.get("path").indexOf("/", 1)+1));
+                        }
+                    }else{
+                       System.out.println("FALSE");//Went to /dev/null
+                    }
                     return ls.toString();
                 }
             }

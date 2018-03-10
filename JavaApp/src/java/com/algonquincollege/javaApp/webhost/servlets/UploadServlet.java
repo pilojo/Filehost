@@ -5,6 +5,7 @@
  */
 package com.algonquincollege.javaApp.webhost.servlets;
 
+import com.algonquincollege.javaApp.database.DBConnection;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -52,19 +53,31 @@ public class UploadServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
         // constructs path of the directory to save uploaded file
-        
-        final String localPath = request.getPathInfo();
+        DBConnection db = new DBConnection();
+        String localPath = request.getPathInfo();
         
         String savePath = SAVE_DIR;
-         
+        
+         String fileName = new String();
         for (Part part : request.getParts()) {
-            String fileName = extractFileName(part);
-            // refines the fileName in case it is an absolute path
+            
+            fileName = extractFileName(part);
+            if(!fileName.matches("[A-Za-z\\.\\-0-9]+")) {
+                response.sendError(403);
+                return;
+            }
+            // refines the fileName in case it is an absolute path1
             fileName = new File(fileName).getName();
             try{
                 part.write(Paths.get(savePath, localPath, fileName).toString());
+                
             }
             catch(IOException e){System.out.println("It goes here to die");}
+        }
+        if(db.connect()!=null){
+            System.out.println(fileName + "\n" + localPath);
+            System.out.println("/"+db.getUserIDFromUsername(db.getUserIDFromPath(localPath))+localPath.substring(localPath.indexOf("/",1), localPath.length()-1)+"/"+fileName);
+            db.newFile("/"+db.getUserIDFromUsername(db.getUserIDFromPath(localPath))+localPath.substring(localPath.indexOf("/",1), localPath.length()-1)+"/"+fileName);
         }
         request.setAttribute("message", "Upload has been done successfully!");
         getServletContext().getRequestDispatcher("/status.jsp").forward(

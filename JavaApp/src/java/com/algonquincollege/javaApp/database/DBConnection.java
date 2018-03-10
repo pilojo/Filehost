@@ -19,9 +19,9 @@ import java.util.regex.Matcher;
 public class DBConnection {
 
     private static final String DRIVER = "com.mysql.jdbc.Driver"; //MySQL db driver
-    private static final String URL = "jdbc:mysql://localhost/filehosttest"; //database to use
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "password";
+    private static final String URL = "jdbc:mysql://10.70.211.115/filehostdb"; //database to use
+    private static final String USERNAME = "John";
+    private static final String PASSWORD = "Password1";
     private static final int NAME = 1;
     private static final int PATH = 0;
 
@@ -37,8 +37,9 @@ public class DBConnection {
             try {
                 Class.forName(DRIVER).newInstance();
                 connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+                System.out.println("DB Connect");
             } catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
-
+                return null;
             }
         }
         return connection;
@@ -71,8 +72,7 @@ public class DBConnection {
             System.out.println(e.getMessage());
         }
         return false;
-    }
-
+}
     /**
      * Create user and home folder
      *
@@ -85,9 +85,8 @@ public class DBConnection {
      * wasn't
      */
     public boolean signUp(String firstName, String lastName, String email, String username, String password) {
-        PasswordHashUtils pass = new PasswordHashUtils();
         System.out.println(firstName + " " + lastName);
-        String createUser = "INSERT INTO users (Username, First_Name, Last_Name, Email,AccountType_ID, Password) VALUES (?, ?, ?, ?, 5, ?)";
+        String createUser = "INSERT INTO users (Username, First_Name, Last_Name, Email,AccountType_ID, Password) VALUES (?, ?, ?, ?, 4, ?)";
         //String getUIDQuery = "SELECT ID FROM users WHERE Username = '"+username+"'";
         try {
             //Create the new user
@@ -96,7 +95,7 @@ public class DBConnection {
             userStmt.setString(2, firstName);
             userStmt.setString(3, lastName);
             userStmt.setString(4, email);
-            userStmt.setString(5, pass.hash(password));
+            userStmt.setString(5, PasswordHashUtils.hash(password));
 
             if (userStmt.executeUpdate() == 0) {
 
@@ -117,7 +116,7 @@ public class DBConnection {
             }
 
             //create new root folder using the newly created user's primary key for the folder name and Owner_ID
-            String createRoot = "INSERT INTO folders (Name, Parent_Path, Owner_ID, Permission_ID) VALUES ('" + UID + "', '/', " + UID + ", 4)";
+            String createRoot = "INSERT INTO folders (Name, Parent_Path, Owner_ID, Permission_ID) VALUES ('" + UID + "', '/', " + UID + ", 1)";
             PreparedStatement folderStmt = connection.prepareStatement(createRoot, Statement.RETURN_GENERATED_KEYS);
             if (folderStmt.executeUpdate() == 0) {
                 System.out.println("create root");
@@ -159,11 +158,12 @@ public class DBConnection {
      * ***************************************************************************
      */
     /**
-     * 
+     *
      * @param path
-     * @return 
+     * @return
      */
     public boolean newFolder(String path) {
+        System.out.println(path);
         Pattern regex = Pattern.compile("\\/[1-9a-zA-Z]*\\/*");
         Matcher m = regex.matcher(path);
         if (m.matches()) {
@@ -176,7 +176,7 @@ public class DBConnection {
         String[] folder = splitPath(path);
         String[] parentFolder = splitPath(folder[PATH]);
         String user = getUserIDFromPath(path);
-        String folderSQL = "INSERT INTO folders (ParentFolder_ID, Name, Parent_Path, Owner_ID, Permission_ID ) SELECT folders.ID, ?, ?, users.ID, 1 FROM folders, users WHERE folders.Name = ? AND folders.Parent_Path = ? AND users.Username = ?;";
+        String folderSQL = "INSERT INTO folders (ParentFolder_ID, Name, Parent_Path, Owner_ID, Permission_ID ) SELECT folders.ID, ?, ?, users.ID, 1 FROM folders, users WHERE folders.Name = ? AND folders.Parent_Path = ? AND users.ID = ?;";
         //String parentSQL = "SELECT Name FROM folders WHERE Parent_Path = ?";
         try {
             /*PreparedStatement getFolders = connection.prepareStatement(parentSQL);
@@ -188,29 +188,41 @@ public class DBConnection {
                     return false;
                 }
             }*/
-
             PreparedStatement nFolder = connection.prepareStatement(folderSQL);
             nFolder.setString(1, folder[NAME]);
             nFolder.setString(2, folder[PATH]);
             nFolder.setString(3, parentFolder[NAME]);
             nFolder.setString(4, parentFolder[PATH]);
             nFolder.setString(5, user);
+            System.out.println(nFolder.toString());
 
             if (nFolder.executeUpdate() == 0) {
-                System.out.print("New folder could not be created");
+                System.out.println("New folder could not be created");
                 return false;
             }
         } catch (SQLException e) {
-
+            e.printStackTrace();
+            return false;
         }
+        System.out.println("folder created");
         return true;
     }
+
     /**
-     * 
+     *
      * @param path
-     * @return 
+     * @return
      */
     public boolean deleteFolder(String path) {
+        Pattern regex = Pattern.compile("\\/[1-9a-zA-Z]*\\/*");
+        Matcher m = regex.matcher(path);
+        if (m.matches()) {
+            System.out.println("DO NOT DELETE ROOT FOLDERS");
+            return false;
+        } else if (!folderExists(path)) {
+            System.out.println("Folder doesn't exist with that name at location");
+            return false;
+        }
         String[] folder = splitPath(path);
         String folderSQL = "DELETE FROM folders WHERE Name = ? AND Parent_Path = ?";
         try {
@@ -218,24 +230,37 @@ public class DBConnection {
             delFolder.setString(1, folder[NAME]);
             delFolder.setString(2, folder[PATH]);
 
-            if (delFolder.executeUpdate() == 0) {
+            int numDeleted = delFolder.executeUpdate();
+            if (numDeleted == 0) {
                 System.out.print("Could not delete folder");
                 return false;
+            } else if (numDeleted > 1) {
+                System.out.println("MULTIPLE FOLDERS DELETED");
+                return false;
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
-
+        System.out.println(folder[NAME] + " deleted.");
         return true;
     }
-    
+
     /**
-     * 
+     *
      * @param src
      * @param dst
-     * @return 
+     * @return
      */
     public boolean updateFolder(String src, String dst) {
+        Pattern regex = Pattern.compile("\\/[1-9a-zA-Z]*\\/*");
+        Matcher m = regex.matcher(src);
+        Matcher m1 = regex.matcher(dst);
+        if (m.matches() || m1.matches()) {
+            System.out.println("DO NOT TOUCH ROOT FOLDERS");
+            return false;
+        }
         if (folderExists(dst)) {
             System.out.println("Folder already exists with that name in specified destination");
             return false;
@@ -266,32 +291,40 @@ public class DBConnection {
             FID.setString(2, updated[PATH]);
 
             ResultSet FIDrs = FID.executeQuery();
-            changeChild(FIDrs.getString("ID"), updated[1], updated[0]);
+            System.out.println("plz");
+            if (FIDrs.next()) {
+                changeChild(FIDrs.getString("ID"), updated[NAME], updated[PATH]);
+            }
 
         } catch (SQLException e) {
-
+            e.printStackTrace();
+            return false;
         }
+        System.out.println(src + " updated to " + dst);
         return true;
     }
-    
+
     /**
-     * 
+     *
      * @param parentID
      * @param parentName
      * @param parentPath
-     * @return 
+     * @return
      */
     public boolean changeChild(String parentID, String parentName, String parentPath) {
+        System.out.println("inChangeChild");
         String kidsSQL = "SELECT ID, Name, Parent_Path FROM folders WHERE ParentFolder_ID = ?";
         String updateKid = "UPDATE folders SET Parent_Path = ? WHERE ParentFolder_ID = ?";
         try {
             PreparedStatement kidsQuery = connection.prepareStatement(kidsSQL);
             kidsQuery.setString(1, parentID);
 
+            //System.out.println(kidsQuery.toString());
             ResultSet kids = kidsQuery.executeQuery();//get all the children info
 
             int rowCount = kids.last() ? kids.getRow() : 0; //get number of kids
             if (rowCount <= 0) {
+                System.out.println("No kids");
                 return false;//return false if there are no children
             }
             String newParentPath = parentPath + parentName + "/"; //make the new parent path using the parent parent path (not a typo)
@@ -306,22 +339,22 @@ public class DBConnection {
 
             kids.beforeFirst();
             while (kids.next()) {
-                changeChild(kids.getString("ID"), kids.getString("Name"), kids.getString("Parent_Path"));
+                changeChild(kids.getString("ID"), kids.getString("Name"), newParentPath);
             }
         } catch (SQLException e) {
-
+            return false;
         }
-
+        System.out.println("updated children");
         return true;
     }
-    
+
     /**
-     * 
+     *
      * @param src
      * @param dst
-     * @return 
+     * @return
      */
-    public boolean moveFile(String src, String dst) {
+    public boolean updateFile(String src, String dst) {
         if (fileExists(dst)) {
             System.out.println("File already exists at location");
             return false;
@@ -330,33 +363,37 @@ public class DBConnection {
         String[] parentFolder = splitPath(file[PATH]);
         String[] old = splitPath(src);
         String[] oldParent = splitPath(old[PATH]);
-        String fileSQL = "UPDATE files SET ParentFolder_ID = (SELECT ID FROM folders WHERE folders.Name = ? AND folders.Parent_Path = ?) WHERE files.Name = ? AND files.ParentFolder_ID = (SELECT ID FROM folders WHERE folders.Name = ? AND folders.Parent_Path = ?);";
+        String fileSQL = "UPDATE files SET files. Name = ?, ParentFolder_ID = (SELECT ID FROM folders WHERE folders.Name = ? AND folders.Parent_Path = ?) WHERE files.Name = ? AND files.ParentFolder_ID = (SELECT ID FROM folders WHERE folders.Name = ? AND folders.Parent_Path = ?);";
         try {
             PreparedStatement mvFile = connection.prepareStatement(fileSQL);
-            mvFile.setString(1, parentFolder[NAME]);
-            mvFile.setString(2, parentFolder[PATH]);
-            mvFile.setString(3, file[NAME]);
-            mvFile.setString(4, oldParent[NAME]);
-            mvFile.setString(5, oldParent[PATH]);
+            mvFile.setString(1, file[NAME]);
+            mvFile.setString(2, parentFolder[NAME]);
+            mvFile.setString(3, parentFolder[PATH]);
+            mvFile.setString(4, old[NAME]);
+            mvFile.setString(5, oldParent[NAME]);
+            mvFile.setString(6, oldParent[PATH]);
+            System.out.println(mvFile.toString());
 
             if (mvFile.executeUpdate() == 0) {
-                System.out.println("Could not change file parent folder");
+                System.out.println("Could not change file.");
                 return false;
             }
 
         } catch (SQLException e) {
-
+            System.out.println("Exception in file update.");
+            return false;
         }
+        System.out.println(src+" file updated to "+dst);
         return true;
     }
-    
+
     /**
-     * 
+     *
      * @param src
      * @param dst
-     * @return 
+     * @return
      */
-    public boolean changeFileName(String src, String dst) {
+    /*public boolean changeFileName(String src, String dst) {
         if (fileExists(dst)) {
             System.out.println("File name already exists at location");
             return false;
@@ -377,15 +414,15 @@ public class DBConnection {
                 return false;
             }
         } catch (SQLException e) {
-
+            return false;
         }
         return true;
-    }
-    
+    }*/
+
     /**
-     * 
+     *
      * @param path
-     * @return 
+     * @return
      */
     public boolean deleteFile(String path) {
         String[] file = splitPath(path);
@@ -396,6 +433,7 @@ public class DBConnection {
             delFile.setString(1, file[NAME]);
             delFile.setString(2, parent[NAME]);
             delFile.setString(3, parent[PATH]);
+            System.out.println(delFile);
 
             if (delFile.executeUpdate() == 0) {
                 System.out.println("Could not delete file.");
@@ -403,21 +441,27 @@ public class DBConnection {
             }
         } catch (Exception e) {
             e.printStackTrace();
+            return false;
         }
+        System.out.println("File was deleted.");
         return true;
     }
-    
+
     /**
-     * 
+     *
      * @param filePath
-     * @return 
+     * @return
      */
     public boolean newFile(String filePath) {
         if (fileExists(filePath)) {
-            System.out.println("File with that name already exists at location");
+            System.out.println("File with that name already exists at " + filePath);
             return false;
         }
         String[] file = splitPath(filePath);
+        if (file[PATH].equals("/")) {
+            System.out.println("DO NOT CREATE IN ROOT ROOT");
+            return false;
+        }
         String[] parentFolder = splitPath(file[PATH]);
         //String fileQuery = "SELECT * FROM files INNER JOIN folders ON folders.ID = files.ParentFolder_ID WHERE folders.Name = ? AND folders.Parent_Path = ?;";
         String fileSQL = "INSERT INTO files (Name, Permissions_ID, ParentFolder_ID) VALUES (?, 1, (SELECT ID FROM folders WHERE folders.Name = ? AND folders.Parent_Path = ?));";
@@ -443,15 +487,18 @@ public class DBConnection {
                 return false;
             }
         } catch (SQLException e) {
-
+            System.out.println(e.getMessage());
+            System.out.println("File was not created due to an Exception being thrown");
+            return false;
         }
+        System.out.println("File created");
         return true;
     }
-    
+
     /**
-     * 
+     *
      * @param path
-     * @return 
+     * @return
      */
     public String[][] list(String path) {
         String[] folder = splitPath(path);
@@ -464,18 +511,21 @@ public class DBConnection {
             getFiles.setString(1, folder[NAME]);
             getFiles.setString(2, folder[PATH]);
             ResultSet fileRS = getFiles.executeQuery();
+            System.out.println(getFiles);
 
             int rowCount = fileRS.last() ? fileRS.getRow() : 0;
             fileRS.beforeFirst();
 
             PreparedStatement getFolders = connection.prepareStatement(folderSQL);
             getFolders.setString(1, path);
+            System.out.println(getFolders);
+            
             ResultSet folderRS = getFolders.executeQuery();
 
             rowCount += folderRS.last() ? folderRS.getRow() : 0;
             folderRS.beforeFirst();
 
-            contents = new String[rowCount][numData];
+            contents = new String[rowCount][numData+1];
             for (int i = 0; i < rowCount; i++) {
                 if (folderRS.next()) {
                     contents[i][0] = folderRS.getString("Name");
@@ -484,21 +534,21 @@ public class DBConnection {
                     contents[i][0] = fileRS.getString("Name");
                     contents[i][numData] = "File";
                 } else {
-                    System.out.println("Unexpected Error in List");
+                    System.out.println("Unexpected error encountered in 2d array generation.");
                 }
                 /*for(int j = 0; j < numData; j++){
                         
                     }*/
             }
         } catch (SQLException e) {
-
         }
         return contents;
     }
+
     /**
-     * 
+     *
      * @param username
-     * @return 
+     * @return
      */
     public String[][] listRoot(String username) {
         String userSQL = "SELECT ID FROM users WHERE Username = ?";
@@ -508,18 +558,18 @@ public class DBConnection {
             getUID.setString(1, username);
 
             ResultSet UID = getUID.executeQuery();
-            contents = list("/"+UID.getString("ID")+"/");
+            contents = list("/" + UID.getString("ID") + "/");
 
         } catch (SQLException e) {
-
+            
         }
         return contents;
     }
-    
+
     /**
-     * 
+     *
      * @param fullPath
-     * @return 
+     * @return
      */
     public static String[] splitPath(String fullPath) {
         String[] retVals = new String[2];
@@ -528,48 +578,51 @@ public class DBConnection {
         retVals[NAME] = fullPath.substring(fullPath.lastIndexOf('/') + 1, fullPath.length());//get folder name
         return retVals;
     }
-    
+
     /**
-     * 
+     *
      * @param fullPath
-     * @return 
+     * @return
      */
     public String getUserIDFromPath(String fullPath) {
-        String[] path = splitPath(fullPath);
-        while (!path[0].equals("/")) {
-            path = splitPath(path[0]);
+        String[] sepPath = fullPath.split("/");
+        return sepPath[1];
+        //return fullPath.substring(1, fullPath.indexOf("/", fullPath.indexOf("/")+1));
+        /*String[] path = splitPath(fullPath);
+        while (!path[PATH].equals("/")) {
+            path = splitPath(path[PATH]);
         }
-        return path[1];
+        return path[NAME];*/
     }
-    
+
     /**
-     * 
+     *
      * @param path
-     * @return 
+     * @return
      */
     public boolean fileExists(String path) {
-        String fileSQL = "SELECT Name FROM files INNER JOIN folders ON folders.ID = files.ParentFolder_ID WHERE folders.Name = ? AND folders.Parent_PATH = ?;";
+        String fileSQL = "SELECT files.Name FROM files INNER JOIN folders ON folders.ID = files.ParentFolder_ID WHERE folders.Name = ? AND folders.Parent_PATH = ? AND files.Name = ?;";
         String[] file = splitPath(path);
         String[] parentFolder = splitPath(file[PATH]);
         try {
             PreparedStatement getFiles = connection.prepareStatement(fileSQL);
             getFiles.setString(1, parentFolder[NAME]);
             getFiles.setString(2, parentFolder[PATH]);
+            getFiles.setString(3, file[NAME]);
+            //System.out.println(getFiles.toString());
 
             ResultSet fileRS = getFiles.executeQuery();
             return fileRS.next();
 
         } catch (SQLException e) {
-
+            return false;
         }
-
-        return true;
     }
-    
+
     /**
-     * 
+     *
      * @param path
-     * @return 
+     * @return
      */
     public boolean folderExists(String path) {
         String[] folder = splitPath(path);
@@ -583,9 +636,71 @@ public class DBConnection {
 
             return folderRS.next();
         } catch (SQLException e) {
+            return false;
+        }
+    }
+
+    public boolean verifyPath(String path) {
+        String[] item = splitPath(path);
+        boolean exists = folderExists(item[PATH]);
+
+        while (!item[PATH].equals("/") && exists) {
+            //System.out.println(item[PATH]);
+            item = splitPath(item[PATH]);
+        }
+
+        return exists;
+    }
+    public String getUsernameFromEmail (String email){
+        String userSQL = "SELECT Username FROM users WHERE Email = ?";
+        try{
+            PreparedStatement getU = connection.prepareStatement(userSQL);
+            getU.setString(1, email);
+            
+            ResultSet userRS = getU.executeQuery();
+            userRS.next();
+            
+            return userRS.getString("Username");
+        }catch(SQLException e){
+            
+        }
+        return null;
+    }
+    public boolean verifyOwner(String email, String path){
+        String userSQL = "SELECT ID FROM users WHERE Email = ?";
+        try{
+            PreparedStatement UID = connection.prepareStatement(userSQL);
+            UID.setString(1,email);
+            
+            ResultSet UIDrs = UID.executeQuery();
+            if(!UIDrs.next()){
+                System.out.println("No user with email: "+email);
+                return false;
+            }
+            
+            return getUserIDFromPath(path).equals(UIDrs.getString("ID"));
+            
+            
+        }catch(SQLException e){
+            System.out.println("Bad things happened while verifying user.");
+           return false; 
+        }    
+    }
+    
+    public String getUserIDFromUsername(String username) {
+        String userSQL = "SELECT ID FROM users WHERE username = ?";
+        try {
+            PreparedStatement getU = connection.prepareStatement(userSQL);
+            getU.setString(1, username);
+
+            ResultSet userRS = getU.executeQuery();
+            userRS.next();
+
+            return userRS.getString("ID");
+        } catch (SQLException e) {
 
         }
-        return true;
+        return null;
     }
 
     /**
@@ -596,6 +711,7 @@ public class DBConnection {
             try {
                 connection.close();
                 connection = null;
+                System.out.println("DB disconnected");
             } catch (SQLException e) {
 
             }

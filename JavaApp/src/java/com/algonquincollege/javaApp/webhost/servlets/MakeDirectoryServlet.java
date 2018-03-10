@@ -20,15 +20,22 @@ public class MakeDirectoryServlet extends WebInterfaceServlet {
 
     @Override
     public String toString(HttpServletRequest request) {
-        
-        ListContentsServlet ls = new ListContentsServlet();
+        ListContentsServlet ls = null;
         try{
+            
             if(json.parseMkdir(ByteReconstruct.byteToString(request))){
+                //ls = new ListContentsServlet(json.map.get("path"));
+                System.out.println(ByteReconstruct.byteToString(request));
+                
                 if(db.connect() == null){
                     return ls.toString();
                 }else{
                     FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
-                    aggregator.addTask(new MakeDirectory(json.map.get("path")));
+                    if(aggregator.addTask(new MakeDirectory(json.map.get("path")))){
+                        db.newFolder("/"+db.getUserIDFromUsername(db.getUserIDFromPath(json.map.get("path")))+"/"+json.map.get("path").substring(json.map.get("path").lastIndexOf("/")+1));
+                    }else{
+                        //Went to /dev/null
+                    }
                     return ls.toString();
                 }
             }

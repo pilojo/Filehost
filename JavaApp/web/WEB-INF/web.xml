@@ -10,7 +10,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>UploadServlet</servlet-name>
-        <url-pattern>/Upload/*</url-pattern>
+        <url-pattern>/upload/*</url-pattern>
     </servlet-mapping>
     
     <servlet>

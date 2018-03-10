@@ -19,7 +19,6 @@ public class Copy extends FileSystemTask {
     private final String dest;
     
     public Copy(String source, String dest){
-        super();
         this.source = source;
         this.dest = dest;
         
@@ -35,7 +34,11 @@ public class Copy extends FileSystemTask {
         } catch (IOException ex) {
             System.err.println("Copy Failed: " + source + " To " + dest);
         }
-        super.run();
+    }
+    
+    @Override
+    public boolean getSuccess(){
+        return Files.exists(Paths.get(root, dest));
     }
     
 }

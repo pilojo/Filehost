@@ -17,28 +17,45 @@ import javax.servlet.http.HttpSession;
  * To be implemented later
  */
 public class ListContentsServlet extends WebInterfaceServlet {
+    private String path = null;
+    
+    public ListContentsServlet(){
+        path = null;
+    }
+    public ListContentsServlet(String path){
+        this.path = path;
+    }
     
     @Override
     public String toString(HttpServletRequest request) {
-        ListContentsServlet ls = new ListContentsServlet();
         try{
             if(json.parseMkdir(ByteReconstruct.byteToString(request))){//Mkdir has the same regex needed for list
                 if(db.connect() == null){
                     System.out.println("DB is Null");
-                    return "\"sucess\":\"false\"";
+                    return new String();
                 }else{
-                    String[][] data = db.list(json.map.get("path"));
-                    if(data == null) return "\"success\":\"false\"";
-                    String send = new String();
-                    for(int i = 0; i < data.length; i++){
-                        send += "{\"name\"" + data[i][0] + ":\"type\"" + data[i][1] + "\",\"size\":\"\",\"lastModified\":\"\"},";
+                    System.out.println("/"+db.getUserIDFromUsername(db.getUserIDFromPath(json.map.get("path")))+"/"+json.map.get("path").substring(json.map.get("path").indexOf("/", 1)+1));
+                    String[][] data;
+                    if(path==null){
+                        data = db.list("/"+db.getUserIDFromUsername(db.getUserIDFromPath(json.map.get("path")))+"/"+json.map.get("path").substring(json.map.get("path").indexOf("/", 1)+1));
+                    }else{
+                        data = db.list("/"+db.getUserIDFromUsername(db.getUserIDFromPath(path))+"/"+path.substring(path.indexOf("/", 1)+1));
                     }
-                    send = send.substring(0, send.length()-1);
-                    send+="\"success\":\"true\"";
+                    System.out.println(data[0][0]);
+                    if(data == null) return new String();
+                    String send = new String("");
+                    send += "\"contents\":[";
+                    for(int i = 0; i < data.length; i++){
+                        send += "{\"name\":\"" + data[i][0] + "\",\"type\":\"" + data[i][1] + "\",\"size\":\"\",\"lastModified\":\"\"},";
+                    }
+                    if(data.length > 0)send = send.substring(0, send.length()-1);
+                    send +="]";
                     return send;
                 }
             }
-        }catch(Exception IOException){}
+        }catch(Exception IOException){
+            
+        }
         return new String();
     }
     

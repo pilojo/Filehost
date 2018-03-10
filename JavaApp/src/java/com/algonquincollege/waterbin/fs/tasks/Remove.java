@@ -17,7 +17,6 @@ public class Remove extends FileSystemTask {
     private final String path;
     
     public Remove(String path){
-        super();
         this.path = path;
         
         System.out.println("Remove Task: Launched to Aggregator");
@@ -33,7 +32,12 @@ public class Remove extends FileSystemTask {
             System.err.println("Remove Failed: " + path);
         }
         System.out.println("Remove Task: Completed");
-        super.run();
+    }
+    
+    
+    @Override
+    public boolean getSuccess(){
+        return !Files.exists(Paths.get(root, path));
     }
    
 }

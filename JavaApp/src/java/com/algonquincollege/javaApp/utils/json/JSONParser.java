@@ -53,15 +53,15 @@ public class JSONParser
     }
     
     public static boolean parseCp(String json){
-        return parse(json, "\\{\\\"from\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\\\"to\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\"\\}");
+        return parse(json, "\\{\\\"from\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\\\"to\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\\\"type\\\"\\:\\\"\\w+\\\"\\}");
     }
     
     public static boolean parseMv(String json){
-        return parse(json, "\\{\\\"from\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\\\"to\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\"\\}");
+        return parse(json, "\\{\\\"from\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\\\"to\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\\\"type\\\"\\:\\\"\\w+\\\"\\}");
     }
     
     public static boolean parseRm(String json){
-        return parse(json, "\\{\\\"path\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\"\\}");
+        return parse(json, "\\{\\\"path\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\\\"type\\\"\\:\\\"\\w+\\\"\\}");
     }
     
     public static boolean parseList(String json){

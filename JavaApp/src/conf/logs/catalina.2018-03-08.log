@@ -1,0 +1,53 @@
+08-Mar-2018 17:55:18.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.5
+08-Mar-2018 17:55:18.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 6 2018 21:42:23 UTC
+08-Mar-2018 17:55:18.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.5.0
+08-Mar-2018 17:55:18.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+08-Mar-2018 17:55:18.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+08-Mar-2018 17:55:18.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+08-Mar-2018 17:55:18.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_162\jre
+08-Mar-2018 17:55:18.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_162-b12
+08-Mar-2018 17:55:18.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+08-Mar-2018 17:55:18.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\jp972\OneDrive\Web\Filehost\JavaApp\src\conf
+08-Mar-2018 17:55:18.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Program Files\Apache Software Foundation\Tomcat 9.0
+08-Mar-2018 17:55:18.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\jp972\OneDrive\Web\Filehost\JavaApp\src\conf\conf\logging.properties
+08-Mar-2018 17:55:18.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+08-Mar-2018 17:55:18.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dhttp.nonProxyHosts=localhost|127.0.0.1|MSI
+08-Mar-2018 17:55:18.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+08-Mar-2018 17:55:18.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+08-Mar-2018 17:55:18.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+08-Mar-2018 17:55:18.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\jp972\OneDrive\Web\Filehost\JavaApp\src\conf
+08-Mar-2018 17:55:18.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Program Files\Apache Software Foundation\Tomcat 9.0
+08-Mar-2018 17:55:18.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\jp972\OneDrive\Web\Filehost\JavaApp\src\conf\temp
+08-Mar-2018 17:55:18.583 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_162\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\nodejs\;C:\Users\jp972\AppData\Local\Microsoft\WindowsApps;;D:\Microsoft VS Code\bin;C:\Users\jp972\AppData\Roaming\npm;.]
+08-Mar-2018 17:55:18.786 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+08-Mar-2018 17:55:18.880 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+08-Mar-2018 17:55:18.880 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+08-Mar-2018 17:55:18.880 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+08-Mar-2018 17:55:18.880 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 762 ms
+08-Mar-2018 17:55:18.911 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+08-Mar-2018 17:55:18.911 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.5
+08-Mar-2018 17:55:18.927 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\jp972\OneDrive\Web\Filehost\JavaApp\src\conf\conf\Catalina\localhost\FSManager.xml]
+08-Mar-2018 17:55:19.489 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+08-Mar-2018 17:55:19.521 SEVERE [main] org.apache.catalina.core.StandardContext.startInternal One or more listeners failed to start. Full details will be found in the appropriate container log file
+08-Mar-2018 17:55:19.521 SEVERE [main] org.apache.catalina.core.StandardContext.startInternal Context [/FSManager] startup failed due to previous errors
+08-Mar-2018 17:55:19.536 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\jp972\OneDrive\Web\Filehost\JavaApp\src\conf\conf\Catalina\localhost\FSManager.xml] has finished in [609] ms
+08-Mar-2018 17:55:19.536 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\jp972\OneDrive\Web\Filehost\JavaApp\src\conf\conf\Catalina\localhost\manager.xml]
+08-Mar-2018 17:55:19.724 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\jp972\OneDrive\Web\Filehost\JavaApp\src\conf\conf\Catalina\localhost\manager.xml] has finished in [188] ms
+08-Mar-2018 17:55:19.724 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\jp972\OneDrive\Web\Filehost\JavaApp\src\conf\conf\Catalina\localhost\ROOT.xml]
+08-Mar-2018 17:55:19.724 WARNING [main] org.apache.catalina.core.StandardContext.setPath A context path must either be an empty string or start with a '/' and do not end with a '/'. The path [/] does not meet these criteria and has been changed to []
+08-Mar-2018 17:55:19.989 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\jp972\OneDrive\Web\Filehost\JavaApp\src\conf\conf\Catalina\localhost\ROOT.xml] has finished in [265] ms
+08-Mar-2018 17:55:19.989 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+08-Mar-2018 17:55:20.005 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+08-Mar-2018 17:55:20.005 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 1117 ms
+08-Mar-2018 17:55:23.162 INFO [http-nio-8080-exec-9] org.apache.catalina.startup.HostConfig.undeploy Undeploying context []
+08-Mar-2018 17:55:23.177 INFO [http-nio-8080-exec-5] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\jp972\OneDrive\Web\Filehost\JavaApp\src\conf\conf\Catalina\localhost\ROOT.xml]
+08-Mar-2018 17:55:23.318 INFO [http-nio-8080-exec-5] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\jp972\OneDrive\Web\Filehost\JavaApp\src\conf\conf\Catalina\localhost\ROOT.xml] has finished in [141] ms
+08-Mar-2018 17:55:23.318 INFO [http-nio-8080-exec-1] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[]] after start() had already been called. The second call will be ignored.
+08-Mar-2018 18:10:37.530 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+08-Mar-2018 18:10:37.530 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+08-Mar-2018 18:10:37.577 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+08-Mar-2018 18:10:37.686 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+08-Mar-2018 18:10:37.686 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+08-Mar-2018 18:10:37.686 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+08-Mar-2018 18:10:37.686 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+08-Mar-2018 18:10:37.702 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]

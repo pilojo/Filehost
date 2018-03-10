@@ -28,14 +28,24 @@ public class CopyServlet extends WebInterfaceServlet {
     
     @Override
     public String toString(HttpServletRequest request) {
-        ListContentsServlet ls = new ListContentsServlet();
+        ListContentsServlet ls = null;
         try{
             if(json.parseCp(ByteReconstruct.byteToString(request))){
+                //ls = new ListContentsServlet(json.map.get("from"));
                 if(db.connect() == null){
                     return ls.toString();
                 }else{
                     FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
-                    aggregator.addTask(new Copy(json.map.get("from"),json.map.get("to")));
+                    if(aggregator.addTask(new Copy(json.map.get("from"),json.map.get("to")))){
+                        if(json.map.get("type").equals(new String("File"))){
+                            System.out.println("/"+db.getUserIDFromUsername(db.getUserIDFromPath(json.map.get("to")))+"/"+json.map.get("to").substring(json.map.get("to").indexOf("/",1)+1));
+                            db.newFile("/"+db.getUserIDFromUsername(db.getUserIDFromPath(json.map.get("to")))+"/"+json.map.get("to").substring(json.map.get("to").indexOf("/",1)+1));
+                        }else{
+                            //Copy Folder to come. Not ready yet.
+                        }
+                    }else{
+                        //Went to /dev/null
+                    }
                     return ls.toString();
                 }
             }
