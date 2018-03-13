@@ -27,6 +27,7 @@ public class LoginServlet extends WebInterfaceServlet {
     @Override
     public String toString(HttpServletRequest request) {
         try{
+            json = new JSONParser();
             if(json.parseLogin(ByteReconstruct.byteToString(request))){
                 if(db.connect() == null){
                      return"\"logedin\":\"false\"";
@@ -41,7 +42,11 @@ public class LoginServlet extends WebInterfaceServlet {
 
             }
             //Any exceptions thrown means the login failed.
-        }catch(Exception e){return "\"logedin\":\"false\"";}
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            return "\"logedin\":\"false\"";}
+        
+        
         
         return "\"logedin\":\"false\"";
     }

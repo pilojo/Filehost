@@ -27,13 +27,25 @@ public class Copy extends FileSystemTask {
     
     @Override
     public void run() {
-        System.out.println("Copy Task: | Going Live");
+        System.out.println("Copy Task: " + source + " To " + dest + " | Going Live");
         try{
-            Files.copy(Paths.get(root, source), Paths.get(root, dest));
-            success = true;
+            if(db.connect() != null){
+                Files.copy(Paths.get(root, source), Paths.get(root, dest));
+                success = true;
+                if(Files.isDirectory(Paths.get(root, dest))){
+                    if(!db.updateFolder(source, dest)){
+                        Files.copy(Paths.get(root, dest), Paths.get(root, source));
+                    }
+                }else{
+                    if(!db.updateFile(source, dest)){
+                        Files.delete(Paths.get(root, dest));
+                    }
+                }
+            }
         } catch (IOException ex) {
             System.err.println("Copy Failed: " + source + " To " + dest);
         }
+        System.out.println("Copy Task: Completed");
     }
     
     @Override

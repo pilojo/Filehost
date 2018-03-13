@@ -33,13 +33,7 @@ public class MoveServlet extends WebInterfaceServlet {
                     if(db.verifyOwner((String)request.getSession().getAttribute("email"), json.map.get("from")) && db.verifyOwner((String)request.getSession().getAttribute("email"), json.map.get("to"))){
                         FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
                         if(aggregator.addTask(new Move(json.map.get("from"),json.map.get("to")))){
-                            if(json.map.get("type").equals(new String("File"))){
-                                db.updateFile(json.map.get("from"), json.map.get("to"));
-                                return "\"success\":\"true\"";
-                            }else{
-                                db.updateFolder(json.map.get("from"), json.map.get("to"));
-                                return "\"success\":\"true\"";
-                            }
+                            return "\"success\":\"true\"";
                         }else{
                             return "\"success\":\"false\"";
                         }
@@ -48,7 +42,7 @@ public class MoveServlet extends WebInterfaceServlet {
                     }
                 }
             }
-        }catch(Exception IOException){}
+        }catch(Exception e){}
         return "\"success\":\"false\"";
     }
     

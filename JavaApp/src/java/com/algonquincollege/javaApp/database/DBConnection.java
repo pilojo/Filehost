@@ -19,9 +19,9 @@ import java.util.regex.Matcher;
 public class DBConnection {
 
     private static final String DRIVER = "com.mysql.jdbc.Driver"; //MySQL db driver
-    private static final String URL = "jdbc:mysql://10.70.200.23/filehostdb"; //database to use
-    private static final String USERNAME = "John";
-    private static final String PASSWORD = "Password1";
+    private static final String URL = "jdbc:mysql://localhost/filehostdb"; //database to use
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "mainstreet";
      private static final int NAME = 1;
     private static final int PATH = 0;
 

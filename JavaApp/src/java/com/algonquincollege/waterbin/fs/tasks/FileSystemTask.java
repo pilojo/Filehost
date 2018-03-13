@@ -5,6 +5,8 @@
  */
 package com.algonquincollege.waterbin.fs.tasks;
     
+import com.algonquincollege.javaApp.database.DBConnection;
+
 /**
  *
  * @author Devon
@@ -12,6 +14,8 @@ package com.algonquincollege.waterbin.fs.tasks;
 public abstract class FileSystemTask implements Runnable{
 
     protected final String root = "D:\\fileHostRoot";
+
+    protected DBConnection db;
     
     protected boolean abort;
     protected boolean success;

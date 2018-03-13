@@ -33,11 +33,7 @@ public class RemoveServlet extends WebInterfaceServlet {
                     if(db.verifyOwner((String)request.getSession().getAttribute("email"), json.map.get("path"))){
                         FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
                         if(aggregator.addTask(new Remove(json.map.get("path")))){
-                            if(json.map.get("type").equals(new String("File"))){
-                                db.deleteFile(json.map.get("path"));
-                            }else{
-                                db.deleteFolder(json.map.get("path"));
-                            }
+                            return "\"success\":\"true\"";
                         }else{
                            return "\"success\":\"false\"";
                         }
@@ -46,7 +42,7 @@ public class RemoveServlet extends WebInterfaceServlet {
                     }
                 }
             }
-        }catch(Exception IOException){}
+        }catch(Exception e){}
         return "\"success\":\"false\"";
     }
     

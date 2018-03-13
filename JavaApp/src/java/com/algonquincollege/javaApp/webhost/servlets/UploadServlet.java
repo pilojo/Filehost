@@ -6,6 +6,10 @@
 package com.algonquincollege.javaApp.webhost.servlets;
 
 import com.algonquincollege.javaApp.database.DBConnection;
+import com.algonquincollege.javaApp.fileManager.utils.ByteReconstruct;
+import com.algonquincollege.javaApp.utils.json.JSONParser;
+import com.algonquincollege.waterbin.fs.fsAggregator.FSAggregator;
+import com.algonquincollege.waterbin.fs.tasks.MakeDirectory;
 import com.algonquincollege.waterbin.fs.transferAggregator.TransferAggregator;
 import com.algonquincollege.waterbin.fs.transferTasks.UploadTask;
 import java.io.File;
@@ -27,9 +31,11 @@ import javax.servlet.http.Part;
 //@WebServlet("/UploadServlet")
 @MultipartConfig(
                 fileSizeThreshold=1024*1024*2, // 2MB
-                 maxFileSize=1024*500,      // 500KB
+                 maxFileSize=1024*1024*2,      // 500KB
                  maxRequestSize=1024*1024*50)   // 50MB
 public class UploadServlet extends HttpServlet {
+    
+    private DBConnection db;
     
     /**
      * handles file upload
@@ -43,17 +49,31 @@ public class UploadServlet extends HttpServlet {
             HttpServletResponse response) throws ServletException, IOException {
         
         System.out.println("Upload Servlet Called.");
-        TransferAggregator taggregate = (TransferAggregator)this.getServletContext().getAttribute("transfer aggregator");
-        
-        
-        UploadTask task = new UploadTask(request, response);
-        
-        if(taggregate.addTask(task)){
-            response.sendError(200);
+        try{
+            db = new DBConnection();
+                if(db.connect() == null){
+                    response.sendError(404);
+                }else{
+                    System.out.println(request.getPathInfo());
+                    if(db.verifyOwner((String)request.getSession().getAttribute("email"), request.getPathInfo())){
+                        TransferAggregator taggregate = (TransferAggregator)this.getServletContext().getAttribute("transfer aggregator");
+                        UploadTask task = new UploadTask(request, response);
+                        if(taggregate.addTask(task)){
+                            
+                            response.sendError(200);
+                        }else{
+                            
+                            response.sendError(404);
+                        }
+                    }else{
+                        response.sendError(404);
+                    }
+                }
+        }catch(Exception IOException){
+
+            System.out.println(IOException.getMessage());
+            response.sendError(404);
         }
-        else
-        {
-            response.sendError(task.getRecommendedCode());
-        }
+
     }
 }

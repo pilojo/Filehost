@@ -1,5 +1,6 @@
 package com.algonquincollege.waterbin.fs.tasks;
 
+import com.algonquincollege.javaApp.database.DBConnection;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -16,6 +17,7 @@ public class MakeDirectory extends FileSystemTask{
     public MakeDirectory(String path){
         this.path = path;
         
+        db = new DBConnection();
         System.out.println("Make Directory Task: Launched to Aggregator");
     }
     
@@ -23,7 +25,13 @@ public class MakeDirectory extends FileSystemTask{
     public void run() {
         System.out.println("Make Directory Task: " + path + " | Going Live");
         try{
-            Files.createDirectory(Paths.get(root, path));
+            if(db.connect() != null){
+                Files.createDirectory(Paths.get(root, path));
+                if(!db.newFolder(path)){
+                    Files.delete(Paths.get(root, path));
+                    System.err.println("Make Directory Task Failed: DB connection issue: " + path);
+                }
+            }
         } catch (IOException ex) {
             System.err.println("Make Directory Task Failed: " + path);
         }

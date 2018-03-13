@@ -13,6 +13,7 @@ import java.nio.file.Paths;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
@@ -21,6 +22,10 @@ import javax.servlet.http.Part;
  *
  * @author Devon
  */
+@MultipartConfig(
+                fileSizeThreshold=1024*1024*2, // 2MB
+                 maxFileSize=1024*1024*2,      // 500KB
+                 maxRequestSize=1024*1024*50)   // 50MB
 public class UploadTask extends TransferTask {
 
     DBConnection db;
@@ -37,6 +42,7 @@ public class UploadTask extends TransferTask {
         db = new DBConnection();
         System.out.println("Upload Task: Queued");
         localPath = request.getPathInfo();
+        fileName = "";
     }
 
     @Override
@@ -92,7 +98,8 @@ public class UploadTask extends TransferTask {
         System.out.println("Upload Task: Ending");
         
         if(!abnormalEnd){
-            if(db.connect() == null || !db.newFile(Paths.get(root, localPath, fileName).toString())){
+            System.out.println(localPath);
+            if(db.connect() == null || !db.newFile(localPath)){
                 try {
                     Files.delete(Paths.get(root, localPath, fileName));
                 } catch (IOException ex) {

@@ -34,13 +34,7 @@ public class MakeDirectoryServlet extends WebInterfaceServlet {
                     if(db.verifyOwner((String)request.getSession().getAttribute("email"), json.map.get("path"))){
                         FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
                         if(aggregator.addTask(new MakeDirectory(json.map.get("path")))){
-                            
-                            if(db.newFolder(json.map.get("path"))){
-                                return "\"success\":\"true\"";
-                            }else{                        
-                                return "\"success\":\"false\"";
-                            }
-                            
+                            return "\"success\":\"true\"";
                         }else{
                             
                             return "\"success\":\"false\"";
