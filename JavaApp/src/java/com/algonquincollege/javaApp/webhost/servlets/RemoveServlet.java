@@ -28,7 +28,7 @@ public class RemoveServlet extends WebInterfaceServlet {
                     System.out.println(json.map.get("path"));
                 ls = new ListContentsServlet();
                 if(db.connect() == null){
-                    return ls.toString(json.map.get("path"), "false");
+                    return "\"success\":\"false\"";
                 }else{
                     if(db.verifyOwner((String)request.getSession().getAttribute("email"), json.map.get("path"))){
                         FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
@@ -39,15 +39,15 @@ public class RemoveServlet extends WebInterfaceServlet {
                                 db.deleteFolder(json.map.get("path"));
                             }
                         }else{
-                           return ls.toString(json.map.get("path"), "false");
+                           return "\"success\":\"false\"";
                         }
                     }else{
-                        return ls.toString(json.map.get("path"), "false");
+                        return "\"success\":\"false\"";
                     }
                 }
             }
         }catch(Exception IOException){}
-        return ls.toString(json.map.get("path"), "false");
+        return "\"success\":\"false\"";
     }
     
 }

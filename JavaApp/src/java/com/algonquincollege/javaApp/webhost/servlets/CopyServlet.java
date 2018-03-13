@@ -35,26 +35,28 @@ public class CopyServlet extends WebInterfaceServlet {
             if(json.parseCp(ByteReconstruct.byteToString(request))){
                 //ls = new ListContentsServlet(json.map.get("from"));
                 if(db.connect() == null){
-                    return ls.toString(json.map.get("to"), "false");
+                    return "\"success\":\"false\"";
                 }else{
                     if(db.verifyOwner((String)request.getSession().getAttribute("email"), json.map.get("from")) && db.verifyOwner((String)request.getSession().getAttribute("email"), json.map.get("to"))){
                         FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
                         if(aggregator.addTask(new Copy(json.map.get("from"),json.map.get("to")))){
                             if(json.map.get("type").equals(new String("File"))){
                                 db.newFile(json.map.get("to"));
+                                return "\"success\":\"true\"";
                             }else{
                                 db.copyFolder(json.map.get("from"), json.map.get("to"));
+                                return "\"success\":\"true\"";
                             }
                         }else{
-                           return ls.toString(json.map.get("to"), "false");
+                           return "\"success\":\"false\"";
                         }
                     }else{
-                        return ls.toString(json.map.get("to"), "false");
+                        return "\"success\":\"false\"";
                     }
                 }
             }
         }catch(Exception IOException){}
-        return ls.toString(json.map.get("to"), "false");
+        return "\"success\":\"false\"";
     }
     
 }

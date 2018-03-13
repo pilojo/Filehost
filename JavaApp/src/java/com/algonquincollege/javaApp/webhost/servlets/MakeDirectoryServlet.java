@@ -29,33 +29,33 @@ public class MakeDirectoryServlet extends WebInterfaceServlet {
                 
                 if(db.connect() == null){
                     
-                    return ls.toString(json.map.get("path"), "false");
+                    return "\"success\":\"false\"";
                 }else{
                     if(db.verifyOwner((String)request.getSession().getAttribute("email"), json.map.get("path"))){
                         FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
                         if(aggregator.addTask(new MakeDirectory(json.map.get("path")))){
                             
                             if(db.newFolder(json.map.get("path"))){
-                                return ls.toString("{"+"\"path\":\""+json.map.get("path")+"\"}", "true");
+                                return "\"success\":\"true\"";
                             }else{                        
-                                return ls.toString(json.map.get("path"), "false");
+                                return "\"success\":\"false\"";
                             }
                             
                         }else{
                             
-                            return ls.toString(json.map.get("path"), "false");
+                            return "\"success\":\"false\"";
                         }
                     }else{
-                        return ls.toString(json.map.get("path"), "false");
+                        return "\"success\":\"false\"";
                     }
                     
                 }
             }else{
-                return ls.toString("INVALID", "false");
+                return "\"success\":\"false\"";
             }
         }catch(Exception IOException){
             System.out.println(IOException.getMessage());
-            return ls.toString(json.map.get("path"), "false");
+            return "\"success\":\"false\"";
         }
     }
     
