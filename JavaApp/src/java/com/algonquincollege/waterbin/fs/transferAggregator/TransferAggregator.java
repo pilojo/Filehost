@@ -30,8 +30,6 @@ public class TransferAggregator {
         System.out.println("File Transfer Aggregator: New Task Submitted");
         Future<TransferTask> ourFuture = (Future<TransferTask>) pool.submit(task);
         
-        
-        
         try {
             ourFuture.get();
             return task.getSuccess();

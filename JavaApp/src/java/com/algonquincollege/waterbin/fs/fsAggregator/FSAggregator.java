@@ -30,8 +30,6 @@ public class FSAggregator {
         System.out.println("File System Aggregator: New Task Submitted");
         Future<FileSystemTask> ourFuture = (Future<FileSystemTask>) pool.submit(task);
         
-        
-        
         try {
             ourFuture.get();
             return task.getSuccess();

@@ -24,7 +24,6 @@ public class MakeDirectory extends FileSystemTask{
         System.out.println("Make Directory Task: " + path + " | Going Live");
         try{
             Files.createDirectory(Paths.get(root, path));
-            success = true;
         } catch (IOException ex) {
             System.err.println("Make Directory Task Failed: " + path);
         }

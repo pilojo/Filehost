@@ -26,6 +26,8 @@ public class UploadTask extends TransferTask {
     DBConnection db;
     final String localPath;
     
+    private boolean abnormalEnd;
+    
     String fileName;
     int recommendedResponseCode;
     
@@ -47,7 +49,8 @@ public class UploadTask extends TransferTask {
                     fileName = new File(fileName).getName();
                     if(!fileName.matches("[A-Za-z\\.\\-0-9]+")) {
                         recommendedResponseCode = 403;
-                        return;
+                        abnormalEnd = true;
+                        break;
                     }
                 }
                 else {
@@ -59,7 +62,8 @@ public class UploadTask extends TransferTask {
                         if(Files.exists(Paths.get(root, localPath, fileName)))
                             Files.delete(Paths.get(root, localPath, fileName));
                         recommendedResponseCode = 403;
-                        return;
+                        abnormalEnd = true;
+                        break;
                     }
                 }
                 part.write(Paths.get(root, localPath, fileName).toString());
@@ -68,35 +72,37 @@ public class UploadTask extends TransferTask {
         } catch (IOException ex) {
             Logger.getLogger(UploadTask.class.getName()).log(Level.SEVERE, "IO Exception during file upload", ex);
             recommendedResponseCode = 500;
+            abnormalEnd = true;
             try {
                 Files.delete(Paths.get(root, localPath, fileName));
             } catch (IOException e) {
                 Logger.getLogger(UploadTask.class.getName()).log(Level.SEVERE, "Error in Attempt to delete Abandoned File", e);
             }
-            return;
         } catch (ServletException ex) {
             Logger.getLogger(UploadTask.class.getName()).log(Level.SEVERE, "Servlet Threw an Exception", ex);
             recommendedResponseCode = 500;
+            abnormalEnd = true;
             try {
                 Files.delete(Paths.get(root, localPath, fileName));
             } catch (IOException e) {
                 Logger.getLogger(UploadTask.class.getName()).log(Level.SEVERE, "Error in Attempt to delete Abandoned File", e);
             }
-            return;
         }
         
         System.out.println("Upload Task: Ending");
         
-        if(db.connect() == null || !db.newFile(Paths.get(root, localPath, fileName).toString())){
-            try {
-                Files.delete(Paths.get(root, localPath, fileName));
-            } catch (IOException ex) {
-                Logger.getLogger(UploadTask.class.getName()).log(Level.SEVERE, "Error in Attempt to delete Abandoned File", ex);
+        if(!abnormalEnd){
+            if(db.connect() == null || !db.newFile(Paths.get(root, localPath, fileName).toString())){
+                try {
+                    Files.delete(Paths.get(root, localPath, fileName));
+                } catch (IOException ex) {
+                    Logger.getLogger(UploadTask.class.getName()).log(Level.SEVERE, "Error in Attempt to delete Abandoned File", ex);
+                }
+                recommendedResponseCode = 500;
             }
-            recommendedResponseCode = 500;
-        }
-        else{
-            recommendedResponseCode = 202;
+            else{
+                recommendedResponseCode = 202;
+            }
         }
     }
     
