@@ -6,6 +6,8 @@
 package com.algonquincollege.javaApp.webhost.servlets;
 
 import com.algonquincollege.javaApp.database.DBConnection;
+import com.algonquincollege.waterbin.fs.transferAggregator.TransferAggregator;
+import com.algonquincollege.waterbin.fs.transferTasks.UploadTask;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -23,24 +25,11 @@ import javax.servlet.http.Part;
  */
 
 //@WebServlet("/UploadServlet")
-@MultipartConfig(fileSizeThreshold=1024*1024*2, // 2MB
+@MultipartConfig(
+                fileSizeThreshold=1024*1024*2, // 2MB
                  maxFileSize=1024*500,      // 500KB
                  maxRequestSize=1024*1024*50)   // 50MB
 public class UploadServlet extends HttpServlet {
-    /**
-     * UID to satisfy Serializable interface
-     */
-    private static final long serialVersionUID = 5762973754703989733L;
-    /**
-     * Name of the directory where uploaded files will be saved, relative to
-     * the web application directory.
-     */
-    private static final String SAVE_DIR = "D:\\fileHostRoot";
-     
-    @Override
-    public void init(){
-        //System.out.println("I was just created");
-    }
     
     /**
      * handles file upload
@@ -52,48 +41,19 @@ public class UploadServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
-        // constructs path of the directory to save uploaded file
-        DBConnection db = new DBConnection();
-        String localPath = request.getPathInfo();
         
-        String savePath = SAVE_DIR;
+        System.out.println("Upload Servlet Called.");
+        TransferAggregator taggregate = (TransferAggregator)this.getServletContext().getAttribute("transfer aggregator");
         
-         String fileName = new String();
-        for (Part part : request.getParts()) {
-            
-            fileName = extractFileName(part);
-            if(!fileName.matches("[A-Za-z\\.\\-0-9]+")) {
-                response.sendError(403);
-                return;
-            }
-            // refines the fileName in case it is an absolute path1
-            fileName = new File(fileName).getName();
-            try{
-                part.write(Paths.get(savePath, localPath, fileName).toString());
-                
-            }
-            catch(IOException e){System.out.println("It goes here to die");}
+        
+        UploadTask task = new UploadTask(request, response);
+        
+        if(taggregate.addTask(task)){
+            response.sendError(200);
         }
-        if(db.connect()!=null){
-            System.out.println(fileName + "\n" + localPath);
-            System.out.println("/"+db.getUserIDFromUsername(db.getUserIDFromPath(localPath))+localPath.substring(localPath.indexOf("/",1), localPath.length()-1)+"/"+fileName);
-            db.newFile("/"+db.getUserIDFromUsername(db.getUserIDFromPath(localPath))+localPath.substring(localPath.indexOf("/",1), localPath.length()-1)+"/"+fileName);
+        else
+        {
+            response.sendError(task.getRecommendedCode());
         }
-        request.setAttribute("message", "Upload has been done successfully!");
-        getServletContext().getRequestDispatcher("/status.jsp").forward(
-                request, response);
-    }
-    /**
-     * Extracts file name from HTTP header content-disposition
-     */
-    private String extractFileName(Part part) {
-        String contentDisp = part.getHeader("content-disposition");
-        String[] items = contentDisp.split(";");
-        for (String s : items) {
-            if (s.trim().startsWith("filename")) {
-                return s.substring(s.indexOf("=") + 2, s.length()-1);
-            }
-        }
-        return "";
     }
 }

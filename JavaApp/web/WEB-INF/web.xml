@@ -3,6 +3,9 @@
     <listener>
         <listener-class>com.algonquincollege.waterbin.fs.fsAggregator.FSAggregatorInitializer</listener-class>
     </listener>
+    <listener>
+        <listener-class>com.algonquincollege.waterbin.fs.transferAggregator.TransferAggregatorInitializer</listener-class>
+    </listener>
     
     <servlet>
         <servlet-name>UploadServlet</servlet-name>
@@ -19,7 +22,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>DownloadServlet</servlet-name>
-        <url-pattern>/Download/*</url-pattern>
+        <url-pattern>/download/*</url-pattern>
     </servlet-mapping>
     
     <servlet>
