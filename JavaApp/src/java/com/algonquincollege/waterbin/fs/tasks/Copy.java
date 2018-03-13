@@ -5,13 +5,14 @@
  */
 package com.algonquincollege.waterbin.fs.tasks;
 
+import com.algonquincollege.javaApp.database.DBConnection;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
 /**
  *
- * @author Devon
+ * @author Devon St John
  */
 public class Copy extends FileSystemTask {
     
@@ -22,7 +23,9 @@ public class Copy extends FileSystemTask {
         this.source = source;
         this.dest = dest;
         
-        System.out.println("Copy Task: Launched to Aggregator");
+        db = new DBConnection();
+        
+        System.out.println("Move Task: Launched to Aggregator");
     }
     
     @Override
@@ -34,7 +37,7 @@ public class Copy extends FileSystemTask {
                 success = true;
                 if(Files.isDirectory(Paths.get(root, dest))){
                     if(!db.updateFolder(source, dest)){
-                        Files.copy(Paths.get(root, dest), Paths.get(root, source));
+                        Files.delete(Paths.get(root, dest));
                     }
                 }else{
                     if(!db.updateFile(source, dest)){
@@ -47,10 +50,9 @@ public class Copy extends FileSystemTask {
         }
         System.out.println("Copy Task: Completed");
     }
-    
+   
     @Override
     public boolean getSuccess(){
         return Files.exists(Paths.get(root, dest));
     }
-    
 }
