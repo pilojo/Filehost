@@ -31,10 +31,11 @@ public class LoginServlet extends WebInterfaceServlet {
                 if(db.connect() == null){
                      return"\"logedin\":\"false\"";
                  }else{
+                    System.out.print(json.map.get("email") + json.map.get("password"));
                      if(db.login(json.map.get("email"), json.map.get("password"))){
                          request.getSession().setAttribute("email", json.map.get("email"));
                          request.getSession().setAttribute("username", db.getUsernameFromEmail(json.map.get("email")));
-                         return "\"logedin\":\"true\",\"username\":\"" + db.getUsernameFromEmail(json.map.get("email"))+"\"";
+                         return "\"logedin\":\"true\",\"username\":\"" + request.getSession().getAttribute("username")+"\"";
                      }
                  }
 

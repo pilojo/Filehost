@@ -12,7 +12,7 @@ import java.util.Map;
  */
 public class JSONParser
 {
-    public static Map<String, String> map;
+    public Map<String, String> map;
     
     public JSONParser() {
         this.map = new HashMap();
@@ -22,12 +22,15 @@ public class JSONParser
     /*
     Parses the single object json if it matches the regex;returns false otherwise
     */
-    public static boolean parse(String json, String regex){
+    public boolean parse(String json, String regex){
+        System.out.println("hit parse");
         if(json.matches(regex))
         {
+            System.out.println("Match regex");
             try{
                 //Trims the opening and closing brackets
                 json=json.substring(1, json.length()-1);
+                System.out.println(json);
                 String[] rows = json.split(",");
                 for (String row : rows) {
                     String[] temp = row.split(":");
@@ -35,36 +38,38 @@ public class JSONParser
                 }
                 System.out.println("Parsed");
                 return true;
-            }catch(Exception e){return false;}
+            }catch(Exception e){
+                //e.printStackTrace();
+                return false;}
         }
         return false;
     }
     
-    public static boolean parseLogin(String json){
+    public boolean parseLogin(String json){
         return parse(json, "\\{\\n*\"email\":\"\\w+@\\w+\\.\\w+\",\"password\":\".+\"\\n*\\}");
     }
     
-    public static boolean parseSignUp(String json){
+    public boolean parseSignUp(String json){
         return parse(json, "\\{\"firstName\":\"[A-Za-z\\.\\-]+\",\"lastName\":\"[A-Za-z\\.\\-]+\",\"email\":\"\\w+@\\w+\\.\\w+\",\"username\":\"\\w+\",\"password\":\".+\"\\}");
     }
     
-    public static boolean parseMkdir(String json){
+    public boolean parseMkdir(String json){
         return parse(json, "\\{\\\"path\\\"\\:\\\"(\\/\\w+)+\\/?(\\w+)?\\\"\\}");
     }
     
-    public static boolean parseCp(String json){
+    public boolean parseCp(String json){
         return parse(json, "\\{\\\"from\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\\\"to\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\\\"type\\\"\\:\\\"\\w+\\\"\\}");
     }
     
-    public static boolean parseMv(String json){
+    public boolean parseMv(String json){
         return parse(json, "\\{\\\"from\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\\\"to\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\\\"type\\\"\\:\\\"\\w+\\\"\\}");
     }
     
-    public static boolean parseRm(String json){
+    public boolean parseRm(String json){
         return parse(json, "\\{\\\"path\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\\\"type\\\"\\:\\\"\\w+\\\"\\}");
     }
     
-    public static boolean parseList(String json){
+    public boolean parseList(String json){
         return parse(json, "\\{\\\"username\\\"\\:\\\"\\w+\\\",\\\"parent\\\"\\:\\\"(\\/\\w+)+\\/?(\\w+)?\\\"\\}");
     }
 }

@@ -6,6 +6,7 @@
 package com.algonquincollege.javaApp.webhost.servlets;
 
 import com.algonquincollege.javaApp.fileManager.utils.ByteReconstruct;
+import com.algonquincollege.javaApp.utils.json.JSONParser;
 import com.algonquincollege.javaApp.webhost.WebInterfaceServlet;
 import com.algonquincollege.waterbin.fs.fsAggregator.FSAggregator;
 import com.algonquincollege.waterbin.fs.tasks.MakeDirectory;
@@ -22,25 +23,40 @@ public class MakeDirectoryServlet extends WebInterfaceServlet {
     public String toString(HttpServletRequest request) {
         ListContentsServlet ls = null;
         try{
-            
+            json = new JSONParser();
             if(json.parseMkdir(ByteReconstruct.byteToString(request))){
-                //ls = new ListContentsServlet(json.map.get("path"));
-                System.out.println(ByteReconstruct.byteToString(request));
+                ls = new ListContentsServlet();
                 
                 if(db.connect() == null){
-                    return ls.toString();
+                    
+                    return ls.toString(json.map.get("path"), "false");
                 }else{
-                    FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
-                    if(aggregator.addTask(new MakeDirectory(json.map.get("path")))){
-                        db.newFolder("/"+db.getUserIDFromUsername(db.getUserIDFromPath(json.map.get("path")))+"/"+json.map.get("path").substring(json.map.get("path").lastIndexOf("/")+1));
+                    if(db.verifyOwner((String)request.getSession().getAttribute("email"), json.map.get("path"))){
+                        FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
+                        if(aggregator.addTask(new MakeDirectory(json.map.get("path")))){
+                            
+                            if(db.newFolder(json.map.get("path"))){
+                                return ls.toString("{"+"\"path\":\""+json.map.get("path")+"\"}", "true");
+                            }else{                        
+                                return ls.toString(json.map.get("path"), "false");
+                            }
+                            
+                        }else{
+                            
+                            return ls.toString(json.map.get("path"), "false");
+                        }
                     }else{
-                        //Went to /dev/null
+                        return ls.toString(json.map.get("path"), "false");
                     }
-                    return ls.toString();
+                    
                 }
+            }else{
+                return ls.toString("INVALID", "false");
             }
-        }catch(Exception IOException){}
-        return ls.toString();
+        }catch(Exception IOException){
+            System.out.println(IOException.getMessage());
+            return ls.toString(json.map.get("path"), "false");
+        }
     }
     
 }

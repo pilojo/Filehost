@@ -6,6 +6,7 @@
 package com.algonquincollege.javaApp.webhost.servlets;
 
 import com.algonquincollege.javaApp.fileManager.utils.ByteReconstruct;
+import com.algonquincollege.javaApp.utils.json.JSONParser;
 import com.algonquincollege.javaApp.webhost.WebInterfaceServlet;
 import com.algonquincollege.waterbin.fs.fsAggregator.FSAggregator;
 import com.algonquincollege.waterbin.fs.tasks.Copy;
@@ -30,27 +31,30 @@ public class CopyServlet extends WebInterfaceServlet {
     public String toString(HttpServletRequest request) {
         ListContentsServlet ls = null;
         try{
+            json = new JSONParser();
             if(json.parseCp(ByteReconstruct.byteToString(request))){
                 //ls = new ListContentsServlet(json.map.get("from"));
                 if(db.connect() == null){
-                    return ls.toString();
+                    return ls.toString(json.map.get("to"), "false");
                 }else{
-                    FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
-                    if(aggregator.addTask(new Copy(json.map.get("from"),json.map.get("to")))){
-                        if(json.map.get("type").equals(new String("File"))){
-                            System.out.println("/"+db.getUserIDFromUsername(db.getUserIDFromPath(json.map.get("to")))+"/"+json.map.get("to").substring(json.map.get("to").indexOf("/",1)+1));
-                            db.newFile("/"+db.getUserIDFromUsername(db.getUserIDFromPath(json.map.get("to")))+"/"+json.map.get("to").substring(json.map.get("to").indexOf("/",1)+1));
+                    if(db.verifyOwner((String)request.getSession().getAttribute("email"), json.map.get("from")) && db.verifyOwner((String)request.getSession().getAttribute("email"), json.map.get("to"))){
+                        FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
+                        if(aggregator.addTask(new Copy(json.map.get("from"),json.map.get("to")))){
+                            if(json.map.get("type").equals(new String("File"))){
+                                db.newFile(json.map.get("to"));
+                            }else{
+                                db.copyFolder(json.map.get("from"), json.map.get("to"));
+                            }
                         }else{
-                            //Copy Folder to come. Not ready yet.
+                           return ls.toString(json.map.get("to"), "false");
                         }
                     }else{
-                        //Went to /dev/null
+                        return ls.toString(json.map.get("to"), "false");
                     }
-                    return ls.toString();
                 }
             }
         }catch(Exception IOException){}
-        return ls.toString();
+        return ls.toString(json.map.get("to"), "false");
     }
     
 }

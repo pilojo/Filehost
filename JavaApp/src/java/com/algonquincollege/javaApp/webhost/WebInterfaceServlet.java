@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
  */
 public abstract class WebInterfaceServlet extends HttpServlet {
     protected DBConnection db = new DBConnection();
-    protected JSONParser json = new JSONParser();
+    protected JSONParser json;
     /**
      * Sends JSON to a client that connects to any children servlets. Ensure toString is overriden
      *
