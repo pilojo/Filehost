@@ -40,6 +40,7 @@ public class SignUpServlet extends WebInterfaceServlet {
                 bindata.add(bytes[0]);
             }
             byte[] tmpdata = new byte[bindata.size()];
+            System.out.println("size: "+bindata.size());
             for(int i = 0; i < bindata.size(); i++){
                 tmpdata[i] = bindata.get(i);
             }//End of String reconstruction
@@ -55,10 +56,13 @@ public class SignUpServlet extends WebInterfaceServlet {
                     
                     FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
                     if(aggregator.addTask(new MakeDirectory(json.map.get("username"))));
-                        db.newFolder(json.map.get("username"));
-                        return "\"signedup\":\"true\"";
-                 }
-             }
+                        if(db.signUp(json.map.get("firstName"), json.map.get("lastName"), json.map.get("email"), json.map.get("username"), json.map.get("password"))){
+                            System.out.println("Signup Servlet: Created");
+                            return "\"signedup\":\"true\"";
+                        }
+                    }
+            
+            }
         }
         //Any exceptions means signup failed
         }catch(Exception e){return e.toString();}

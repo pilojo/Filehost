@@ -33,11 +33,14 @@ public class Remove extends FileSystemTask {
                 boolean wasFolder = Files.isDirectory(Paths.get(root, path));
 
                 Files.delete(Paths.get(root, path));
-                success = true;
                 if(wasFolder){
-                    db.deleteFolder(path);
+                    if(db.deleteFolder(path)){
+                        success = true;
+                    }else success = false;
                 }else{
-                    db.deleteFile(path);
+                    if(db.deleteFile(path)){
+                        success = true;
+                    }else success = false;
                 }
             }
         } catch (IOException ex) {

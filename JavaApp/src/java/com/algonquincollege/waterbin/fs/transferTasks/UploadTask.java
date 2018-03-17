@@ -7,7 +7,9 @@ package com.algonquincollege.waterbin.fs.transferTasks;
 
 import com.algonquincollege.javaApp.database.DBConnection;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.logging.Level;
@@ -33,7 +35,7 @@ public class UploadTask extends TransferTask {
     
     private boolean abnormalEnd;
     
-    String fileName;
+    private String fileName;
     int recommendedResponseCode;
     
     public UploadTask(HttpServletRequest request, HttpServletResponse response) {
@@ -42,66 +44,46 @@ public class UploadTask extends TransferTask {
         db = new DBConnection();
         System.out.println("Upload Task: Queued");
         localPath = request.getPathInfo();
-        fileName = "";
+        fileName = localPath.substring(localPath.lastIndexOf("/"));
     }
 
     @Override
     public void run() {
         System.out.println("Upload Task: Going Live");
-        try {
-            for (Part part : request.getParts()) {
-                if(fileName.isEmpty()){
-                    fileName = extractFileName(part);
-                    fileName = new File(fileName).getName();
-                    if(!fileName.matches("[A-Za-z\\.\\-0-9]+")) {
-                        recommendedResponseCode = 403;
-                        abnormalEnd = true;
-                        break;
+        try{
+            
+            int counter = 1024*1024*5;
+            if(!fileName.matches("\\/[A-Za-z0-9\\_]+(\\.?[A-Za-z0-9\\_]+)*")){
+                counter = -1;
+                abnormalEnd = true;
+                System.out.println(fileName + "Invalid File Name");
+            }else{
+                InputStream istream = request.getInputStream();
+                FileOutputStream file = new FileOutputStream(Paths.get(root, localPath).toString());
+            
+                byte[] bytes = new byte[1];
+                while(istream.read(bytes) != -1){
+                    if(counter <= 0) {
+                       file.flush();
+                       file.close();
+                       Files.delete(Paths.get(root, localPath));
+                       abnormalEnd = true;
+                       break;
                     }
+                    file.write(bytes);
+                    counter--;
                 }
-                else {
-                    String thisFileName = extractFileName(part);
-                    thisFileName = new File(thisFileName).getName();
-
-                    if (!thisFileName.equals(fileName)){
-                        Logger.getLogger(UploadTask.class.getName()).log(Level.SEVERE, "ATTEMPT TO INSERT MULTIPLE FILES INTO UPLOAD! This upload is aborting NOW, all progress writen will be reverted!");
-                        if(Files.exists(Paths.get(root, localPath, fileName)))
-                            Files.delete(Paths.get(root, localPath, fileName));
-                        recommendedResponseCode = 403;
-                        abnormalEnd = true;
-                        break;
-                    }
-                }
-                part.write(Paths.get(root, localPath, fileName).toString());
-                System.out.println("Upload Task: Wrote Part");
+                file.flush();
+                file.close();
             }
-        } catch (IOException ex) {
-            Logger.getLogger(UploadTask.class.getName()).log(Level.SEVERE, "IO Exception during file upload", ex);
-            recommendedResponseCode = 500;
-            abnormalEnd = true;
-            try {
-                Files.delete(Paths.get(root, localPath, fileName));
-            } catch (IOException e) {
-                Logger.getLogger(UploadTask.class.getName()).log(Level.SEVERE, "Error in Attempt to delete Abandoned File", e);
-            }
-        } catch (ServletException ex) {
-            Logger.getLogger(UploadTask.class.getName()).log(Level.SEVERE, "Servlet Threw an Exception", ex);
-            recommendedResponseCode = 500;
-            abnormalEnd = true;
-            try {
-                Files.delete(Paths.get(root, localPath, fileName));
-            } catch (IOException e) {
-                Logger.getLogger(UploadTask.class.getName()).log(Level.SEVERE, "Error in Attempt to delete Abandoned File", e);
-            }
+        }catch(Exception e){
         }
         
-        System.out.println("Upload Task: Ending");
-        
         if(!abnormalEnd){
-            System.out.println(localPath+"/"+fileName);
-            if(db.connect() == null || !db.newFile(localPath+"/"+fileName)){
+            System.out.println(localPath);
+            if(db.connect() == null || !db.newFile(localPath)){
                 try {
-                    Files.delete(Paths.get(root, localPath, fileName));
+                    Files.delete(Paths.get(root, localPath));
                 } catch (IOException ex) {
                     Logger.getLogger(UploadTask.class.getName()).log(Level.SEVERE, "Error in Attempt to delete Abandoned File", ex);
                 }
@@ -112,24 +94,10 @@ public class UploadTask extends TransferTask {
             }
         }
     }
-    
-    /**
-     * Extracts file name from HTTP header content-disposition
-     */
-    private String extractFileName(Part part) {
-        String contentDisp = part.getHeader("content-disposition");
-        String[] items = contentDisp.split(";");
-        for (String s : items) {
-            if (s.trim().startsWith("filename")) {
-                return s.substring(s.indexOf("=") + 2, s.length() - 1);
-            }
-        }
-        return "";
-    }
 
     @Override
     public boolean getSuccess() {
-        return Files.exists(Paths.get(root, localPath, fileName));
+        return Files.exists(Paths.get(root, localPath));
     }
     
     public int getRecommendedCode(){

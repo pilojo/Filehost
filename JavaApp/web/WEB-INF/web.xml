@@ -6,11 +6,27 @@
     <listener>
         <listener-class>com.algonquincollege.waterbin.fs.transferAggregator.TransferAggregatorInitializer</listener-class>
     </listener>
-    
+    <servlet>
+        <servlet-name>SearchUserServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.SearchUserServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchFileServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.SearchFileServlet</servlet-class>
+    </servlet>
     <servlet>
         <servlet-name>UploadServlet</servlet-name>
         <servlet-class>com.algonquincollege.javaApp.webhost.servlets.UploadServlet</servlet-class>
     </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>SearchFileServlet</servlet-name>
+        <url-pattern>/server/searchFile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchUserServlet</servlet-name>
+        <url-pattern>/server/searchUser</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>UploadServlet</servlet-name>
         <url-pattern>/upload/*</url-pattern>
@@ -113,12 +129,12 @@
        <location>/index.html</location>
    </error-page>
     <security-constraint>
-    <web-resource-collection>
-    <web-resource-name>Entire Application</web-resource-name>
-    <url-pattern>/*</url-pattern>
-    </web-resource-collection>
-    <user-data-constraint>
-    <transport-guarantee>CONFIDENTIAL</transport-guarantee>
-    </user-data-constraint>
+        <web-resource-collection>
+            <web-resource-name>Entire Application</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
     </security-constraint>
 </web-app>

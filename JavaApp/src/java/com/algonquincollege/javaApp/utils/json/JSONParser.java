@@ -1,4 +1,4 @@
-/*
+    /*
 A simple json parser that only splits 1 scope json files. does not handle objects. Should be replaced
 */
 package com.algonquincollege.javaApp.utils.json;
@@ -71,5 +71,13 @@ public class JSONParser
     
     public boolean parseList(String json){
         return parse(json, "\\{\\\"username\\\"\\:\\\"\\w+\\\",\\\"parent\\\"\\:\\\"(\\/\\w+)+\\/?(\\w+)?\\\"\\}");
+    }
+    
+    public boolean parseSearchFile(String json){
+        return parse(json, "{\"firstName\":\"\\w+\",\"lastName\":\"\\w+\",\"username\":\"\\w+\",\"fileName\":\"\\w+\"}");
+    }
+    
+    public boolean parseSearchUser(String json){
+        return parse(json, "{\"firstName\":\"\\w+\",\"lastName\":\"\\w+\",\"username\":\"\\w+\"}");
     }
 }

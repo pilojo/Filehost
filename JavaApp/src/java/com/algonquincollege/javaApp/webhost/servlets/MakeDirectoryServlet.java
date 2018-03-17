@@ -26,9 +26,7 @@ public class MakeDirectoryServlet extends WebInterfaceServlet {
             json = new JSONParser();
             if(json.parseMkdir(ByteReconstruct.byteToString(request))){
                 ls = new ListContentsServlet();
-                
                 if(db.connect() == null){
-                    
                     return "\"success\":\"false\"";
                 }else{
                     if(db.verifyOwner((String)request.getSession().getAttribute("email"), json.map.get("path"))){

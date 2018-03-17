@@ -7,6 +7,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
@@ -22,7 +24,7 @@ public class DBConnection {
     private static final String URL = "jdbc:mysql://localhost/filehostdb"; //database to use
     private static final String USERNAME = "root";
     private static final String PASSWORD = "mainstreet";
-     private static final int NAME = 1;
+    private static final int NAME = 1;
     private static final int PATH = 0;
 
     private Connection connection; //Holds the connnection object to the db so that it can be re-used
@@ -177,7 +179,7 @@ public class DBConnection {
         String[] folder = splitPath(path);
         String[] parentFolder = splitPath(folder[PATH]);
         String user = getUsernameFromPath(path);
-        String folderSQL = "INSERT INTO folders (ParentFolder_ID, Name, Parent_Path, Owner_ID, Permission_ID ) SELECT folders.ID, ?, ?, users.ID, 1 FROM folders, users WHERE folders.Name = ? AND folders.Parent_Path = ? AND users.Username = ?";
+        String folderSQL = "INSERT INTO folders (ParentFolder_ID, Name, Parent_Path, Owner_ID, Permission_ID ) SELECT folders.ID, ?, ?, users.ID, folders.Permission_ID FROM folders, users WHERE folders.Name = ? AND folders.Parent_Path = ? AND users.Username = ?";
 
         try {
             PreparedStatement nFolder = connection.prepareStatement(folderSQL);
@@ -492,28 +494,108 @@ public class DBConnection {
         return true;
     }
     
-    public boolean changeFolderPermission(String path, String permissionName){
+/**
+     *
+     * @param path
+     * @param permissionName
+     * @return
+     */
+
+    public boolean changeFolderPermission(String path, String permissionName) {
+        if(!folderExists(path)){
+            System.out.println("Cannot find folder "+path);
+            return false;
+        }
         String[] folder = splitPath(path);
         String folderSQL = "UPDATE folders SET Permission_ID = (SELECT ID FROM permissions WHERE Name = ?) WHERE Name = ? AND Parent_Path = ? ;";
-        
-        try{
+
+        try {
             PreparedStatement changeFolder = connection.prepareStatement(folderSQL);
             changeFolder.setString(1, permissionName);
             changeFolder.setString(2, folder[NAME]);
             changeFolder.setString(3, folder[PATH]);
-            
+            System.out.println(changeFolder.toString());
+
             int updated = changeFolder.executeUpdate();
-            
-            if(updated == 0){
+
+            if (updated == 0) {
                 System.out.println("No folder permission changed");
                 return false;
             }
             System.out.println("Folder permission changed.");
-            
+            if (permissionName.equals("public")) {
+                return true;
+            }
+
+            String getFID = "SELECT ID FROM folders WHERE Name = ? AND Parent_Path = ?";
+            PreparedStatement FID = connection.prepareStatement(getFID);
+            FID.setString(1, folder[NAME]);
+            FID.setString(2, folder[PATH]);
+
+            ResultSet FIDrs = FID.executeQuery();
+            System.out.println("plz");
+            if (FIDrs.next()) {
+                childPermissions(FIDrs.getString("ID"), permissionName);
+            }
+
         } catch (SQLException e) {
+            e.printStackTrace();
             return false;
         }
 
+        return true;
+    }
+    /**
+     * 
+     * @param parentID
+     * @param permission
+     * @return 
+     */
+    public boolean childPermissions(String parentID, String permission) {
+        String childFolderSQL = "SELECT folders.ID, permissions.Name FROM folders INNER JOIN permissions ON folders.Permission_ID = permissions.ID WHERE ParentFolder_ID = ?";
+        String updateFolder = "UPDATE folders SET Permission_ID = (SELECT ID FROM permissions WHERE Name = ?) WHERE folders.ID = ?;";
+        String childFileSQL = "SELECT files.ID, permissions.Name FROM files INNER JOIN permissions ON files.Permissions_ID = permissions.ID WHERE ParentFolder_ID = ?";
+        String updateFile = "UPDATE files SET Permissions_ID = (SELECT ID FROM permissions WHERE Name = ?) WHERE ID = ?";
+
+        try {
+            PreparedStatement kidFiles = connection.prepareStatement(childFileSQL);
+            kidFiles.setString(1, parentID);
+            PreparedStatement kidFolders = connection.prepareStatement(childFolderSQL);
+            kidFolders.setString(1, parentID);
+            PreparedStatement updateFol = connection.prepareStatement(updateFolder);
+            updateFol.setString(1, permission);
+            PreparedStatement updateFil = connection.prepareStatement(updateFile);
+            updateFil.setString(1, permission);
+
+            ResultSet fileRS = kidFiles.executeQuery();
+
+            while (fileRS.next()) {
+                updateFil.setString(2, fileRS.getString("ID"));
+                if (permission.equals("shared")) {
+                    if(fileRS.getString("Name").equals("public")){
+                        updateFil.executeUpdate();
+                    }
+                }else{
+                    updateFil.executeUpdate();
+                }                
+            }
+            
+            ResultSet folderRS = kidFolders.executeQuery();
+            while(folderRS.next()){
+                updateFol.setString(2, folderRS.getString("ID"));
+                if(permission.equals("shared")){
+                    if(folderRS.getString("Name").equals("public")){
+                        updateFol.executeUpdate();
+                    }
+                }else{
+                    updateFol.executeUpdate();
+                }
+                childPermissions(folderRS.getString("ID"), permission);
+            }
+
+        } catch (SQLException e) {
+            return false;
+        }
         return true;
     }
     /**
@@ -595,31 +677,95 @@ public class DBConnection {
             }
 
         } catch (SQLException e) {
-            
         }
         return contents;
     }
-    
-
     /**
-     *
+     * 
      * @param username
-     * @return
+     * @param firstname
+     * @param lastname
+     * @param filename
+     * @return 
      */
-    public String[][] listRoot(String username) {
-        String userSQL = "SELECT ID FROM users WHERE Username = ?";
-        String[][] contents = null;
-        try {
-            PreparedStatement getUID = connection.prepareStatement(userSQL);
-            getUID.setString(1, username);
-
-            ResultSet UID = getUID.executeQuery();
-            contents = list("/" + UID.getString("ID") + "/");
-
-        } catch (SQLException e) {
-
+    public String[][] searchFiles(String username,  String firstname, String lastname, String filename){
+        String [][]files = null;
+        String fileSQL = "SELECT files.Name, Username, Parent_Path, folders.Name AS folderName FROM files INNER JOIN folders ON files.ParentFolder_ID = folders.ID INNER JOIN users ON folders.Owner_ID = users.ID WHERE Username LIKE ? AND First_Name LIKE ? AND Last_Name LIKE ? AND files.Name LIKE ?;";
+        
+        if(username == null) username = "%";
+        if(firstname == null) firstname = "%";
+        if(lastname == null) lastname = "%";
+        if(filename == null) filename = "%";
+        
+        try{
+            PreparedStatement getFiles = connection.prepareStatement(fileSQL);
+            getFiles.setString(1, username);
+            getFiles.setString(2, firstname);
+            getFiles.setString(3, lastname);
+            getFiles.setString(4, filename);
+            
+            ResultSet fileRS = getFiles.executeQuery();
+            
+            int rowCount = fileRS.last() ? fileRS.getRow() : 0;
+            fileRS.beforeFirst();
+            
+            if(rowCount == 0){
+                System.out.println("No results found.");
+                return files;
+            }
+            
+            files = new String[rowCount][4];
+            int i = 0;
+            while(fileRS.next()){
+                files[i][0] = fileRS.getString("Name");
+                files[i][1] = "File";
+                files[i][2] = fileRS.getString("Username");
+                files[i][3] = fileRS.getString("Parent_Path") + fileRS.getString("folderName") +"/";
+                i++;
+            }
+            
+            
+        }catch(SQLException e){
+            
         }
-        return contents;
+        return files;
+    }
+    
+    public String [][] searchUsers (String username, String firstname, String lastname){
+        String[][] users = null;
+        String userSQL = "SELECT Username, First_Name, Last_Name FROM users WHERE Username LIKE ? AND First_Name LIKE ? AND Last_Name LIKE ?;";
+        
+        if(username == null) username = "%";
+        if(firstname == null) firstname = "%";
+        if(lastname == null) lastname = "%";
+        try{
+            PreparedStatement getUsers = connection.prepareStatement(userSQL);
+            getUsers.setString(1, username);
+            getUsers.setString(2, firstname);
+            getUsers.setString(3, lastname);
+            
+            ResultSet userRS = getUsers.executeQuery();
+            
+            int rowCount = userRS.last() ? userRS.getRow() : 0;
+            userRS.beforeFirst();
+            
+            if(rowCount == 0){
+                System.out.println("No results found.");
+                return users;
+            }
+            
+            int i = 0;
+            users = new String[rowCount][3];
+            while(userRS.next()){
+                users[i][0] = userRS.getString("Username");
+                users[i][1] = userRS.getString("First_Name");
+                users[i][2] = userRS.getString("Last_Name");
+                i++;
+            }
+        }catch(SQLException e){
+            return null;
+        }
+        return users;
     }
 
     /**

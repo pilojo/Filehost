@@ -36,11 +36,11 @@ public class Copy extends FileSystemTask {
                 Files.copy(Paths.get(root, source), Paths.get(root, dest));
                 success = true;
                 if(Files.isDirectory(Paths.get(root, dest))){
-                    if(!db.updateFolder(source, dest)){
+                    if(!db.newFolder(dest)){
                         Files.delete(Paths.get(root, dest));
                     }
                 }else{
-                    if(!db.updateFile(source, dest)){
+                    if(!db.newFile(dest)){
                         Files.delete(Paths.get(root, dest));
                     }
                 }
