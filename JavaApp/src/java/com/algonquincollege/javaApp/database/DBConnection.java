@@ -1036,7 +1036,7 @@ public class DBConnection {
     public boolean setScannedFlag(String path) {
         String[] file = splitPath(path);
 
-        if (file[PATH] == "/") {
+        if (file[PATH].equals("/")) {
             System.out.println("There shouldn't be any files in root root. Stop.");
             return false;
         }
@@ -1330,6 +1330,31 @@ public class DBConnection {
             return false;
         }
         return false;
+    }
+    public String[] ownedGroups(String username){
+        String[] groups = null;
+        String groupSQL = "SELECT Groupname FROM groups WHERE username = ?;";
+        try{
+            PreparedStatement groupStmt = connection.prepareStatement(groupSQL);
+            groupStmt.setString(1, username);
+            
+            ResultSet groupRS = groupStmt.executeQuery();
+            int rowCount = groupRS.last() ? groupRS.getRow() : 0;
+            groupRS.beforeFirst();
+            
+            if(rowCount == 0){
+                System.out.println("User has no groups.");
+                return groups;
+            }
+            groups = new String[rowCount];
+            for(int i = 0; i < rowCount; i++){
+                groups[i] = groupRS.getString("Groupname");
+            }
+            
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return groups;
     }
 
     /**
