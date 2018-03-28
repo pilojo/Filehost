@@ -7,7 +7,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
@@ -402,14 +401,33 @@ public class DBConnection {
             return false;
         }
         String[] folder = splitPath(path);
+        if(folder[PATH].equals("/")){
+            System.out.println("DO NOT CHANGE ROOT FOLDER PERMISSION.");
+            return false;
+        }
+        
+        String[] parent = splitPath(folder[PATH]);
+        String permissionSQL = "SELECT permissions.Name as pName From folders INNER JOIN permissions ON permissions.ID = folders.Permission_ID WHERE folders.Name AND Parent_Path = ?;";
         String folderSQL = "UPDATE folders SET Permission_ID = (SELECT ID FROM permissions WHERE Name = ?) WHERE Name = ? AND Parent_Path = ? ;";
 
         try {
+            PreparedStatement permissionStmt = connection.prepareStatement(permissionSQL);
+            permissionStmt.setString(1, parent[NAME]);
+            permissionStmt.setString(2, parent[PATH]);
+            
+            ResultSet permissionRS = permissionStmt.executeQuery();
+            if(permissionRS.getString("pName").equals(permissionName)){
+                System.out.println("Folder already has that permission.");
+                return true;
+            }else if(permissionRS.getString("pName").equals("private")){
+                System.out.println("Parent folder is private, cannot change child folder permission.");
+                return false;
+            }
+            
             PreparedStatement changeFolder = connection.prepareStatement(folderSQL);
             changeFolder.setString(1, permissionName);
             changeFolder.setString(2, folder[NAME]);
             changeFolder.setString(3, folder[PATH]);
-            System.out.println(changeFolder.toString());
 
             int updated = changeFolder.executeUpdate();
 
@@ -633,8 +651,20 @@ public class DBConnection {
         String[] file = splitPath(path);
         String[] parent = splitPath(file[PATH]);
         String fileSQL = "UPDATE files INNER JOIN folders ON files.ParentFolder_ID = folders.ID SET files.Permissions_ID = (SELECT ID FROM permissions WHERE NAME = ?) WHERE files.Name = ? AND folders.Name = ? AND folders.Parent_Path = ?;";
-
+        String permissionSQL = "SELECT permissions.Name as pName From folders INNER JOIN permissions ON permissions.ID = folders.Permission_ID WHERE folders.Name AND Parent_Path = ?;";
         try {
+            PreparedStatement permissionStmt = connection.prepareStatement(permissionSQL);
+            permissionStmt.setString(1, parent[NAME]);
+            permissionStmt.setString(2, parent[PATH]);
+            
+            ResultSet permissionRS = permissionStmt.executeQuery();
+            if(permissionRS.getString("pName").equals(permissionName)){
+                System.out.println("File already has that permission.");
+                return true;
+            }else if(permissionRS.getString("pName").equals("private")){
+                System.out.println("Parent folder is private, cannot change child file permission.");
+                return false;
+            }
             PreparedStatement files = connection.prepareStatement(fileSQL);
             files.setString(1, permissionName);
             files.setString(2, file[NAME]);
