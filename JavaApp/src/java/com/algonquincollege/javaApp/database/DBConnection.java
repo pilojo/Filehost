@@ -195,6 +195,11 @@ public class DBConnection {
                 System.out.println("New folder could not be created");
                 return false;
             }
+            
+            String groups[] = folderGroups(parentFolder[PATH]);
+            for (String group : groups) {
+                shareFolderWithGroup(path, group);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
@@ -632,6 +637,10 @@ public class DBConnection {
             if (nFile.executeUpdate() == 0) {
                 System.out.println("Could not create new file");
                 return false;
+            }
+            String[] groups = fileGroups(parentFolder[PATH]);
+            for(String group : groups){
+                shareFileWithGroup(filePath, group);
             }
         } catch (SQLException e) {
             System.out.println("File was not created due to an Exception being thrown");
@@ -1289,6 +1298,58 @@ public class DBConnection {
         }
         return true;
     }
+    /**
+     * 
+     * @param path
+     * @param groupname
+     * @return 
+     */
+    public boolean removeFolderAccess(String path, String groupname){
+        if(!groupExists(groupname)){
+            System.out.println("Group couldn't have access revoked as it doesn't exist.");
+            return false;
+        }
+        String[] folder = splitPath(path);
+        String groupSQL = "DELETE FROM sharedfolders INNER JOIN folders ON folders.ID = sharedfolders.Folder_ID WHERE folders.Name = ? folders.Parent_Path = ?;";
+        try{
+            PreparedStatement groupStmt = connection.prepareStatement(groupSQL);
+            groupStmt.setString(1, folder[NAME]);
+            groupStmt.setString(2, folder[PATH]);
+            
+            if(groupStmt.executeUpdate()==0){
+                System.out.println("No groups were revoked.");
+                return false;
+            }
+            
+        }catch(SQLException e){
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+    public boolean removeFileAccess(String path, String groupname){
+        if(!groupExists(groupname)){
+            System.out.println("Group doesn't exist, could not remove group access to file.");
+            return false;
+        }
+        String[] file = splitPath(path);
+        String[] parent = splitPath(file[PATH]);
+        String groupSQL = "DELETE FROM sharedfiles INNER JOIN files ON files.ID = sharedfiles.File_ID WHERE files.Name AND files.ParentFolder_ID = (SELECT ID FROM folders WHERE folders.Name = ? AND folders.Parent_Path = ?);";
+        try{
+            PreparedStatement groupStmt = connection.prepareStatement(groupSQL);
+            groupStmt.setString(1, file[NAME]);
+            groupStmt.setString(2, parent[NAME]);
+            groupStmt.setString(3, parent[PATH]);
+            
+            if(groupStmt.executeUpdate()==0){
+                System.out.println("No groups revoked from file.");
+                return false;
+            }
+        }catch(SQLException e){
+            return false;
+        }
+        return true;
+    }
 
     /**
      *
@@ -1331,6 +1392,11 @@ public class DBConnection {
         }
         return false;
     }
+    /**
+     * 
+     * @param username
+     * @return 
+     */
     public String[] ownedGroups(String username){
         String[] groups = null;
         String groupSQL = "SELECT Groupname FROM groups WHERE username = ?;";
@@ -1399,6 +1465,70 @@ public class DBConnection {
             return false;
         }
         return false;
+    }
+    /**
+     * 
+     * @param path
+     * @return 
+     */
+    public String[] folderGroups (String path){
+        String[] groups = null;
+        String[] folder = splitPath(path);
+        String groupSQL = "SELECT Groupname FROM sharedfolders INNER JOIN folders ON folders.ID = sharedfolders.Folder_ID WHERE folders.Name = ? AND folders.Parent_Path = ?;";
+        try{
+            PreparedStatement groupStmt = connection.prepareStatement(groupSQL);
+            groupStmt.setString(1, folder[NAME]);
+            groupStmt.setString(2, folder[PATH]);
+            
+            ResultSet groupRS = groupStmt.executeQuery();
+            int rowCount = groupRS.last() ? groupRS.getRow() : 0;
+            groupRS.beforeFirst();
+            
+            if(rowCount == 0)
+                return groups;
+            
+            groups = new String[rowCount];
+             for(int i = 0; i < rowCount; i++){
+                 groups[i] = groupRS.getString("Groupname");
+             }
+            
+        }catch(SQLException e){
+            
+        }
+        return groups;
+    }
+    /**
+     * 
+     * @param path
+     * @return 
+     */
+    public String[] fileGroups (String path){
+        String[] groups = null;
+        String[] file = splitPath(path);
+        String[] parent = splitPath(file[PATH]);
+        String groupSQL = "SELECT Groupname FROM sharedfiles INNER JOIN files ON files.ID = sharedfiles.Files_ID INNER JOIN folders ON folders.ID = files.ParentFolder_ID WHERE files.Name = ? AND folders.Name = ? AND folders.Parent_Path = ?;";
+        try{
+            PreparedStatement groupStmt = connection.prepareStatement(groupSQL);
+            groupStmt.setString(1, file[NAME]);
+            groupStmt.setString(2, parent[NAME]);
+            groupStmt.setString(3, parent[PATH]);
+            
+            ResultSet groupRS = groupStmt.executeQuery();
+            int rowCount = groupRS.last() ? groupRS.getRow() : 0;
+            groupRS.beforeFirst();
+            
+            if(rowCount == 0)
+                return groups;
+            
+            groups = new String[rowCount];
+             for(int i = 0; i < rowCount; i++){
+                 groups[i] = groupRS.getString("Groupname");
+             }
+            
+        }catch(SQLException e){
+            
+        }
+        return groups;
     }
 
     /**
