@@ -11,9 +11,7 @@ import com.algonquincollege.javaApp.webhost.WebInterfaceServlet;
 import com.algonquincollege.waterbin.fs.fsAggregator.FSAggregator;
 import com.algonquincollege.waterbin.fs.tasks.MakeDirectory;
 import java.util.ArrayList;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 /**
  *

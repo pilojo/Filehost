@@ -40,7 +40,7 @@ public class Copy extends FileSystemTask {
                         Files.delete(Paths.get(root, dest));
                     }
                 }else{
-                    if(!db.newFile(dest)){
+                    if(!db.newFile(dest, 123)){
                         Files.delete(Paths.get(root, dest));
                     }
                 }

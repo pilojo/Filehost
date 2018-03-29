@@ -29,15 +29,13 @@ public class CopyServlet extends WebInterfaceServlet {
     
     @Override
     public String toString(HttpServletRequest request) {
-        ListContentsServlet ls = null;
         try{
             json = new JSONParser();
             if(json.parseCp(ByteReconstruct.byteToString(request))){
-                //ls = new ListContentsServlet(json.map.get("from"));
                 if(db.connect() == null){
                     return "\"success\":\"false\"";
                 }else{
-                    if(db.verifyOwner((String)request.getSession().getAttribute("email"), json.map.get("from")) && db.verifyOwner((String)request.getSession().getAttribute("email"), json.map.get("to"))){
+                    if(db.verifyOwner((String)request.getSession().getAttribute("email"), json.map.get("to"))){
                         FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
                         if(aggregator.addTask(new Copy(json.map.get("from"),json.map.get("to")))){
 

@@ -81,7 +81,7 @@ public class UploadTask extends TransferTask {
         
         if(!abnormalEnd){
             System.out.println(localPath);
-            if(db.connect() == null || !db.newFile(localPath)){
+            if(db.connect() == null || !db.newFile(localPath, 123)){
                 try {
                     Files.delete(Paths.get(root, localPath));
                 } catch (IOException ex) {

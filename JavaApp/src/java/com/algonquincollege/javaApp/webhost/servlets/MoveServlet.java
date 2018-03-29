@@ -21,11 +21,9 @@ public class MoveServlet extends WebInterfaceServlet {
 
     @Override
     public String toString(HttpServletRequest request) {
-        ListContentsServlet ls = null;
         try{
             json = new JSONParser();
             if(json.parseMv(ByteReconstruct.byteToString(request))){
-                ls = new ListContentsServlet();
                 if(db.connect() == null){
                     System.out.println("DB is Null");
                     return "\"success\":\"false\"";

@@ -46,7 +46,7 @@ public class JSONParser
     }
     
     public boolean parseLogin(String json){
-        return parse(json, "\\{\\n*\"email\":\"\\w+@\\w+\\.\\w+\",\"password\":\".+\"\\n*\\}");
+        return parse(json, "\\{\"email\":\"\\w+@\\w+\\.\\w+\",\"password\":\".+\"\\}");
     }
     
     public boolean parseSignUp(String json){
@@ -74,10 +74,10 @@ public class JSONParser
     }
     
     public boolean parseSearchFile(String json){
-        return parse(json, "{\"firstName\":\"\\w+\",\"lastName\":\"\\w+\",\"username\":\"\\w+\",\"fileName\":\"\\w+\"}");
+        return parse(json, "\\{\"firstName\"\\:\"\\w*\",\"lastName\"\\:\"\\w*\",\"username\"\\:\"\\w*\"\\,\"fileName\"\\:\"\\w*\"\\}");
     }
     
     public boolean parseSearchUser(String json){
-        return parse(json, "{\"firstName\":\"\\w+\",\"lastName\":\"\\w+\",\"username\":\"\\w+\"}");
+        return parse(json, "\\{\"firstName\"\\:\"\\w*\",\"lastName\"\\:\"\\w*\",\"username\"\\:\"\\w*\"\\}");
     }
 }

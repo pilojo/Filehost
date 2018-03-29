@@ -58,7 +58,6 @@ public class ListContentsServlet extends WebInterfaceServlet {
                     return "\"success\":\"false\"";
                 }else{
                     String[][] data;
-                    System.out.println("HERE");
                     data = db.list(json.map.get("path"));
                     System.out.println(data[0][0]);
                     if(data == null) return new String();
