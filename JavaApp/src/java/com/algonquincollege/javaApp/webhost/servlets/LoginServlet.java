@@ -6,44 +6,48 @@
 package com.algonquincollege.javaApp.webhost.servlets;
 
 import com.algonquincollege.javaApp.database.DBConnection;
+import com.algonquincollege.javaApp.fileManager.utils.ByteReconstruct;
 import com.algonquincollege.javaApp.utils.json.JSONParser;
 import com.algonquincollege.javaApp.webhost.WebInterfaceServlet;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 
 /**
  *
- * @author Byzantian
+ * @author John Pilon
+ * Communicates with the database after receiving POST data from browser to validate login information
  */
 public class LoginServlet extends WebInterfaceServlet {
-    private JSONParser json = new JSONParser();
-    private DBConnection db = new DBConnection();
+    /**
+     * Sends JSON to a client that connects to this servlet.
+     *
+     * @param request servlet request
+     * @return String: JSON formatted data for the client
+     */
     @Override
     public String toString(HttpServletRequest request) {
         try{
-            byte[] bytes = new byte[1];
-            ArrayList<Byte> bindata = new ArrayList();
-            while(-1 != request.getInputStream().read(bytes)){
-                bindata.add(bytes[0]);
-            }
-            byte[] tmpdata = new byte[bindata.size()];
-            for(int i = 0; i < bindata.size(); i++){
-                tmpdata[i] = bindata.get(i);
-            }
-            if(json.parseLogin(new String(tmpdata))){
+            json = new JSONParser();
+            if(json.parseLogin(ByteReconstruct.byteToString(request))){
                 if(db.connect() == null){
                      return"\"logedin\":\"false\"";
                  }else{
-                     if(db.login(json.map.get("username"), json.map.get("password"))){
-                         return "\"logedin\":\"true\"";
+                    System.out.print(json.map.get("email") + json.map.get("password"));
+                     if(db.login(json.map.get("email"), json.map.get("password"))){
+                         System.out.println("HIT");
+                         request.getSession().setAttribute("email", json.map.get("email"));
+                         request.getSession().setAttribute("username", db.getUsernameFromEmail(json.map.get("email")));
+                         return "\"logedin\":\"true\",\"username\":\"" + request.getSession().getAttribute("username")+"\"";
                      }
                  }
 
             }
-        }catch(Exception e){return "\"logedin\":\"false\"";}
+            //Any exceptions thrown means the login failed.
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            return "\"logedin\":\"false\"";}
+        
+        
         
         return "\"logedin\":\"false\"";
     }

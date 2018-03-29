@@ -1,5 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <listener>
+        <listener-class>com.algonquincollege.waterbin.fs.fsAggregator.FSAggregatorInitializer</listener-class>
+    </listener>
+    <listener>
+        <listener-class>com.algonquincollege.waterbin.fs.transferAggregator.TransferAggregatorInitializer</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>SearchUserServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.SearchUserServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchFileServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.SearchFileServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.UploadServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>SearchFileServlet</servlet-name>
+        <url-pattern>/server/searchFile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchUserServlet</servlet-name>
+        <url-pattern>/server/searchUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/upload/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>DownloadServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.DownloadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DownloadServlet</servlet-name>
+        <url-pattern>/download/*</url-pattern>
+    </servlet-mapping>
+    
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.algonquincollege.javaApp.webhost.servlets.LoginServlet</servlet-class>
@@ -50,23 +91,23 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>MoveServlet</servlet-name>
-        <url-pattern>/server/move</url-pattern>
+        <url-pattern>/server/mv</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CopyServlet</servlet-name>
-        <url-pattern>/server/copy</url-pattern>
+        <url-pattern>/server/cp</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>RenameServlet</servlet-name>
+        <servlet-name>MoveServlet</servlet-name>
         <url-pattern>/server/rename</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RemoveServlet</servlet-name>
-        <url-pattern>/server/remove</url-pattern>
+        <url-pattern>/server/rm</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>MakeDirectoryServlet</servlet-name>
-        <url-pattern>/server/makeDirectory</url-pattern>
+        <url-pattern>/server/mkdir</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
@@ -74,7 +115,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListContentsServlet</servlet-name>
-        <url-pattern>/server/listContents</url-pattern>
+        <url-pattern>/server/ls</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SignUpServlet</servlet-name>
@@ -87,5 +128,13 @@
        <error-code>404</error-code>
        <location>/index.html</location>
    </error-page>
-
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Entire Application</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
 </web-app>

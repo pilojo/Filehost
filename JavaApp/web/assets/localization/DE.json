@@ -1,0 +1,23 @@
+{
+    "Home":"Startseite",
+    "Search Users":"Benutzen Suchen",
+    "User Search":"Benutzen Suchen",
+    "Search Files":"Datei Suchen",
+    "File Search":"Datei Suchen",
+    "Sign Up":"Registrieren",
+    "Login":"Einloggen",
+    "Logout":"Ausloggen",
+    "Email":"Email",
+    "Password":"Passwort",
+    "First Name":"Vornam",
+    "Last Name":"Zunam",
+    "Username":"Benutzernam",
+    "File Name":"Dateinam",
+    "Last Modified":"Zuletzt Bearbeitet",
+    "File Size":"Dateigroesse",
+    "File Type":"Dateityp",
+    "File":"Datei",
+    "Folder":"Dateiordner",
+    "Image":"Bild",
+    "Login Failed":"Einloggen Versagen"
+}
