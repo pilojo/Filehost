@@ -782,10 +782,10 @@ public class DBConnection {
 
         try {
             PreparedStatement getFiles = connection.prepareStatement(fileSQL);
-            getFiles.setString(1, username);
-            getFiles.setString(2, firstname);
-            getFiles.setString(3, lastname);
-            getFiles.setString(4, filename);
+            getFiles.setString(1, "%"+username+"%");
+            getFiles.setString(2, "%"+firstname+"%");
+            getFiles.setString(3, "%"+lastname+"%");
+            getFiles.setString(4, "%"+filename+"%");
 
             ResultSet fileRS = getFiles.executeQuery();
 
@@ -828,9 +828,9 @@ public class DBConnection {
         }
         try {
             PreparedStatement getUsers = connection.prepareStatement(userSQL);
-            getUsers.setString(1, username);
-            getUsers.setString(2, firstname);
-            getUsers.setString(3, lastname);
+            getUsers.setString(1, "%"+username+"%");
+            getUsers.setString(2, "%"+firstname+"%");
+            getUsers.setString(3, "%"+lastname+"%");
 
             ResultSet userRS = getUsers.executeQuery();
 
