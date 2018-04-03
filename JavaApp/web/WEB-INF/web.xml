@@ -18,7 +18,55 @@
         <servlet-name>UploadServlet</servlet-name>
         <servlet-class>com.algonquincollege.javaApp.webhost.servlets.UploadServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddUserToGroupServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.AddUserToGroupServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ChangePermissionServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.ChangePermissionServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CreateGroupServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.CreateGroupServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteGroupServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.DeleteGroupServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListGroupsServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.ListGroupsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ShareWithGroupServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.ShareWithGroupServlet</servlet-class>
+    </servlet>
     
+    <servlet-mapping>
+        <servlet-name>AddUserToGroupServlet</servlet-name>
+        <url-pattern>/server/addUserToGroup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChangePermissionServlet</servlet-name>
+        <url-pattern>/server/changePermission</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateGroupServlet</servlet-name>
+        <url-pattern>/server/createGroup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteGroupServlet</servlet-name>
+        <url-pattern>/server/deleteGroup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListGroupsServlet</servlet-name>
+        <url-pattern>/server/listGroups</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShareWithGroupServlet</servlet-name>
+        <url-pattern>/server/shareWithGroup</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SearchFileServlet</servlet-name>
         <url-pattern>/server/searchFile</url-pattern>

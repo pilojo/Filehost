@@ -23,7 +23,7 @@ public class CreateGroupServlet extends WebInterfaceServlet{
                     
                     return "\"success\":\"false\"";
                 }else{
-                    if(db.newGroup(json.map.get("group"), (String)request.getSession().getAttribute("username"))){
+                    if(db.newGroup(json.map.get("groupName"), (String)request.getSession().getAttribute("username"))){
                         return "\"success\":\"true\"";
                     }
                 }

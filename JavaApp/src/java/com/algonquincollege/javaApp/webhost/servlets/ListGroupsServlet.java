@@ -19,11 +19,12 @@ public class ListGroupsServlet extends WebInterfaceServlet{
     public String toString(HttpServletRequest request){
         try{
                 json = new JSONParser();
-                if(json.parseListGroups(ByteReconstruct.byteToString(request))){
+                //if(json.parseListGroups(ByteReconstruct.byteToString(request))){
                     if(db.connect() == null){
                         return "\"success\":\"false\"";
                     }else{
-                        String[] groups = db.ownedGroups(json.map.get("username"));
+                        String[] groups = db.ownedGroups((String)request.getSession().getAttribute("username"));
+                        if(groups == null) return "\"success\":\"false\"";
                         String res = "";
                         for(int i = 0; i < groups.length; i++){
                             res += "\"name\":\"" + groups[i] + "\",";
@@ -31,7 +32,7 @@ public class ListGroupsServlet extends WebInterfaceServlet{
                         res = res.substring(0, res.length()-1);
                         return res;
                     }
-                }
+                //}
         }catch(Exception e){
             
         }

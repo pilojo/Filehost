@@ -25,11 +25,11 @@ public class ChangePermissionServlet extends WebInterfaceServlet{
                     return "\"success\":\"false\"";
                 }else{
                     if(json.map.get("type").equals("File")){
-                        if(db.changeFilePermission(json.map.get("path"), json.map.get("Permission"))){
+                        if(db.changeFilePermission(json.map.get("path"), json.map.get("permission"))){
                             return "\"success\":\"true\"";
                         }
                     }else if(json.map.get("type").equals("Folder")){
-                        if(db.changeFolderPermission(json.map.get("path"), json.map.get("Permission"))){
+                        if(db.changeFolderPermission(json.map.get("path"), json.map.get("permission"))){
                             return "\"success\":\"true\"";
                         }
                     }

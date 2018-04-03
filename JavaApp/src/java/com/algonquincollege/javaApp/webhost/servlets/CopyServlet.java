@@ -35,8 +35,7 @@ public class CopyServlet extends WebInterfaceServlet {
                 if(db.connect() == null){
                     return "\"success\":\"false\"";
                 }else{
-                    //if(db.verifyOwner((String)request.getSession().getAttribute("email"), json.map.get("to"))){
-                    if(db.canUserAccessFile((String)request.getSession().getAttribute("username"), json.map.get("from"))){
+                    if(db.canUserAccessFile((String)request.getSession().getAttribute("username"), json.map.get("from")) || db.verifyOwner((String)request.getSession().getAttribute("email"), json.map.get("from"))){
                         FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
                        
                         if(aggregator.addTask(new Copy(json.map.get("from"),json.map.get("to")))){

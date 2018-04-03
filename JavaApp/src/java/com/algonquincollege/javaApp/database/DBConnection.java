@@ -1160,7 +1160,7 @@ public class DBConnection {
      * @return
      */
     public boolean deleteGroup(String groupName) {
-        if (groupExists(groupName)) {
+        if (!groupExists(groupName)) {
             System.out.println("Group doesn't exist.");
             return false;
         }
@@ -1399,14 +1399,14 @@ public class DBConnection {
      */
     public String[] ownedGroups(String username){
         String[] groups = null;
-        String groupSQL = "SELECT Groupname FROM groups WHERE username = ?;";
+        String groupSQL = "SELECT Groupname FROM user_group WHERE username = ?;";
         try{
             PreparedStatement groupStmt = connection.prepareStatement(groupSQL);
             groupStmt.setString(1, username);
             
             ResultSet groupRS = groupStmt.executeQuery();
             int rowCount = groupRS.last() ? groupRS.getRow() : 0;
-            groupRS.beforeFirst();
+            groupRS.first();
             
             if(rowCount == 0){
                 System.out.println("User has no groups.");
