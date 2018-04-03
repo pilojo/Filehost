@@ -1,0 +1,16 @@
+127.0.0.1 - - [02/Apr/2018:15:52:26 -0400] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 302 -
+127.0.0.1 - - [02/Apr/2018:15:52:26 -0400] "GET /manager/text/ HTTP/1.1" 401 2536
+127.0.0.1 - admin [02/Apr/2018:15:52:33 -0400] "GET /manager/text/ HTTP/1.1" 200 39
+127.0.0.1 - - [02/Apr/2018:15:52:33 -0400] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 302 -
+127.0.0.1 - admin [02/Apr/2018:15:52:33 -0400] "GET /manager/text/ HTTP/1.1" 200 39
+127.0.0.1 - - [02/Apr/2018:15:52:33 -0400] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 302 -
+127.0.0.1 - admin [02/Apr/2018:15:52:33 -0400] "GET /manager/text/ HTTP/1.1" 200 39
+127.0.0.1 - - [02/Apr/2018:15:52:33 -0400] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 302 -
+127.0.0.1 - admin [02/Apr/2018:15:52:33 -0400] "GET /manager/text/ HTTP/1.1" 200 39
+127.0.0.1 - admin [02/Apr/2018:15:52:33 -0400] "GET /manager/text/list HTTP/1.1" 200 305
+127.0.0.1 - admin [02/Apr/2018:15:52:34 -0400] "GET /manager/text/undeploy?path=/ HTTP/1.1" 200 60
+127.0.0.1 - admin [02/Apr/2018:15:52:34 -0400] "GET /manager/text/deploy?config=file%3A%2FC%3A%2FUsers%2Fjp972%2FAppData%2FLocal%2FTemp%2Fcontext7947136248514388490.xml&path=/ HTTP/1.1" 200 58
+127.0.0.1 - admin [02/Apr/2018:15:52:34 -0400] "GET /manager/text/start?path=/ HTTP/1.1" 200 57
+0:0:0:0:0:0:0:1 - - [02/Apr/2018:15:52:38 -0400] "GET / HTTP/1.1" 302 -
+127.0.0.1 - - [02/Apr/2018:15:54:00 -0400] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 302 -
+127.0.0.1 - admin [02/Apr/2018:15:54:00 -0400] "GET /manager/text/ HTTP/1.1" 200 39

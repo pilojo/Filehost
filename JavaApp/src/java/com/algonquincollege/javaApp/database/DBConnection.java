@@ -23,7 +23,7 @@ public class DBConnection {
     private static final String DRIVER = "com.mysql.jdbc.Driver"; //MySQL db driver
     private static final String URL = "jdbc:mysql://localhost/filehostdb"; //database to use
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "60143088431472276664";
+    private static final String PASSWORD = "mainstreet";
     private static final int NAME = 1;
     private static final int PATH = 0;
     private static final long MAX_USAGE = 50000000;

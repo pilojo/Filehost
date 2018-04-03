@@ -49,18 +49,14 @@ public class SignUpServlet extends WebInterfaceServlet {
                 System.out.println("Signup Servlet: Null DB");
                  return"\"signedup\":\"false\"";
              }else{
-                 if(db.signUp(json.map.get("firstName"), json.map.get("lastName"), json.map.get("email"), json.map.get("username"), json.map.get("password"))){
-                    System.out.println("Signup Servlet: Created");
-                    
-                    FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
-                    if(aggregator.addTask(new MakeDirectory(json.map.get("username"))));
-                        if(db.signUp(json.map.get("firstName"), json.map.get("lastName"), json.map.get("email"), json.map.get("username"), json.map.get("password"))){
-                            System.out.println("Signup Servlet: Created");
-                            return "\"signedup\":\"true\"";
-                        }
+                FSAggregator aggregator = (FSAggregator)getServletContext().getAttribute("aggregator");
+                if(aggregator.addTask(new MakeDirectory(json.map.get("username"))));
+                    if(db.signUp(json.map.get("firstName"), json.map.get("lastName"), json.map.get("email"), json.map.get("username"), json.map.get("password"))){
+                        System.out.println("Signup Servlet: Created");
+                        return "\"signedup\":\"true\"";
                     }
-            
             }
+            
         }
         //Any exceptions means signup failed
         }catch(Exception e){return e.toString();}
