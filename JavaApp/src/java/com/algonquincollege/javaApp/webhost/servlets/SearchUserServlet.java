@@ -33,7 +33,7 @@ public class SearchUserServlet extends WebInterfaceServlet{
                         return "\"success\":\"false\"";
                     }
                     for(String[] data1 : data){
-                        send+= "{\"firstName\":\"" + data1[0] + "\",\"lastName\":\"" + data1[1] + "\",\"username\":\"" +data1[2] + "\"},";
+                        send+= "{\"firstName\":\"" + data1[1] + "\",\"lastName\":\"" + data1[2] + "\",\"username\":\"" +data1[0] + "\"},";
                     }
                     
                     send = send.substring(0, send.length()-1);
