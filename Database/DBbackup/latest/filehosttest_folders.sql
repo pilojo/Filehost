@@ -16,19 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `user_group`
+-- Table structure for table `folders`
 --
 
-DROP TABLE IF EXISTS `user_group`;
+DROP TABLE IF EXISTS `folders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user_group` (
-  `username` varchar(32) NOT NULL,
-  `groupname` varchar(32) NOT NULL,
-  KEY `groups_fk_users_idx` (`groupname`),
-  KEY `users_fk_groups` (`username`),
-  CONSTRAINT `groups_fk_users` FOREIGN KEY (`groupname`) REFERENCES `groups` (`Name`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  CONSTRAINT `users_fk_groups` FOREIGN KEY (`username`) REFERENCES `users` (`Username`) ON DELETE CASCADE ON UPDATE NO ACTION
+CREATE TABLE `folders` (
+  `ID` bigint(20) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(32) NOT NULL,
+  `Parent_Path` text NOT NULL,
+  `Owner_ID` bigint(20) NOT NULL,
+  `Permission_ID` bigint(20) NOT NULL,
+  `ParentFolder_ID` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `ID_UNIQUE` (`ID`),
+  KEY `fk_Folders_Users1_idx` (`Owner_ID`),
+  KEY `fk_Folders_Permissions1_idx` (`Permission_ID`),
+  KEY `fk_parent_folder_id_idx` (`ParentFolder_ID`),
+  CONSTRAINT `fk_Folders_Permissions1` FOREIGN KEY (`Permission_ID`) REFERENCES `permissions` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_parent_folder_id` FOREIGN KEY (`ParentFolder_ID`) REFERENCES `folders` (`ID`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `fk_user_id` FOREIGN KEY (`Owner_ID`) REFERENCES `users` (`ID`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -41,4 +49,4 @@ CREATE TABLE `user_group` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-27 15:10:17
+-- Dump completed on 2018-04-04 15:38:08

@@ -26,6 +26,7 @@ CREATE TABLE `groups` (
   `Name` varchar(32) NOT NULL,
   `Owner_username` varchar(32) NOT NULL,
   PRIMARY KEY (`Name`),
+  UNIQUE KEY `Name_UNIQUE` (`Name`),
   KEY `user_fk_idx` (`Owner_username`),
   CONSTRAINT `user_fk` FOREIGN KEY (`Owner_username`) REFERENCES `users` (`Username`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -40,4 +41,4 @@ CREATE TABLE `groups` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-27 15:10:17
+-- Dump completed on 2018-04-04 15:38:10

@@ -1,6 +1,7 @@
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: filehostdb
+
 -- ------------------------------------------------------
 -- Server version	5.7.21-log
 
@@ -23,12 +24,12 @@ DROP TABLE IF EXISTS `sharedfiles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sharedfiles` (
-  `Folder_ID` bigint(20) NOT NULL,
-  `User_ID` bigint(20) NOT NULL,
-  PRIMARY KEY (`Folder_ID`,`User_ID`),
-  KEY `fk_SharedFiles_Users1_idx` (`User_ID`),
-  CONSTRAINT `fk_SharedFiles_Folders1` FOREIGN KEY (`Folder_ID`) REFERENCES `folders` (`ID`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  CONSTRAINT `fk_SharedFiles_Users1` FOREIGN KEY (`User_ID`) REFERENCES `users` (`ID`) ON DELETE CASCADE ON UPDATE NO ACTION
+  `File_ID` bigint(20) NOT NULL,
+  `Groupname` varchar(32) NOT NULL,
+  KEY `fk_SharedFiles_groups_idx` (`Groupname`),
+  KEY `fk_SharedFiles_Files_idx` (`File_ID`),
+  CONSTRAINT `fk_SharedFiles_Files` FOREIGN KEY (`File_ID`) REFERENCES `files` (`ID`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `fk_SharedFiles_groups` FOREIGN KEY (`Groupname`) REFERENCES `groups` (`Name`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -41,4 +42,4 @@ CREATE TABLE `sharedfiles` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-27 15:10:16
+-- Dump completed on 2018-04-04 15:38:09

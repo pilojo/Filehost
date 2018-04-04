@@ -16,19 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `accounttypes`
+-- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `accounttypes`;
+DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `accounttypes` (
+CREATE TABLE `users` (
   `ID` bigint(20) NOT NULL AUTO_INCREMENT,
-  `Name` varchar(16) NOT NULL,
+  `Username` varchar(32) DEFAULT NULL,
+  `First_Name` varchar(32) NOT NULL,
+  `Last_Name` varchar(150) NOT NULL,
+  `Email` varchar(150) NOT NULL,
+  `AccountType_ID` bigint(20) DEFAULT NULL,
+  `RootFolder_ID` bigint(20) DEFAULT NULL,
+  `Password` varchar(150) NOT NULL,
+  `storageUsage_Bytes` bigint(20) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`ID`),
   UNIQUE KEY `ID_UNIQUE` (`ID`),
-  UNIQUE KEY `Name_UNIQUE` (`Name`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+  UNIQUE KEY `Email_UNIQUE` (`Email`),
+  UNIQUE KEY `Username_UNIQUE` (`Username`),
+  KEY `fk_Users_AccountTypes_idx` (`AccountType_ID`),
+  KEY `fk_Users_Folders1_idx` (`RootFolder_ID`),
+  CONSTRAINT `fk_Users_AccountTypes` FOREIGN KEY (`AccountType_ID`) REFERENCES `accounttypes` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Users_Folders1` FOREIGN KEY (`RootFolder_ID`) REFERENCES `folders` (`ID`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -40,4 +52,4 @@ CREATE TABLE `accounttypes` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-27 15:10:16
+-- Dump completed on 2018-04-04 15:38:09

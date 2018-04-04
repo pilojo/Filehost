@@ -16,23 +16,21 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `files`
+-- Table structure for table `tomcat_sessions`
 --
 
-DROP TABLE IF EXISTS `files`;
+DROP TABLE IF EXISTS `tomcat_sessions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `files` (
-  `ID` bigint(20) NOT NULL AUTO_INCREMENT,
-  `Name` varchar(32) NOT NULL,
-  `Permissions_ID` bigint(20) NOT NULL,
-  `ParentFolder_ID` bigint(20) NOT NULL,
-  PRIMARY KEY (`ID`),
-  UNIQUE KEY `ID_UNIQUE` (`ID`),
-  KEY `fk_Files_Permissions1_idx` (`Permissions_ID`),
-  KEY `fk_Files_Folders1_idx` (`ParentFolder_ID`),
-  CONSTRAINT `fk_Files_Folders1` FOREIGN KEY (`ParentFolder_ID`) REFERENCES `folders` (`ID`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Files_Permissions1` FOREIGN KEY (`Permissions_ID`) REFERENCES `permissions` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+CREATE TABLE `tomcat_sessions` (
+  `session_id` varchar(100) NOT NULL,
+  `valid_session` char(1) NOT NULL,
+  `max_inactive` int(11) NOT NULL,
+  `last_access` bigint(20) NOT NULL,
+  `app_name` varchar(255) DEFAULT NULL,
+  `session_data` mediumblob,
+  PRIMARY KEY (`session_id`),
+  KEY `kapp_name` (`app_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -45,4 +43,4 @@ CREATE TABLE `files` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-27 15:10:15
+-- Dump completed on 2018-04-04 15:38:10
