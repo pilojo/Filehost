@@ -1530,6 +1530,62 @@ public class DBConnection {
         }
         return groups;
     }
+    
+    public boolean removeUserFromGroup(String username, String groupName) {
+        if (!groupExists(groupName)) {
+            System.out.println("user could not be removed from group as group doesn't exist.");
+            return false;
+        }
+
+        String groupSQL = "DELETE FROM user_group WHERE username = ? AND groupname = ?;";
+        try {
+            PreparedStatement rmUser = connection.prepareStatement(groupSQL);
+            rmUser.setString(1, username);
+
+            if (rmUser.executeUpdate() == 0) {
+                System.out.println("Could not remove user from group.");
+                return false;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+    
+    public String[] usersInGroup(String groupname) {
+        String[] users = null;
+        if (!groupExists(groupname)) {
+            System.out.println("Group doesn't exist. no users in group " + groupname);
+            return users;
+        }
+        String groupSQL = "SELECT username FROM user_group WHERE groupname = ? ;";
+        try {
+            PreparedStatement groupStmt = connection.prepareStatement(groupSQL);
+            groupStmt.setString(1, groupname);
+
+            ResultSet groupRS = groupStmt.executeQuery();
+
+            int rowCount = groupRS.last() ? groupRS.getRow() : 0;
+            groupRS.beforeFirst();
+
+            if (rowCount == 0) {
+                return users;
+            }
+
+            users = new String[rowCount];
+            for(int i = 0; i < rowCount; i++){
+               if(groupRS.next()){
+                   users[i] = groupRS.getString("Groupname");
+               }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return users;
+    }
 
     /**
      * Disconnects from the database.

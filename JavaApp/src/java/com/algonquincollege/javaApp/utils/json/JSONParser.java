@@ -81,11 +81,19 @@ public class JSONParser
         return parse(json, "\\{\"groupName\"\\:\"\\w*\",\"username\"\\:\"\\w*\"\\}");
     }
     
+    public boolean parseRemoveUserFromGroup(String json){
+        return parse(json, "\\{\"groupName\"\\:\"\\w*\",\"username\"\\:\"\\w*\"\\}");
+    }
+    
     public boolean parseChangePermission(String json){
         return parse(json, "\\{\"path\"\\:\"\\w*\",\"permission\"\\:\"\\w*\",\"type\"\\:\"\\w*\"\\}");
     }
     
     public boolean parseCreateGroup(String json){
+        return parse(json, "\\{\"groupName\"\\:\"\\w*\"\\}");
+    }
+    
+    public boolean parseListUsersInGroup(String json){
         return parse(json, "\\{\"groupName\"\\:\"\\w*\"\\}");
     }
     
