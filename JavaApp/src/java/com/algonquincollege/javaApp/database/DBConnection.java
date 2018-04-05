@@ -878,7 +878,7 @@ public class DBConnection {
             }
             ResultSet groupRS = stmt.executeQuery();
             int rowCount = groupRS.last() ? groupRS.getRow() : 0;
-            groupRS.beforeFirst();
+            groupRS.first();
 
             if (rowCount == 0) {
                 System.out.println(path + " has no groups associated to it.");
@@ -888,11 +888,29 @@ public class DBConnection {
             groups = new String[rowCount];
             for (int i = 0; i < rowCount; i++) {
                 groups[i] = groupRS.getString("Groupname");
+                groupRS.next();
             }
         } catch (SQLException e) {
             return null;
         }
         return groups;
+    }
+    
+    
+    public int userSpaceUsage(String username){
+        int spaceUsed = -1;
+        String userSQL = "SELECT storageUsage_Bytes FROM users WHERE username = ?;";
+        try{
+            PreparedStatement userStmt = connection.prepareStatement(userSQL);
+            userStmt.setString(1, username);
+            
+            ResultSet storageUsage = userStmt.executeQuery();
+            
+            spaceUsed = storageUsage.getInt("storageUsage_Bytes");
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return spaceUsed;
     }
 
     /**
@@ -1436,7 +1454,7 @@ public class DBConnection {
 
             ResultSet groupRS = groupStmt.executeQuery();
             int rowCount = groupRS.last() ? groupRS.getRow() : 0;
-            groupRS.beforeFirst();
+            groupRS.first();
 
             if (rowCount == 0) {
                 System.out.println("User has no groups.");
@@ -1445,6 +1463,7 @@ public class DBConnection {
             groups = new String[rowCount];
             for (int i = 0; i < rowCount; i++) {
                 groups[i] = groupRS.getString("Groupname");
+                groupRS.next();
             }
 
         } catch (SQLException e) {
@@ -1467,7 +1486,7 @@ public class DBConnection {
             ResultSet groupRS = groupStmt.executeQuery();
 
             int rowCount = groupRS.last() ? groupRS.getRow() : 0;
-            groupRS.beforeFirst();
+            groupRS.first();
 
             if (rowCount == 0) {
                 return users;
@@ -1475,7 +1494,8 @@ public class DBConnection {
 
             users = new String[rowCount];
             for(int i = 0; i < rowCount; i++){
-                users[i] = groupRS.next();
+                users[i] = groupRS.getString("username");
+                groupRS.next();
             }
 
         } catch (SQLException e) {
@@ -1545,7 +1565,7 @@ public class DBConnection {
 
             ResultSet groupRS = groupStmt.executeQuery();
             int rowCount = groupRS.last() ? groupRS.getRow() : 0;
-            groupRS.beforeFirst();
+            groupRS.first();
 
             if (rowCount == 0) {
                 return groups;
@@ -1554,6 +1574,7 @@ public class DBConnection {
             groups = new String[rowCount];
             for (int i = 0; i < rowCount; i++) {
                 groups[i] = groupRS.getString("Groupname");
+                groupRS.next();
             }
 
         } catch (SQLException e) {
