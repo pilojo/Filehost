@@ -163,23 +163,24 @@ public class DBConnection {
      * ***************************************************************************
      */
     /**
-     *
-     * @param path
-     * @return
+     *Creates a new folder in the database
+     * @param path, folder details 
+     * @return true on success, false on failure or exception
      */
     public boolean newFolder(String path) {
+        //makes sure the no once tries to create a root folder
         Pattern regex = Pattern.compile("\\/[1-9a-zA-Z]*\\/*");
         Matcher m = regex.matcher(path);
         if (m.matches()) {
             System.out.println("DO NOT MAKE ROOT FOLDERS");
             return false;
-        } else if (folderExists(path)) {
+        } else if (folderExists(path)) {//makes sure that there are no duplicate folders in the same parent folder
             System.out.println("Folder already exists with that name at location");
             return false;
         }
-        String[] folder = splitPath(path);
-        String[] parentFolder = splitPath(folder[PATH]);
-        String user = getUsernameFromPath(path);
+        String[] folder = splitPath(path);//gets folder details
+        String[] parentFolder = splitPath(folder[PATH]);//gets parent folder details
+        String user = getUsernameFromPath(path);//get the user that is creating the folder
         String folderSQL = "INSERT INTO folders (ParentFolder_ID, Name, Parent_Path, Owner_ID, Permission_ID ) SELECT folders.ID, ?, ?, users.ID, folders.Permission_ID FROM folders, users WHERE folders.Name = ? AND folders.Parent_Path = ? AND users.Username = ?";
 
         try {
@@ -855,6 +856,12 @@ public class DBConnection {
         }
         return users;
     }
+    /**
+     * 
+     * @param type
+     * @param path
+     * @return 
+     */
 
     public String[] getGroupName(String type, String path) {
         String[] groups = null;
@@ -896,7 +903,11 @@ public class DBConnection {
         return groups;
     }
     
-    
+    /**
+     * 
+     * @param username
+     * @return 
+     */
     public int userSpaceUsage(String username){
         int spaceUsed = -1;
         String userSQL = "SELECT storageUsage_Bytes FROM users WHERE username = ?;";
@@ -1115,7 +1126,7 @@ public class DBConnection {
 
     /**
      * ***************************************************************************************************************************************************
-     * Groups (kill me)
+     * Groups 
      * ****************************************************************************************************************************************************8
      */
     /**
