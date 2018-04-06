@@ -54,7 +54,7 @@ public class UploadServlet extends HttpServlet {
                 if(db.connect() == null){
                     response.sendError(404);
                 }else{
-                    System.out.println(request.getPathInfo());
+                    
                     if(db.verifyOwner((String)request.getSession().getAttribute("email"), request.getPathInfo())){
                         TransferAggregator taggregate = (TransferAggregator)this.getServletContext().getAttribute("transfer aggregator");
                         UploadTask task = new UploadTask(request, response);

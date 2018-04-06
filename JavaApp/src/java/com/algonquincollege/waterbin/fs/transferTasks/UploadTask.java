@@ -25,8 +25,8 @@ import javax.servlet.http.Part;
  * @author Devon
  */
 @MultipartConfig(
-                fileSizeThreshold=1024*1024*2, // 2MB
-                 maxFileSize=1024*1024*2,      // 500KB
+                fileSizeThreshold=1024*10241024*2, // 2MB
+                 maxFileSize=1024*1024*1024*2,      // 500KB
                  maxRequestSize=1024*1024*50)   // 50MB
 public class UploadTask extends TransferTask {
 
@@ -50,38 +50,33 @@ public class UploadTask extends TransferTask {
     @Override
     public void run() {
         System.out.println("Upload Task: Going Live");
+        int fileLength = Integer.parseInt(request.getHeader("content-length"));
         try{
-            
-            int counter = 1024*1024*5;
-            if(!fileName.matches("\\/[A-Za-z0-9\\_]+(\\.?[A-Za-z0-9\\_]+)*")){
-                counter = -1;
-                abnormalEnd = true;
-                System.out.println(fileName + "Invalid File Name");
-            }else{
-                InputStream istream = request.getInputStream();
-                FileOutputStream file = new FileOutputStream(Paths.get(root, localPath).toString());
-            
-                byte[] bytes = new byte[1];
-                while(istream.read(bytes) != -1){
-                    if(counter <= 0) {
-                       file.flush();
-                       file.close();
-                       Files.delete(Paths.get(root, localPath));
-                       abnormalEnd = true;
-                       break;
+            System.out.println((String)request.getSession().getAttribute("email") + localPath);
+                System.out.println("HIT");
+                if(!fileName.matches("\\/[A-Za-z0-9\\_]+(\\.?[A-Za-z0-9\\_]+)*")){
+                    abnormalEnd = true;
+                    System.out.println(fileName + "Invalid File Name");
+                }else{
+                    InputStream istream = request.getInputStream();
+                    FileOutputStream file = new FileOutputStream(Paths.get(root, localPath).toString());
+                    System.out.println(request.getHeader("content-length"));
+                    byte[] bytes = new byte[fileLength];
+                    byte[] temp = new byte[1];
+                    for(int i = 0; (istream.read(temp) != -1); i++){
+                        bytes[i] = temp[0];
                     }
                     file.write(bytes);
-                    counter--;
+                    file.flush();
+                    file.close();
                 }
-                file.flush();
-                file.close();
-            }
         }catch(Exception e){
+            
         }
         
         if(!abnormalEnd){
             System.out.println(localPath);
-            if(db.connect() == null || !db.newFile(localPath, 123)){
+            if(db.connect() == null || !db.newFile(localPath, fileLength)){
                 try {
                     Files.delete(Paths.get(root, localPath));
                 } catch (IOException ex) {

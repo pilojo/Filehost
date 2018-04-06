@@ -23,7 +23,7 @@ public class DBConnection {
     private static final String DRIVER = "com.mysql.jdbc.Driver"; //MySQL db driver
     private static final String URL = "jdbc:mysql://localhost/filehostdb"; //database to use
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "60143088431472276664";
+    private static final String PASSWORD = "mainstreet";
     private static final int NAME = 1;
     private static final int PATH = 0;
     private static final long MAX_USAGE = 50000000;
@@ -163,24 +163,23 @@ public class DBConnection {
      * ***************************************************************************
      */
     /**
-     *Creates a new folder in the database
-     * @param path, folder details 
-     * @return true on success, false on failure or exception
+     *
+     * @param path
+     * @return
      */
     public boolean newFolder(String path) {
-        //makes sure the no once tries to create a root folder
         Pattern regex = Pattern.compile("\\/[1-9a-zA-Z]*\\/*");
         Matcher m = regex.matcher(path);
         if (m.matches()) {
             System.out.println("DO NOT MAKE ROOT FOLDERS");
             return false;
-        } else if (folderExists(path)) {//makes sure that there are no duplicate folders in the same parent folder
+        } else if (folderExists(path)) {
             System.out.println("Folder already exists with that name at location");
             return false;
         }
-        String[] folder = splitPath(path);//gets folder details
-        String[] parentFolder = splitPath(folder[PATH]);//gets parent folder details
-        String user = getUsernameFromPath(path);//get the user that is creating the folder
+        String[] folder = splitPath(path);
+        String[] parentFolder = splitPath(folder[PATH]);
+        String user = getUsernameFromPath(path);
         String folderSQL = "INSERT INTO folders (ParentFolder_ID, Name, Parent_Path, Owner_ID, Permission_ID ) SELECT folders.ID, ?, ?, users.ID, folders.Permission_ID FROM folders, users WHERE folders.Name = ? AND folders.Parent_Path = ? AND users.Username = ?";
 
         try {
@@ -198,8 +197,10 @@ public class DBConnection {
             }
 
             String groups[] = folderGroups(parentFolder[PATH]);
-            for (String group : groups) {
-                shareFolderWithGroup(path, group);
+            if(groups != null){
+                for (String group : groups) {
+                    shareFolderWithGroup(path, group);
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -413,7 +414,7 @@ public class DBConnection {
         }
 
         String[] parent = splitPath(folder[PATH]);
-        String permissionSQL = "SELECT permissions.Name as pName From folders INNER JOIN permissions ON permissions.ID = folders.Permission_ID WHERE folders.Name AND Parent_Path = ?;";
+        String permissionSQL = "SELECT permissions.Name as pName From folders INNER JOIN permissions ON permissions.ID = folders.Permission_ID WHERE folders.Name = ? AND Parent_Path = ?;";
         String folderSQL = "UPDATE folders SET Permission_ID = (SELECT ID FROM permissions WHERE Name = ?) WHERE Name = ? AND Parent_Path = ? ;";
 
         try {
@@ -422,6 +423,7 @@ public class DBConnection {
             permissionStmt.setString(2, parent[PATH]);
 
             ResultSet permissionRS = permissionStmt.executeQuery();
+            if(!permissionRS.next()) throw new Exception("NULL");
             if (permissionRS.getString("pName").equals(permissionName)) {
                 System.out.println("Folder already has that permission.");
                 return true;
@@ -457,7 +459,7 @@ public class DBConnection {
                 childPermissions(FIDrs.getString("ID"), permissionName);
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
@@ -639,9 +641,11 @@ public class DBConnection {
                 System.out.println("Could not create new file");
                 return false;
             }
-            String[] groups = fileGroups(parentFolder[PATH]);
-            for (String group : groups) {
-                shareFileWithGroup(filePath, group);
+            String[] groups = folderGroups(parentFolder[PATH]);
+            if(groups != null){
+                for (String group : groups) {
+                    shareFileWithGroup(filePath, group);
+                }
             }
         } catch (SQLException e) {
             System.out.println("File was not created due to an Exception being thrown");
@@ -661,13 +665,14 @@ public class DBConnection {
         String[] file = splitPath(path);
         String[] parent = splitPath(file[PATH]);
         String fileSQL = "UPDATE files INNER JOIN folders ON files.ParentFolder_ID = folders.ID SET files.Permissions_ID = (SELECT ID FROM permissions WHERE NAME = ?) WHERE files.Name = ? AND folders.Name = ? AND folders.Parent_Path = ?;";
-        String permissionSQL = "SELECT permissions.Name as pName From folders INNER JOIN permissions ON permissions.ID = folders.Permission_ID WHERE folders.Name AND Parent_Path = ?;";
+        String permissionSQL = "SELECT permissions.Name as pName From folders INNER JOIN permissions ON permissions.ID = folders.Permission_ID WHERE folders.Name = ? AND Parent_Path = ?;";
         try {
             PreparedStatement permissionStmt = connection.prepareStatement(permissionSQL);
             permissionStmt.setString(1, parent[NAME]);
             permissionStmt.setString(2, parent[PATH]);
 
             ResultSet permissionRS = permissionStmt.executeQuery();
+            if(!permissionRS.next())throw new Exception("NULL");
             if (permissionRS.getString("pName").equals(permissionName)) {
                 System.out.println("File already has that permission.");
                 return true;
@@ -690,7 +695,8 @@ public class DBConnection {
             } else {
                 return true;
             }
-        } catch (SQLException e) {
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
             return false;
         }
         return true;
@@ -856,12 +862,6 @@ public class DBConnection {
         }
         return users;
     }
-    /**
-     * 
-     * @param type
-     * @param path
-     * @return 
-     */
 
     public String[] getGroupName(String type, String path) {
         String[] groups = null;
@@ -903,11 +903,7 @@ public class DBConnection {
         return groups;
     }
     
-    /**
-     * 
-     * @param username
-     * @return 
-     */
+    
     public int userSpaceUsage(String username){
         int spaceUsed = -1;
         String userSQL = "SELECT storageUsage_Bytes FROM users WHERE username = ?;";
@@ -1126,7 +1122,7 @@ public class DBConnection {
 
     /**
      * ***************************************************************************************************************************************************
-     * Groups 
+     * Groups (kill me)
      * ****************************************************************************************************************************************************8
      */
     /**
@@ -1189,7 +1185,7 @@ public class DBConnection {
      * @return
      */
     public boolean deleteGroup(String groupName) {
-        if (groupExists(groupName)) {
+        if (!groupExists(groupName)) {
             System.out.println("Group doesn't exist.");
             return false;
         }
@@ -1349,6 +1345,7 @@ public class DBConnection {
             }
 
         } catch (SQLException e) {
+            System.out.println(e.getMessage());
             return false;
         }
         return true;
@@ -1418,7 +1415,7 @@ public class DBConnection {
     public boolean canUserAccessFolder(String username, String path) {
         String[] folder = splitPath(path);
         String folderSQL = "SELECT permissions.Name as pName FROM folders INNER JOIN permissions ON folders.permission_ID = permissions.ID WHERE folders.Name = ? AND folders.Parent_Path = ?;";
-        if (!fileExists(path)) {
+        if (!folderExists(path)) {
             System.out.println("folder cannot be accessed, as it doesn't exist.");
             return false;
         }
@@ -1458,7 +1455,7 @@ public class DBConnection {
      */
     public String[] ownedGroups(String username) {
         String[] groups = null;
-        String groupSQL = "SELECT Groupname FROM groups WHERE username = ?;";
+        String groupSQL = "SELECT Groupname FROM user_group WHERE username = ?;";
         try {
             PreparedStatement groupStmt = connection.prepareStatement(groupSQL);
             groupStmt.setString(1, username);

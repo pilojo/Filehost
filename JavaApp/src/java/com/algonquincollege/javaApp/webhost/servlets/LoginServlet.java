@@ -32,7 +32,6 @@ public class LoginServlet extends WebInterfaceServlet {
                 if(db.connect() == null){
                      return"\"logedin\":\"false\"";
                  }else{
-                    System.out.print(json.map.get("email") + json.map.get("password"));
                      if(db.login(json.map.get("email"), json.map.get("password"))){
                          System.out.println("HIT");
                          request.getSession().setAttribute("email", json.map.get("email"));
