@@ -197,7 +197,7 @@ public class DBConnection {
             }
 
             String groups[] = folderGroups(parentFolder[PATH]);
-            if(groups != null){
+            if (groups != null) {
                 for (String group : groups) {
                     shareFolderWithGroup(path, group);
                 }
@@ -423,7 +423,9 @@ public class DBConnection {
             permissionStmt.setString(2, parent[PATH]);
 
             ResultSet permissionRS = permissionStmt.executeQuery();
-            if(!permissionRS.next()) throw new Exception("NULL");
+            if (!permissionRS.next()) {
+                throw new Exception("NULL");
+            }
             if (permissionRS.getString("pName").equals(permissionName)) {
                 System.out.println("Folder already has that permission.");
                 return true;
@@ -642,7 +644,7 @@ public class DBConnection {
                 return false;
             }
             String[] groups = folderGroups(parentFolder[PATH]);
-            if(groups != null){
+            if (groups != null) {
                 for (String group : groups) {
                     shareFileWithGroup(filePath, group);
                 }
@@ -672,7 +674,9 @@ public class DBConnection {
             permissionStmt.setString(2, parent[PATH]);
 
             ResultSet permissionRS = permissionStmt.executeQuery();
-            if(!permissionRS.next())throw new Exception("NULL");
+            if (!permissionRS.next()) {
+                throw new Exception("NULL");
+            }
             if (permissionRS.getString("pName").equals(permissionName)) {
                 System.out.println("File already has that permission.");
                 return true;
@@ -712,7 +716,7 @@ public class DBConnection {
      * @param path
      * @return
      */
-    public String[][] list(String path) {
+    public String[][] list(String path, String username) {
         String[] folder = splitPath(path);
         String fileSQL = "SELECT lastModified, byteSize, isVirus, isScanned, files.Name, permissions.Name pName FROM files INNER JOIN folders ON folders.ID = files.ParentFolder_ID INNER JOIN permissions ON files.Permissions_ID = permissions.ID WHERE folders.Name = ? AND folders.Parent_PATH = ?;";
         String folderSQL = "SELECT folders.Name, permissions.Name AS pName FROM folders INNER JOIN  permissions ON Permission_ID = permissions.ID WHERE Parent_Path = ?;";
@@ -738,23 +742,27 @@ public class DBConnection {
             contents = new String[rowCount][numData];
             int i = 0;
             while (folderRS.next()) {
-                contents[i][0] = folderRS.getString("Name");
-                contents[i][1] = "Folder";
-                contents[i][2] = folderRS.getString("pName");
-                for (int j = 3; j < numData; j++) {
-                    contents[i][j] = "";
+                if (canUserAccessFolder(username, path+folderRS.getString("Name"))) {
+                    contents[i][0] = folderRS.getString("Name");
+                    contents[i][1] = "Folder";
+                    contents[i][2] = folderRS.getString("pName");
+                    for (int j = 3; j < numData; j++) {
+                        contents[i][j] = "";
+                    }
+                    i++;
                 }
-                i++;
             }
             while (fileRS.next()) {
-                contents[i][0] = fileRS.getString("Name");
-                contents[i][1] = "File";
-                contents[i][2] = fileRS.getString("pName");
-                contents[i][3] = fileRS.getString("lastModified");
-                contents[i][4] = fileRS.getString("byteSize");
-                contents[i][5] = fileRS.getString("isScanned");
-                contents[i][6] = fileRS.getString("isVirus");
-                i++;
+                if (canUserAccessFile(username, path+fileRS.getString("Name"))) {
+                    contents[i][0] = fileRS.getString("Name");
+                    contents[i][1] = "File";
+                    contents[i][2] = fileRS.getString("pName");
+                    contents[i][3] = fileRS.getString("lastModified");
+                    contents[i][4] = fileRS.getString("byteSize");
+                    contents[i][5] = fileRS.getString("isScanned");
+                    contents[i][6] = fileRS.getString("isVirus");
+                    i++;
+                }
             }
 
         } catch (SQLException e) {
@@ -902,19 +910,18 @@ public class DBConnection {
         }
         return groups;
     }
-    
-    
-    public int userSpaceUsage(String username){
+
+    public int userSpaceUsage(String username) {
         int spaceUsed = -1;
         String userSQL = "SELECT storageUsage_Bytes FROM users WHERE username = ?;";
-        try{
+        try {
             PreparedStatement userStmt = connection.prepareStatement(userSQL);
             userStmt.setString(1, username);
-            
+
             ResultSet storageUsage = userStmt.executeQuery();
-            
+
             spaceUsed = storageUsage.getInt("storageUsage_Bytes");
-        }catch(SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return spaceUsed;
@@ -1238,6 +1245,7 @@ public class DBConnection {
         try {
             PreparedStatement rmUser = connection.prepareStatement(groupSQL);
             rmUser.setString(1, username);
+            rmUser.setString(2, groupName);
 
             if (rmUser.executeUpdate() == 0) {
                 System.out.println("Could not remove user from group.");
@@ -1305,6 +1313,7 @@ public class DBConnection {
             }
 
         } catch (SQLException e) {
+            System.out.println(e.getMessage());
             return false;
         }
 
@@ -1424,12 +1433,15 @@ public class DBConnection {
             PreparedStatement folderStmt = connection.prepareStatement(folderSQL);
             folderStmt.setString(1, folder[NAME]);
             folderStmt.setString(2, folder[PATH]);
+            System.out.println(folderStmt.toString());
 
             ResultSet permission = folderStmt.executeQuery();
             if (permission.next()) {
                 String permissionName = permission.getString("pName");
                 if (permissionName.equals("public") || (getUsernameFromPath(path).equals(username))) {
                     return true;
+                }else if(permissionName.equals("private")){
+                    return false;
                 } else if (permissionName.equals("shared")) {
                     String sharedSQL = "SELECT * FROM folders INNER JOIN sharedfolders ON sharedfolders.Folder_ID = folders.ID INNER JOIN groups ON sharedfolders.Groupname = groups.Name INNER JOIN user_group ON user_group.groupname = groups.Name WHERE user_group.username = ? AND folders.Name = ? AND folders.Parent_Path = ?;";
                     PreparedStatement sharedStmt = connection.prepareStatement(sharedSQL);
@@ -1501,7 +1513,7 @@ public class DBConnection {
             }
 
             users = new String[rowCount];
-            for(int i = 0; i < rowCount; i++){
+            for (int i = 0; i < rowCount; i++) {
                 users[i] = groupRS.getString("username");
                 groupRS.next();
             }
@@ -1545,6 +1557,7 @@ public class DBConnection {
                     sharedStmt.setString(1, username);
                     sharedStmt.setString(2, parent[NAME]);
                     sharedStmt.setString(3, parent[PATH]);
+                    System.out.println(sharedStmt.toString());
 
                     ResultSet fileRS = sharedStmt.executeQuery();
                     return fileRS.next();

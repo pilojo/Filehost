@@ -24,18 +24,19 @@ public class ListUsersInGroupServlet extends WebInterfaceServlet{
                     return "\"success\":\"false\"";
                 }else{
                         String[] data = db.usersInGroup((String)request.getSession().getAttribute("username") + "-" +json.map.get("groupName"));
-                        if(data == null) return "\"success\":\"false\"";
-                        String res = "";
+                        if(data == null) return "\"users\":[]";
+                        String res = "\"users\":[";
                         for(int i = 0; i < data.length; i++){
-                            res += "\"name\":\"" + data[i] + "\",";
+                            res += "\"" + data[i] + "\",";
                         }
                         res = res.substring(0, res.length()-1);
+                        res += "]";
                         return res;
                     }
                 }
             }
         catch(Exception e){
-             
+             System.out.println("HIT");
          }
         return "\"success\":\"false\"";
     }

@@ -52,11 +52,11 @@
     </servlet>
     <servlet>
         <servlet-name>ListUsersInGroupServlet</servlet-name>
-        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.RemoveUserFromGroupServlet</servlet-class>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.ListUsersInGroupServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>RemoveGroupFromItemServlet</servlet-name>
-        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.RemoveUserFromGroupServlet</servlet-class>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.RemoveGroupFromItemServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RemoveGroupFromItemServlet</servlet-name>
@@ -64,11 +64,11 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListUsersInGroupServlet</servlet-name>
-        <url-pattern>/server/listUsersInGroup</url-pattern>
+        <url-pattern>/server/getUsersInGroup</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RemoveUserFromGroupServlet</servlet-name>
-        <url-pattern>/server/removeUserFromGroup</url-pattern>
+        <url-pattern>/server/deleteUserFromGroup</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListItemGroupsServlet</servlet-name>

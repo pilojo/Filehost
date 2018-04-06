@@ -94,6 +94,7 @@ public class JSONParser
     }
     
     public boolean parseListUsersInGroup(String json){
+        System.out.println("HIT");
         return parse(json, "\\{\"groupName\"\\:\"\\w*\"\\}");
     }
     

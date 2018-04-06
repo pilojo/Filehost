@@ -45,5 +45,8 @@
     "Shared":"Shared",
     "Private":"Private",
     "Public":"Public",
-    "Add Group":"Add Group"
+    "Add Group":"Add Group",
+    "Set Permission":"Set Permission",
+    "Users In Group":"Users In Group",
+    "Add User":"Add User"
 }
