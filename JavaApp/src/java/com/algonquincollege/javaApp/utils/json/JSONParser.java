@@ -86,7 +86,7 @@ public class JSONParser
     }
     
     public boolean parseChangePermission(String json){
-        return parse(json, "\\{\"path\"\\:\"\\w*\",\"permission\"\\:\"\\w*\",\"type\"\\:\"\\w*\"\\}");
+        return parse(json, "\\{\\\"path\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\"permission\"\\:\"\\w*\",\"type\"\\:\"\\w*\"\\}");
     }
     
     public boolean parseCreateGroup(String json){
@@ -102,10 +102,18 @@ public class JSONParser
     }
     
     public boolean parseListGroups(String json){
-        return parse(json, "");
+        return true;
     }
     
     public boolean parseShareWithGroup(String json){
-        return parse(json, "\\{\"path\"\\:\"\\w*\"\\,\"groupName\"\\:\"\\w*\"\\,\"type\"\\:\"\\w*\"\\}");
+        return parse(json, "\\{\\\"path\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\"groupName\"\\:\"\\w*\"\\,\"type\"\\:\"\\w*\"\\}");
+    }
+    
+    public boolean parseListItemGroups(String json){
+        return parse(json, "\\{\\\"path\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(.?\\w+)*\\\"\\,\\\"type\\\"\\:\\\"\\w*\\\"\\}"); 
+    }
+    
+    public boolean parseRemoveGroupFromItem(String json){
+        return parse(json, "\\{\"type\"\\:\"\\w*\"\\,\\\"path\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\"groupName\"\\:\"\\w*\"\\}");
     }
 }

@@ -23,7 +23,7 @@ public class ListUsersInGroupServlet extends WebInterfaceServlet{
                     
                     return "\"success\":\"false\"";
                 }else{
-                        String[] data = db.usersInGroup(json.map.get("groupName"));
+                        String[] data = db.usersInGroup((String)request.getSession().getAttribute("username") + "-" +json.map.get("groupName"));
                         if(data == null) return "\"success\":\"false\"";
                         String res = "";
                         for(int i = 0; i < data.length; i++){

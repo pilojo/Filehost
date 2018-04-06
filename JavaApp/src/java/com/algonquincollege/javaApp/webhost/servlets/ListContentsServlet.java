@@ -28,22 +28,30 @@ public class ListContentsServlet extends WebInterfaceServlet {
                     System.out.println("DB is Null");
                     return "\"success\":\"false\"";
                 } else {
-                    if (db.canUserAccessFolder((String) request.getSession().getAttribute("username"), json.map.get("path"))) {
+                    System.out.println(json.map.get("path"));
+                    if (db.canUserAccessFolder((String) request.getSession().getAttribute("username"), json.map.get("path")) || db.verifyOwner((String)request.getSession().getAttribute("email"), json.map.get("path"))) {
                         String[][] data;
                         data = db.list(json.map.get("path"));
-                        System.out.println(data[0][0]);
+                        
                         if (data == null) {
-                            return new String();
-                        }
+                            
+                            System.out.println("HIT");
+                            return "\"success\":\"false\"";
+                        }   
                         String send = "";
+                        
                         send += "\"contents\":[";
+                        
+                        System.out.println("HIT");
                         for (int i = 0; i < data.length; i++) {
-                            send += "{\"name\":\"" + data[i][0] + "\",\"type\":\"" + data[i][1] + "\",\"size\":\"\",\"lastModified\":\"\"},";
+                            
+                            send += "{\"name\":\"" + data[i][0] + "\",\"type\":\"" + data[i][1] + "\",\"permission\":\"" + data[i][2] + "\",\"size\":\""+ data[i][4] +"\",\"lastModified\":\"" + data[i][3] +"\"},";
                         }
                         if (data.length > 0) {
                             send = send.substring(0, send.length() - 1);
                         }
                         send += "]";
+                        
                         return send;
                     } else {
                         return "\"success\":\"false\"";

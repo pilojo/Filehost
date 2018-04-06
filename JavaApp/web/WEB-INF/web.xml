@@ -42,7 +42,38 @@
         <servlet-name>ShareWithGroupServlet</servlet-name>
         <servlet-class>com.algonquincollege.javaApp.webhost.servlets.ShareWithGroupServlet</servlet-class>
     </servlet>
-    
+    <servlet>
+        <servlet-name>ListItemGroupsServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.ListItemGroupsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveUserFromGroupServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.RemoveUserFromGroupServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListUsersInGroupServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.RemoveUserFromGroupServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveGroupFromItemServlet</servlet-name>
+        <servlet-class>com.algonquincollege.javaApp.webhost.servlets.RemoveUserFromGroupServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RemoveGroupFromItemServlet</servlet-name>
+        <url-pattern>/server/removeGroupForItem</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListUsersInGroupServlet</servlet-name>
+        <url-pattern>/server/listUsersInGroup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveUserFromGroupServlet</servlet-name>
+        <url-pattern>/server/removeUserFromGroup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListItemGroupsServlet</servlet-name>
+        <url-pattern>/server/getGroupsForItem</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AddUserToGroupServlet</servlet-name>
         <url-pattern>/server/addUserToGroup</url-pattern>

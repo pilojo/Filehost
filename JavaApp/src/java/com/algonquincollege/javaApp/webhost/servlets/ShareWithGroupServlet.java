@@ -25,11 +25,11 @@ public class ShareWithGroupServlet extends WebInterfaceServlet{
                 }else{
                     if(db.verifyOwner((String)request.getSession().getAttribute("email"), json.map.get("path"))){
                         if(json.map.get("type").equals("File")){
-                            if(db.shareFileWithGroup(json.map.get("path"), json.map.get("group"))){
+                            if(db.shareFileWithGroup(json.map.get("path"), (String)request.getSession().getAttribute("username") + "-" +json.map.get("groupName"))){
                                 return "\"success\":\"true\"";
                             }
                         }else if(json.map.get("type").equals("Folder")){
-                            if(db.shareFolderWithGroup(json.map.get("path"), json.map.get("group"))){
+                            if(db.shareFolderWithGroup(json.map.get("path"), (String)request.getSession().getAttribute("username") + "-" +json.map.get("groupName"))){
                                 return "\"success\":\"true\"";
                             }
                         }

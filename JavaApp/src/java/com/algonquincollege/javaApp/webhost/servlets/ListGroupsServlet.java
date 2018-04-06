@@ -24,12 +24,14 @@ public class ListGroupsServlet extends WebInterfaceServlet{
                         return "\"success\":\"false\"";
                     }else{
                         String[] groups = db.ownedGroups((String)request.getSession().getAttribute("username"));
-                        if(groups == null) return "\"success\":\"false\"";
-                        String res = "";
+                        if(groups == null) return "\"groups\":[]";
+                        String res = "\"groups\":[";
                         for(int i = 0; i < groups.length; i++){
-                            res += "\"name\":\"" + groups[i] + "\",";
+                            res += "\"" + groups[i].substring(groups[i].indexOf("-")+1) + "\",";
                         }
+                        
                         res = res.substring(0, res.length()-1);
+                        res += "]";
                         return res;
                     }
                 //}

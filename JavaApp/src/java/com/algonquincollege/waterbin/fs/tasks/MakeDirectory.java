@@ -31,11 +31,12 @@ public class MakeDirectory extends FileSystemTask{
                     Files.delete(Paths.get(root, path));
                     System.err.println("Make Directory Task Failed: DB connection issue: " + path);
                 }
+                System.out.println("Make Directory Task: Completed");
             }
         } catch (IOException ex) {
             System.err.println("Make Directory Task Failed: " + path);
         }
-        System.out.println("Make Directory Task: Completed");
+        
         
     }
     

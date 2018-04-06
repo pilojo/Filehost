@@ -23,7 +23,7 @@ public class DeleteGroupServlet extends WebInterfaceServlet{
                     
                     return "\"success\":\"false\"";
                 }else{
-                    if(db.deleteGroup(json.map.get("groupName"))){
+                    if(db.deleteGroup((String)request.getSession().getAttribute("username") + "-" +json.map.get("groupName"))){
                         return "\"success\":\"true\"";
                     }
                 }

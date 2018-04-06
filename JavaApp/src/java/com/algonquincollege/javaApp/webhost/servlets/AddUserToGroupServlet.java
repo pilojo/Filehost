@@ -23,7 +23,7 @@ public class AddUserToGroupServlet extends WebInterfaceServlet{
                     
                     return "\"success\":\"false\"";
                 }else{
-                        if(db.addUserToGroup(json.map.get("username"), json.map.get("groupName"))){
+                        if(db.addUserToGroup(json.map.get("username"), (String)request.getSession().getAttribute("username") + "-" +json.map.get("groupName"))){
                         return "\"success\":\"true\"";
                     }
                 }
