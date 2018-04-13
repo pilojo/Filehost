@@ -42,8 +42,6 @@ public class MakeDirectory extends FileSystemTask{
         } catch (IOException ex) {
             System.err.println("Make Directory Task Failed: " + path);
         }
-        
-        
     }
     
     /**
