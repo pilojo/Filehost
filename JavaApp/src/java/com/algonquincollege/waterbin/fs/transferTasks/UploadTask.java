@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.algonquincollege.waterbin.fs.transferTasks;
 
 import com.algonquincollege.javaApp.database.DBConnection;
@@ -21,23 +16,24 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
 /**
- *
- * @author Devon
+ * Class representing the asyncronous handling of a client upload task
+ * @author Devon St. John
  */
-@MultipartConfig(
-                fileSizeThreshold=1024*10241024*2, // 2MB
-                 maxFileSize=1024*1024*1024*2,      // 500KB
-                 maxRequestSize=1024*1024*50)   // 50MB
 public class UploadTask extends TransferTask {
-
+  
     DBConnection db;
-    final String localPath;
+    final String localPath; 
     
     private boolean abnormalEnd;
     
     private String fileName;
     int recommendedResponseCode;
     
+    /**
+     * Initial Constructor, taking the calling servlet's request and response objects
+     * @param the calling servlet's request object
+     * @param the calling servlet's response object
+     */
     public UploadTask(HttpServletRequest request, HttpServletResponse response) {
         super(request, response);
         
@@ -47,17 +43,20 @@ public class UploadTask extends TransferTask {
         fileName = localPath.substring(localPath.lastIndexOf("/"));
     }
 
+    /**
+     * Handles all the logic of the upload operation, can be called as part of an executor service
+     */
     @Override
     public void run() {
         System.out.println("Upload Task: Going Live");
-        int fileLength = Integer.parseInt(request.getHeader("content-length"));
+        int fileLength = Integer.parseInt(request.getHeader("content-length"));//Get the file length from the mime header
+      
         try{
             System.out.println((String)request.getSession().getAttribute("email") + localPath);
-                System.out.println("HIT");
-
                     InputStream istream = request.getInputStream();
                     FileOutputStream file = new FileOutputStream(Paths.get(root, localPath).toString());
                     System.out.println(request.getHeader("content-length"));
+                    //Read in the data, byte by byte
                     byte[] bytes = new byte[fileLength];
                     byte[] temp = new byte[1];
                     for(int i = 0; (istream.read(temp) != -1); i++){
@@ -71,7 +70,7 @@ public class UploadTask extends TransferTask {
             
         }
         
-        if(!abnormalEnd){
+        if(!abnormalEnd){//If all went well, commit this change to the database
             System.out.println(localPath);
             if(db.connect() == null || !db.newFile(localPath, fileLength)){
                 try {
@@ -87,11 +86,19 @@ public class UploadTask extends TransferTask {
         }
     }
 
+    /**
+     * Get whether or not the operation was successful
+     * @param whether the file was created
+     */
     @Override
     public boolean getSuccess() {
         return Files.exists(Paths.get(root, localPath));
     }
-    
+  
+    /**
+     * Gets the code that was generated during run in response to the tranfer operation
+     * @return the code recommended to return to the client
+     */
     public int getRecommendedCode(){
         return recommendedResponseCode;
     }
