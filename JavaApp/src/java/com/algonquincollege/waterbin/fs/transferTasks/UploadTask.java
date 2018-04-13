@@ -88,7 +88,7 @@ public class UploadTask extends TransferTask {
 
     /**
      * Get whether or not the operation was successful
-     * @param whether the file was created
+     * @return whether the file was created
      */
     @Override
     public boolean getSuccess() {
