@@ -25,6 +25,7 @@ public class ShareWithGroupServlet extends WebInterfaceServlet{
                 }else{
                     if(db.verifyOwner((String)request.getSession().getAttribute("email"), json.map.get("path"))){
                         if(json.map.get("type").equals("File")){
+                            System.out.println((String)request.getSession().getAttribute("username") + "-" +json.map.get("groupName"));
                             if(db.shareFileWithGroup(json.map.get("path"), (String)request.getSession().getAttribute("username") + "-" +json.map.get("groupName"))){
                                 return "\"success\":\"true\"";
                             }

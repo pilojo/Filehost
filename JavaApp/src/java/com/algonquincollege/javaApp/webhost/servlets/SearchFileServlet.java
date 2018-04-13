@@ -41,7 +41,10 @@ public class SearchFileServlet extends WebInterfaceServlet{
                 }
             }
         }catch(Exception e){
+            
         }
+        
+                        System.out.println("HIT");
         return "\"success\":\"false\"";
     }
 }

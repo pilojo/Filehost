@@ -54,10 +54,7 @@ public class UploadTask extends TransferTask {
         try{
             System.out.println((String)request.getSession().getAttribute("email") + localPath);
                 System.out.println("HIT");
-                if(!fileName.matches("\\/[A-Za-z0-9\\_]+(\\.?[A-Za-z0-9\\_]+)*")){
-                    abnormalEnd = true;
-                    System.out.println(fileName + "Invalid File Name");
-                }else{
+
                     InputStream istream = request.getInputStream();
                     FileOutputStream file = new FileOutputStream(Paths.get(root, localPath).toString());
                     System.out.println(request.getHeader("content-length"));
@@ -69,7 +66,7 @@ public class UploadTask extends TransferTask {
                     file.write(bytes);
                     file.flush();
                     file.close();
-                }
+                
         }catch(Exception e){
             
         }

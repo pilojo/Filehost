@@ -22,84 +22,99 @@ public class JSONParser
     /*
     Parses the single object json if it matches the regex;returns false otherwise
     */
-    public boolean parse(String json, String regex){
-        System.out.println("hit parse");
-        if(json.matches(regex))
-        {
-            System.out.println("Match regex");
-            try{
-                //Trims the opening and closing brackets
-                json=json.substring(1, json.length()-1);
-                System.out.println(json);
-                String[] rows = json.split(",");
-                for (String row : rows) {
-                    String[] temp = row.split(":");
-                    map.put(temp[0].substring(1,temp[0].length()-1),temp[1].substring(1,temp[1].length()-1));
+    public boolean parse(String toParse){
+        char json[];
+        byte pos=0;
+        boolean valid;
+        String entry;
+        byte start;
+        int end;
+        try{
+            json=toParse.toCharArray();
+            this.map=new HashMap();
+            valid=json[pos++]=='{';
+            String key="";
+            String value="";
+            do{
+                entry="";
+                if(json[pos++]=='\"'){
+                    start=pos;
+                    while(json[pos++]!='\"'){if(json[pos]=='\\'){valid=false;break;}}
+                    end=pos-1;
+                    if(valid){entry=toParse.substring(start,end);}
                 }
-                System.out.println("Parsed");
-                return true;
-            }catch(Exception e){
-                //e.printStackTrace();
-                return false;}
-        }
-        return false;
+                if(valid&&json[pos++]==':'){
+                    key=entry;
+                    entry="";
+                    if(json[pos++]=='\"'){
+                        start=pos;
+                        while(json[pos++]!='\"'){if(json[pos]=='\\'){valid=false;break;}}
+                        end=pos-1;
+                        //valid=valid&&start!=end;
+                        if(valid){entry=toParse.substring(start,end);}
+                    }
+                    if(valid){value=entry;}
+                }else{valid=false;}
+                map.put(key, value);
+            }while(valid&&json[pos]==',' && (pos++)>0);
+            return valid&&json[pos++]=='}';
+        }catch(Exception e){return false;}
     }
     
     public boolean parseLogin(String json){
-        return parse(json, "\\{\"email\":\"\\w+@\\w+\\.\\w+\",\"password\":\".+\"\\}");
+        return parse(json);
     }
     
     public boolean parseSignUp(String json){
-        return parse(json, "\\{\"firstName\":\"[A-Za-z\\.\\-]+\",\"lastName\":\"[A-Za-z\\.\\-]+\",\"email\":\"\\w+@\\w+\\.\\w+\",\"username\":\"\\w+\",\"password\":\".+\"\\}");
+        return parse(json);
     }
     
     public boolean parseMkdir(String json){
-        return parse(json, "\\{\\\"path\\\"\\:\\\"(\\/\\w+)+\\/?(\\w+)?\\\"\\}");
+        return parse(json);
     }
     
     public boolean parseCp(String json){
-        return parse(json, "\\{\\\"from\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\\\"to\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\\\"type\\\"\\:\\\"\\w+\\\"\\}");
+        return parse(json);
     }
     
     public boolean parseMv(String json){
-        return parse(json, "\\{\\\"from\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\\\"to\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\\\"type\\\"\\:\\\"\\w+\\\"\\}");
+        return parse(json);
     }
     
     public boolean parseRm(String json){
-        return parse(json, "\\{\\\"path\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\\\"type\\\"\\:\\\"\\w+\\\"\\}");
+        return parse(json);
     }
     
     public boolean parseSearchFile(String json){
-        return parse(json, "\\{\"firstName\"\\:\"\\w*\",\"lastName\"\\:\"\\w*\",\"username\"\\:\"\\w*\"\\,\"fileName\"\\:\"\\w*\"\\}");
+        return parse(json);
     }
     
     public boolean parseSearchUser(String json){
-        return parse(json, "\\{\"firstName\"\\:\"\\w*\",\"lastName\"\\:\"\\w*\",\"username\"\\:\"\\w*\"\\}");
+        return parse(json);
     }
     
     public boolean parseAddUserToGroup(String json){
-        return parse(json, "\\{\"groupName\"\\:\"\\w*\",\"username\"\\:\"\\w*\"\\}");
+        return parse(json);
     }
     
     public boolean parseRemoveUserFromGroup(String json){
-        return parse(json, "\\{\"groupName\"\\:\"\\w*\",\"username\"\\:\"\\w*\"\\}");
+        return parse(json);
     }
     
     public boolean parseChangePermission(String json){
-        return parse(json, "\\{\\\"path\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\"permission\"\\:\"\\w*\",\"type\"\\:\"\\w*\"\\}");
+        return parse(json);
     }
     
     public boolean parseCreateGroup(String json){
-        return parse(json, "\\{\"groupName\"\\:\"\\w*\"\\}");
+        return parse(json);
     }
     
     public boolean parseListUsersInGroup(String json){
-        System.out.println("HIT");
-        return parse(json, "\\{\"groupName\"\\:\"\\w*\"\\}");
+        return parse(json);
     }
     
     public boolean parseDeleteGroup(String json){
-        return parse(json, "\\{\"groupName\"\\:\"\\w*\"\\}");
+        return parse(json);
     }
     
     public boolean parseListGroups(String json){
@@ -107,14 +122,14 @@ public class JSONParser
     }
     
     public boolean parseShareWithGroup(String json){
-        return parse(json, "\\{\\\"path\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\"groupName\"\\:\"\\w*\"\\,\"type\"\\:\"\\w*\"\\}");
+        return parse(json);
     }
     
     public boolean parseListItemGroups(String json){
-        return parse(json, "\\{\\\"path\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(.?\\w+)*\\\"\\,\\\"type\\\"\\:\\\"\\w*\\\"\\}"); 
+        return parse(json);
     }
     
     public boolean parseRemoveGroupFromItem(String json){
-        return parse(json, "\\{\"type\"\\:\"\\w*\"\\,\\\"path\\\"\\:\\\"((\\/\\w+)+\\/?(\\w+)?)?(\\.?\\w+)*\\\",\"groupName\"\\:\"\\w*\"\\}");
+        return parse(json);
     }
 }

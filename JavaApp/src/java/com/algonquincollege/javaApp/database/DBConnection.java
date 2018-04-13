@@ -99,7 +99,7 @@ public class DBConnection {
             userStmt.setString(2, firstName);
             userStmt.setString(3, lastName);
             userStmt.setString(4, email);
-            userStmt.setString(5, password);
+            userStmt.setString(5, PasswordHashUtils.hash(password));
 
             if (userStmt.executeUpdate() == 0) {
 
@@ -426,7 +426,7 @@ public class DBConnection {
             if (!permissionRS.next()) {
                 throw new Exception("NULL");
             }
-            if (permissionRS.getString("pName").equals(permissionName)) {
+            if ( !permissionRS.getString("pName").equals("public")&& permissionRS.getString("pName").equals(permissionName)) {
                 System.out.println("Folder already has that permission.");
                 return true;
             } else if (permissionRS.getString("pName").equals("private")) {
@@ -638,6 +638,7 @@ public class DBConnection {
             nFile.setString(2, parentFolder[NAME]);
             nFile.setString(3, parentFolder[PATH]);
             nFile.setLong(4, size);
+            System.out.println(nFile.toString());
 
             if (nFile.executeUpdate() == 0) {
                 System.out.println("Could not create new file");
@@ -650,6 +651,7 @@ public class DBConnection {
                 }
             }
         } catch (SQLException e) {
+            System.out.println(e.getMessage());
             System.out.println("File was not created due to an Exception being thrown");
             return false;
         }
@@ -1330,10 +1332,10 @@ public class DBConnection {
 
         String[] file = splitPath(path);
         String[] parent = splitPath(file[PATH]);
-        String fileSQL = "INSERT INTO shared_files (File_ID, Groupname) SELECT files.ID, ? FROM files WHERE Name = ? AND ParentFolder_ID = (SELECT ID FROM folders WHERE Name = ? AND Parent_Path = ?);";
+        String fileSQL = "INSERT INTO sharedfiles (File_ID, Groupname) SELECT files.ID, ? FROM files WHERE Name = ? AND ParentFolder_ID = (SELECT ID FROM folders WHERE Name = ? AND Parent_Path = ?);";
 
         if (!fileExists(path) || !groupExists(groupname)) {
-            System.out.println("Something doesn't exist.");
+            System.out.println("Something doesn't exist. groupname: "+groupname+" file: "+path);
             return false;
         }
         if (!changeFilePermission(path, "shared")) {
