@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.algonquincollege.waterbin.fs.transferTasks;
 
 import java.io.FileInputStream;
@@ -16,15 +11,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
- * @author jp972
+ * Class representing the asyncronous handling of a client download task
+ * @author Devon St. John
  */
 public class DownloadTask extends TransferTask{
     
     /**
-     *
-     * @param request
-     * @param response
+     * Initial Constructor, taking the calling servlet's request and response objects
+     * @param the calling servlet's request object
+     * @param the calling servlet's response object
      */
     public DownloadTask(HttpServletRequest request, HttpServletResponse response){
         super(request, response);
@@ -32,6 +27,9 @@ public class DownloadTask extends TransferTask{
         System.out.println("Download Task: Queued");  
     }
     
+    /**
+     * Handles all the logic of the download operation, can be called as part of an executor service
+     */
     @Override
     public void run(){
         System.out.println("Starting download...");
@@ -70,6 +68,10 @@ public class DownloadTask extends TransferTask{
         }
     }
 
+    /**
+     * Get whether or not the operation was successful
+     * @return whether or not the operation was successful
+     */
     @Override
     public boolean getSuccess() {
         return true;
