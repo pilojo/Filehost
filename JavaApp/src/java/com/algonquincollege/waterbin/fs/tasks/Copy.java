@@ -29,7 +29,7 @@ public class Copy extends FileSystemTask {
     }
     
     /**
-     * Handles all the logic of the move operation, can be called as part of an executor service
+     * Handles all the logic of the copy operation, can be called as part of an executor service
      */
     @Override
     public void run() {
