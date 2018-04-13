@@ -162,18 +162,20 @@ public class DBConnection {
      * Folder manipulations
      * ***************************************************************************
      */
+    
     /**
-     *
+     * Creates a new folder in the Database
      * @param path
-     * @return
+     * @return true on success, false on failure
      */
     public boolean newFolder(String path) {
+        //makes sure that hte folder being created isn't a root folder
         Pattern regex = Pattern.compile("\\/[1-9a-zA-Z]*\\/*");
         Matcher m = regex.matcher(path);
         if (m.matches()) {
             System.out.println("DO NOT MAKE ROOT FOLDERS");
             return false;
-        } else if (folderExists(path)) {
+        } else if (folderExists(path)) {//makes sure the folder doesn't already exists
             System.out.println("Folder already exists with that name at location");
             return false;
         }
@@ -211,17 +213,18 @@ public class DBConnection {
     }
 
     /**
-     *
+     * Deletes a folder from the db
      * @param path
-     * @return
+     * @return true on success, false on failure
      */
     public boolean deleteFolder(String path) {
+        //makes sure root folders aren't going to be deleted
         Pattern regex = Pattern.compile("\\/[1-9a-zA-Z]*\\/*");
         Matcher m = regex.matcher(path);
         if (m.matches()) {
             System.out.println("DO NOT DELETE ROOT FOLDERS");
             return false;
-        } else if (!folderExists(path)) {
+        } else if (!folderExists(path)) {//makes sure the folder exists
             System.out.println("Folder doesn't exist with that name at location");
             return false;
         }
@@ -250,12 +253,13 @@ public class DBConnection {
     }
 
     /**
-     *
-     * @param src
-     * @param dst
-     * @return
+     * Changes a folder, allows for moving or renaming a folder.
+     * @param src, original folder path
+     * @param dst, destination folder path
+     * @return true on success, false on failure
      */
     public boolean updateFolder(String src, String dst) {
+        //makes sure root folders aren't modified
         Pattern regex = Pattern.compile("\\/[1-9a-zA-Z]*\\/*");
         Matcher m = regex.matcher(src);
         Matcher m1 = regex.matcher(dst);
@@ -263,7 +267,7 @@ public class DBConnection {
             System.out.println("DO NOT TOUCH ROOT FOLDERS");
             return false;
         }
-        if (folderExists(dst)) {
+        if (folderExists(dst)) {//makes sure a folder isn't getting moved into a location where a folder with the same name exists
             System.out.println("Folder already exists with that name in specified destination");
             return false;
         }
@@ -287,6 +291,7 @@ public class DBConnection {
                 System.out.println("could not update folder");
                 return false;
             }
+            //gets the id from the newly updated folder so that it's children can be updated
             String getFID = "SELECT ID FROM folders WHERE Name = ? AND Parent_Path = ?";
             PreparedStatement FID = connection.prepareStatement(getFID);
             FID.setString(1, updated[NAME]);
@@ -307,14 +312,15 @@ public class DBConnection {
     }
 
     /**
-     *
-     * @param parentID
-     * @param parentName
-     * @param parentPath
-     * @return
+     *  updates all the children in a folder to reflect it's parent
+     * @param parentID, the parent folder ID
+     * @param parentName, parent folder name
+     * @param parentPath, the path of the parent folder
+     * @return true on success, false on failure
      */
     public boolean changeChild(String parentID, String parentName, String parentPath) {
         System.out.println("inChangeChild");
+        //get info of the children in folder.
         String kidsSQL = "SELECT ID, Name, Parent_Path FROM folders WHERE ParentFolder_ID = ?";
         String updateKid = "UPDATE folders SET Parent_Path = ? WHERE ParentFolder_ID = ?";
         try {
@@ -340,6 +346,7 @@ public class DBConnection {
             }
 
             kids.beforeFirst();
+            //changes the children of the children
             while (kids.next()) {
                 changeChild(kids.getString("ID"), kids.getString("Name"), newParentPath);
             }
@@ -349,10 +356,16 @@ public class DBConnection {
         System.out.println("updated children");
         return true;
     }
-
+    /**
+     * Makes a copy of a specified folder and calls a function that copies it's children
+     * @param src, original folder location
+     * @param dst, destination of folder
+     * @return true on success, false on failure
+     */
     public boolean copyFolder(String src, String dst) {
         String[] orig = splitPath(src);
-        if (!newFolder(dst + orig[NAME] + "/")) {
+        
+        if (!newFolder(dst + orig[NAME] + "/")) {//create copy
             System.out.println("Parent folder could not be created");
             return false;
         }
@@ -360,10 +373,10 @@ public class DBConnection {
     }
 
     /**
-     *
-     * @param src
-     * @param dst
-     * @return
+     * Copies the children of a folder
+     * @param src, folder to copy
+     * @param dst, location to copy to
+     * @return true on success, false on failure
      */
     public boolean copyTree(String src, String dst) {
         String[] orig = splitPath(src);
@@ -385,6 +398,7 @@ public class DBConnection {
 
             ResultSet folderRS = kidFolders.executeQuery();
             String folderName;
+            //copy children in children
             while (folderRS.next()) {
                 folderName = folderRS.getString("Name");
                 newFolder(dst + orig[NAME] + "/" + folderName);
@@ -397,10 +411,10 @@ public class DBConnection {
     }
 
     /**
-     *
-     * @param path
-     * @param permissionName
-     * @return
+     * changes a folder's permission
+     * @param path, folder
+     * @param permissionName, permission to be changed to
+     * @return true on success, false on failure
      */
     public boolean changeFolderPermission(String path, String permissionName) {
         if (!folderExists(path)) {
@@ -418,6 +432,7 @@ public class DBConnection {
         String folderSQL = "UPDATE folders SET Permission_ID = (SELECT ID FROM permissions WHERE Name = ?) WHERE Name = ? AND Parent_Path = ? ;";
 
         try {
+            //get parent folder permission
             PreparedStatement permissionStmt = connection.prepareStatement(permissionSQL);
             permissionStmt.setString(1, parent[NAME]);
             permissionStmt.setString(2, parent[PATH]);
@@ -429,7 +444,7 @@ public class DBConnection {
             if ( !permissionRS.getString("pName").equals("public")&& permissionRS.getString("pName").equals(permissionName)) {
                 System.out.println("Folder already has that permission.");
                 return true;
-            } else if (permissionRS.getString("pName").equals("private")) {
+            } else if (permissionRS.getString("pName").equals("private")) {//do not change permission if parent folder is private as security can only increase in a tree
                 System.out.println("Parent folder is private, cannot change child folder permission.");
                 return false;
             }
@@ -457,6 +472,7 @@ public class DBConnection {
 
             ResultSet FIDrs = FID.executeQuery();
             System.out.println("plz");
+            //changes the permission of all the children in folder
             if (FIDrs.next()) {
                 childPermissions(FIDrs.getString("ID"), permissionName);
             }
@@ -470,10 +486,10 @@ public class DBConnection {
     }
 
     /**
-     *
-     * @param parentID
-     * @param permission
-     * @return
+     * changes the permissions of all the children in a folder.
+     * @param parentID, parent folder id
+     * @param permission, the permission to change to
+     * @return true on success, false on failure
      */
     public boolean childPermissions(String parentID, String permission) {
         String childFolderSQL = "SELECT folders.ID, permissions.Name FROM folders INNER JOIN permissions ON folders.Permission_ID = permissions.ID WHERE ParentFolder_ID = ?";
@@ -492,10 +508,11 @@ public class DBConnection {
             updateFil.setString(1, permission);
 
             ResultSet fileRS = kidFiles.executeQuery();
-
+            
+            //change the files
             while (fileRS.next()) {
                 updateFil.setString(2, fileRS.getString("ID"));
-                if (permission.equals("shared")) {
+                if (permission.equals("shared")) { //changes the permission if it isn't already set to it
                     if (fileRS.getString("Name").equals("public")) {
                         updateFil.executeUpdate();
                     }
@@ -503,7 +520,7 @@ public class DBConnection {
                     updateFil.executeUpdate();
                 }
             }
-
+            //change the folders
             ResultSet folderRS = kidFolders.executeQuery();
             while (folderRS.next()) {
                 updateFol.setString(2, folderRS.getString("ID"));
@@ -529,10 +546,10 @@ public class DBConnection {
      * ******************************************************************************************
      */
     /**
-     *
-     * @param src
-     * @param dst
-     * @return
+     * moves or renames a file
+     * @param src, original file location
+     * @param dst, destination of file
+     * @return true on success, false on failure
      */
     public boolean updateFile(String src, String dst) {
         if (fileExists(dst)) {
@@ -570,9 +587,9 @@ public class DBConnection {
     }
 
     /**
-     *
+     * deletes a files
      * @param path
-     * @return
+     * @return true on success, false on failure
      */
     public boolean deleteFile(String path) {
         String[] file = splitPath(path);
@@ -598,10 +615,10 @@ public class DBConnection {
     }
 
     /**
-     *
+     * creates a new file
      * @param filePath
-     * @param size
-     * @return
+     * @param size, size of the file
+     * @return true on success, false on failure
      */
     public boolean newFile(String filePath, long size) {
         if (fileExists(filePath)) {
@@ -660,10 +677,10 @@ public class DBConnection {
     }
 
     /**
-     *
-     * @param path
-     * @param permissionName
-     * @return
+     * changes a file's permission
+     * @param path, file path
+     * @param permissionName, permission to change to
+     * @return true on success, false on failure
      */
     public boolean changeFilePermission(String path, String permissionName) {
         String[] file = splitPath(path);
@@ -714,9 +731,9 @@ public class DBConnection {
      * ****************************************************************************
      */
     /**
-     *
-     * @param path
-     * @return
+     * shows the children and their information in a folder
+     * @param path, path of parent folder
+     * @return  2D array containing children information
      */
     public String[][] list(String path, String username) {
         String[] folder = splitPath(path);
@@ -743,17 +760,19 @@ public class DBConnection {
 
             contents = new String[rowCount][numData];
             int i = 0;
+            //place folder inforamtion in array
             while (folderRS.next()) {
                 if (canUserAccessFolder(username, path+folderRS.getString("Name"))) {
                     contents[i][0] = folderRS.getString("Name");
                     contents[i][1] = "Folder";
                     contents[i][2] = folderRS.getString("pName");
                     for (int j = 3; j < numData; j++) {
-                        contents[i][j] = "";
+                        contents[i][j] = "";//since file has more information then folder fill it with nothing
                     }
                     i++;
                 }
             }
+            //place files information in array
             while (fileRS.next()) {
                 if (canUserAccessFile(username, path+fileRS.getString("Name"))) {
                     contents[i][0] = fileRS.getString("Name");
@@ -773,17 +792,18 @@ public class DBConnection {
     }
 
     /**
-     *
+     * looks for a file using username, firstname, lastname, and/or filename. none of the parameters are obligatory.
      * @param username
      * @param firstname
      * @param lastname
      * @param filename
-     * @return
+     * @return a 2D array of all the results found.
      */
     public String[][] searchFiles(String username, String firstname, String lastname, String filename) {
         String[][] files = null;
         String fileSQL = "SELECT files.Name, Username, Parent_Path, folders.Name AS folderName FROM files INNER JOIN folders ON files.ParentFolder_ID = folders.ID INNER JOIN users ON folders.Owner_ID = users.ID WHERE Username LIKE ? AND First_Name LIKE ? AND Last_Name LIKE ? AND files.Name LIKE ?;";
-
+        
+        //if any of the parameters are null change it to search for any.
         if (username == null) {
             username = "%";
         }
@@ -829,7 +849,13 @@ public class DBConnection {
         }
         return files;
     }
-
+    /**
+     * searches for users using given information, none of the parameters are obligatory.
+     * @param username
+     * @param firstname
+     * @param lastname
+     * @return 2D array of users found
+     */
     public String[][] searchUsers(String username, String firstname, String lastname) {
         String[][] users = null;
         String userSQL = "SELECT Username, First_Name, Last_Name FROM users WHERE Username LIKE ? AND First_Name LIKE ? AND Last_Name LIKE ?;";
@@ -872,7 +898,12 @@ public class DBConnection {
         }
         return users;
     }
-
+    /**
+     * Gets the groups that a file of folder belongs to
+     * @param type, if the item is either a file or a folder
+     * @param path, location of item
+     * @return array of all the groups
+     */
     public String[] getGroupName(String type, String path) {
         String[] groups = null;
         try {
@@ -912,7 +943,11 @@ public class DBConnection {
         }
         return groups;
     }
-
+    /**
+     * retrieves how much space a user's files are taking.
+     * @param username
+     * @return returns how many bytes of storage a user is taking, returns -1 on failure.
+     */
     public int userSpaceUsage(String username) {
         int spaceUsed = -1;
         String userSQL = "SELECT storageUsage_Bytes FROM users WHERE username = ?;";
@@ -935,9 +970,9 @@ public class DBConnection {
      * ****************************************************************************
      */
     /**
-     *
+     * gets the item name and parent path from a path
      * @param fullPath
-     * @return
+     * @return an array with item name and parent location.
      */
     public static String[] splitPath(String fullPath) {
         String[] retVals = new String[2];
@@ -948,9 +983,9 @@ public class DBConnection {
     }
 
     /**
-     *
+     * gets the root folder/ name of the user that created an item
      * @param fullPath
-     * @return
+     * @return username
      */
     public String getUsernameFromPath(String fullPath) {
         String[] sepPath = fullPath.split("/");
@@ -958,9 +993,9 @@ public class DBConnection {
     }
 
     /**
-     *
+     * checks to see if a file already exists at location
      * @param path
-     * @return
+     * @return true if it exists, false if it doesn't;
      */
     public boolean fileExists(String path) {
         String fileSQL = "SELECT files.Name FROM files INNER JOIN folders ON folders.ID = files.ParentFolder_ID WHERE folders.Name = ? AND folders.Parent_PATH = ? AND files.Name = ?;";
@@ -982,9 +1017,9 @@ public class DBConnection {
     }
 
     /**
-     *
+     * checks if a folder exists at location
      * @param path
-     * @return
+     * @return true if it exists, false if it doesn't
      */
     public boolean folderExists(String path) {
         String[] folder = splitPath(path);
@@ -1001,11 +1036,16 @@ public class DBConnection {
             return false;
         }
     }
-
+    /**
+     * Makes sure that a given path exists
+     * @param path
+     * @return true if it exists, false if it doesn't
+     */
     public boolean verifyPath(String path) {
         String[] item = splitPath(path);
         boolean exists = folderExists(item[PATH]);
-
+        
+        //goes up tree
         while (!item[PATH].equals("/") && exists) {
             //System.out.println(item[PATH]);
             item = splitPath(item[PATH]);
@@ -1013,7 +1053,11 @@ public class DBConnection {
 
         return exists;
     }
-
+    /**
+     * gets the username using their email
+     * @param email
+     * @return username, null if failure
+     */
     public String getUsernameFromEmail(String email) {
         String userSQL = "SELECT Username FROM users WHERE Email = ?";
         try {
@@ -1029,7 +1073,11 @@ public class DBConnection {
         }
         return null;
     }
-
+    /**
+     * Get the user id from their username in the database
+     * @param username
+     * @return username
+     */
     public String getUserIDFromUsername(String username) {
         String userSQL = "SELECT ID FROM users WHERE username = ?";
         try {
@@ -1045,7 +1093,12 @@ public class DBConnection {
         }
         return null;
     }
-
+    /**
+     * confirms that the root folder belongs to a user using their email
+     * @param email
+     * @param path
+     * @return true if it belongs to user, false if it doesn't
+     */
     public boolean verifyOwner(String email, String path) {
         String userSQL = "SELECT Username FROM users WHERE Email = ?";
         try {
@@ -1072,9 +1125,9 @@ public class DBConnection {
      * ************************************************************************
      */
     /**
-     *
+     * sets scanned flag to true once an item has been scanned
      * @param path
-     * @return
+     * @return true on success, false on failure
      */
     public boolean setScannedFlag(String path) {
         String[] file = splitPath(path);
@@ -1101,9 +1154,9 @@ public class DBConnection {
     }
 
     /**
-     *
+     * sets the virus flag if item is found to be a virus
      * @param path
-     * @return
+     * @return true on success, false on failure
      */
     public boolean setVirusFlag(String path) {
         String[] file = splitPath(path);
@@ -1131,14 +1184,14 @@ public class DBConnection {
 
     /**
      * ***************************************************************************************************************************************************
-     * Groups (kill me)
+     * Groups 
      * ****************************************************************************************************************************************************8
      */
     /**
-     *
+     * Creates a new group
      * @param groupName
      * @param username
-     * @return
+     * @return true on success, false on failure
      */
     public boolean newGroup(String groupName, String username) {
         if (groupExists(groupName)) {
@@ -1168,9 +1221,9 @@ public class DBConnection {
     }
 
     /**
-     *
+     * checks to see if given group already exists
      * @param groupName
-     * @return
+     * @return true if it exists, false if it doesn't
      */
     public boolean groupExists(String groupName) {
         String groupSQL = "Select * FROM groups WHERE Name = ?";
@@ -1189,9 +1242,9 @@ public class DBConnection {
     }
 
     /**
-     *
+     * Removes a group from the database
      * @param groupName
-     * @return
+     * @return true on success, false on failure
      */
     public boolean deleteGroup(String groupName) {
         if (!groupExists(groupName)) {
@@ -1214,10 +1267,10 @@ public class DBConnection {
     }
 
     /**
-     *
+     * Gives user access to the shared files/folders of a group
      * @param username
      * @param groupName
-     * @return
+     * @return true on success, false on failure
      */
     public boolean addUserToGroup(String username, String groupName) {
 
@@ -1236,7 +1289,12 @@ public class DBConnection {
         }
         return true;
     }
-
+    /**
+     * Revokes a user's access to shared files/folders of group
+     * @param username
+     * @param groupName
+     * @return true on success, false on failure
+     */
     public boolean removeUserFromGroup(String username, String groupName) {
         if (!groupExists(groupName)) {
             System.out.println("user could not be removed from group as group doesn't exist.");
@@ -1261,25 +1319,24 @@ public class DBConnection {
     }
 
     /**
-     *
+     * Gives group access to folder
      * @param path
      * @param groupName
-     * @param groupOwner
-     * @return
+     * @return true on success, false on failure
      */
     public boolean shareFolderWithGroup(String path, String groupName) {
 
         String[] folder = splitPath(path);
-        if (folder[PATH].equals("/")) {
+        if (folder[PATH].equals("/")) { //root folders are always public
             System.out.println("CANNOT SHARE ROOT FOLDER.");
             return false;
         }
-        if (!groupExists(groupName)) {
+        if (!groupExists(groupName)) {//makes sure group exists
             System.out.println("Group doesn't exist.");
             return false;
         }
 
-        if (!changeFolderPermission(path, "shared")) {
+        if (!changeFolderPermission(path, "shared")) {// changes the folders permission
             System.out.println("Could not change folder permission to shared.");
             return false;
         }
@@ -1298,7 +1355,7 @@ public class DBConnection {
             String folderSQL = "SELECT Name FROM folders WHERE Parent_Path = ?;";
             PreparedStatement folderStmt = connection.prepareStatement(folderSQL);
             folderStmt.setString(1, path);
-
+            //adds children of folder to the group
             ResultSet childFolRS = folderStmt.executeQuery();
             while (childFolRS.next()) {
                 shareFolderWithGroup((path + childFolRS.getString("Name")), groupName);
@@ -1323,10 +1380,10 @@ public class DBConnection {
     }
 
     /**
-     *
+     * Gives group access to file
      * @param path
      * @param groupname
-     * @return
+     * @return true on success, false on failure
      */
     public boolean shareFileWithGroup(String path, String groupname) {
 
@@ -1363,10 +1420,10 @@ public class DBConnection {
     }
 
     /**
-     *
+     * Removes a group's access to a folder 
      * @param path
      * @param groupname
-     * @return
+     * @return true on success, false on failure
      */
     public boolean removeFolderAccess(String path, String groupname) {
         if (!groupExists(groupname)) {
@@ -1392,7 +1449,12 @@ public class DBConnection {
         }
         return true;
     }
-
+    /**
+     * Removes a group's access to a file
+     * @param path
+     * @param groupname
+     * @return true on success, false on failure
+     */
     public boolean removeFileAccess(String path, String groupname) {
         if (!groupExists(groupname)) {
             System.out.println("Group doesn't exist, could not remove group access to file.");
@@ -1418,10 +1480,10 @@ public class DBConnection {
     }
 
     /**
-     *
+     * Says if a user has read access on a folder
      * @param username
      * @param path
-     * @return
+     * @return true if user can access folder, false if they can't
      */
     public boolean canUserAccessFolder(String username, String path) {
         String[] folder = splitPath(path);
@@ -1440,10 +1502,8 @@ public class DBConnection {
             ResultSet permission = folderStmt.executeQuery();
             if (permission.next()) {
                 String permissionName = permission.getString("pName");
-                if (permissionName.equals("public") || (getUsernameFromPath(path).equals(username))) {
+                if (permissionName.equals("public") || (getUsernameFromPath(path).equals(username))) {//if folder is public or user is owner automatic true
                     return true;
-                }else if(permissionName.equals("private")){
-                    return false;
                 } else if (permissionName.equals("shared")) {
                     String sharedSQL = "SELECT * FROM folders INNER JOIN sharedfolders ON sharedfolders.Folder_ID = folders.ID INNER JOIN groups ON sharedfolders.Groupname = groups.Name INNER JOIN user_group ON user_group.groupname = groups.Name WHERE user_group.username = ? AND folders.Name = ? AND folders.Parent_Path = ?;";
                     PreparedStatement sharedStmt = connection.prepareStatement(sharedSQL);
@@ -1463,9 +1523,9 @@ public class DBConnection {
     }
 
     /**
-     *
+     *  Gives list of all the groups a user has created
      * @param username
-     * @return
+     * @return an array of groups, null if there are none
      */
     public String[] ownedGroups(String username) {
         String[] groups = null;
@@ -1493,7 +1553,11 @@ public class DBConnection {
         }
         return groups;
     }
-
+    /**
+     * Gives a list of users with group access
+     * @param groupname
+     * @return and array of users with group access
+     */
     public String[] usersInGroup(String groupname) {
         String[] users = null;
         if (!groupExists(groupname)) {
@@ -1528,10 +1592,10 @@ public class DBConnection {
     }
 
     /**
-     *
+     * Says whether a user has read access on a file.
      * @param username
      * @param path
-     * @return
+     * @return true if they have access, false if they don't
      */
     public boolean canUserAccessFile(String username, String path) {
         String[] file = splitPath(path);
@@ -1573,9 +1637,9 @@ public class DBConnection {
     }
 
     /**
-     *
+     * returns all the groups a folder belongs to
      * @param path
-     * @return
+     * @return an array of groups that have access to a folder
      */
     public String[] folderGroups(String path) {
         String[] groups = null;
@@ -1607,9 +1671,9 @@ public class DBConnection {
     }
 
     /**
-     *
+     * Returns the groups with access to a file
      * @param path
-     * @return
+     * @return an array of groups with file access
      */
     public String[] fileGroups(String path) {
         String[] groups = null;
@@ -1642,10 +1706,10 @@ public class DBConnection {
     }
 
     /**
-     *
+     * Says if the user created a group
      * @param username
      * @param group
-     * @return
+     * @return true if they created specified group, false if they didn't
      */
     public boolean isGroupOwner(String username, String group) {
         String groupSQL = "SELECT * FROM groups WHERE Name = ? AND Owner_username = ?;";
