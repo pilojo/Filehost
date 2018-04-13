@@ -1,24 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.algonquincollege.waterbin.fs.tasks;
     
 import com.algonquincollege.javaApp.database.DBConnection;
 
 /**
- *
- * @author Devon
+ * Class representing a basic asyncronous copy file task
+ * @author Devon St. John
  */
 public abstract class FileSystemTask implements Runnable{
 
-    protected final String root = "D:\\fileHostRoot";
+    protected final String root = "D:\\fileHostRoot"; //This is the path used to resolve relitive paths to absolute with
 
     protected DBConnection db;
     
     protected boolean abort;
     protected boolean success;
     
+    /**
+     * Get whether or not the operation was successful
+     * @return whether or not the operation was successful
+     */
     public abstract boolean getSuccess();
 }
